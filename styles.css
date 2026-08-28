@@ -1081,17 +1081,19 @@ button {
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.75rem;
   flex-wrap: wrap;
+  margin-top: 0.25rem;
 }
 
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  padding-top: 1.5rem;
+  gap: 1rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--glass-border);
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .stat-item h4 {
