@@ -357,4 +357,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startAutoSlide();
   }
+
+
+  /* --------------------------------------------------------------------------
+     CONTADOR DINÁMICO CON DISTORSIÓN GLITCH (+3,725)
+     -------------------------------------------------------------------------- */
+  const counterEl = document.getElementById('counter-equipos-reparados');
+  if (counterEl) {
+    const BASE_NUMBER = 3725;
+    let currentVal = BASE_NUMBER;
+    const incrementSteps = [1, 2, 3]; // Suma +1, luego +2, luego +3, luego +1...
+    let stepIndex = 0;
+    let counterInterval = null;
+
+    function formatNumber(num) {
+      return '+' + num.toLocaleString('es-EC');
+    }
+
+    function triggerDistortionIncrement() {
+      const increment = incrementSteps[stepIndex % incrementSteps.length];
+      stepIndex++;
+      currentVal += increment;
+
+      // Disparar animación de distorsión
+      counterEl.classList.remove('is-glitching');
+      // Forzar reflujo para reiniciar keyframe
+      void counterEl.offsetWidth;
+      counterEl.classList.add('is-glitching');
+
+      // Actualizar número a mitad de la distorsión
+      setTimeout(() => {
+        counterEl.textContent = formatNumber(currentVal);
+      }, 140);
+    }
+
+    function startCounter() {
+      if (counterInterval) clearInterval(counterInterval);
+      currentVal = BASE_NUMBER;
+      stepIndex = 0;
+      counterEl.textContent = formatNumber(BASE_NUMBER);
+      counterInterval = setInterval(triggerDistortionIncrement, 2000);
+    }
+
+    function stopAndResetCounter() {
+      if (counterInterval) {
+        clearInterval(counterInterval);
+        counterInterval = null;
+      }
+      currentVal = BASE_NUMBER;
+      stepIndex = 0;
+      counterEl.textContent = formatNumber(BASE_NUMBER);
+    }
+
+    // Iniciar con IntersectionObserver (cuando el módulo es visible en pantalla)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounter();
+        } else {
+          stopAndResetCounter();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(counterEl);
+
+    // Si el slider de inicio cambia de diapositiva y regresa al slide 1, reiniciar conteo
+    const slide1 = counterEl.closest('.hero-slide');
+    if (slide1) {
+      const mutationObserver = new MutationObserver(() => {
+        if (slide1.classList.contains('active')) {
+          startCounter();
+        } else {
+          stopAndResetCounter();
+        }
+      });
+      mutationObserver.observe(slide1, { attributes: true, attributeFilter: ['class'] });
+    }
+  }
+
 });
