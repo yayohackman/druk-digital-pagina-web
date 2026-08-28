@@ -1987,6 +1987,30 @@ input:checked + .slider:before {
     gap: 1rem;
     text-align: center;
   }
+
+  /* Imagen/poster del hero: en móvil ya no es un video autoplay de fondo
+     (ver app.js), así que la mostramos en una proporción más liviana y
+     acorde a una pantalla angosta en vez del alto fijo de escritorio */
+  .hero-img-wrapper img,
+  .hero-img-wrapper video {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .simulator-preview img,
+  .simulator-preview video {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Tipografía del hero: tamaño y tracking propios para pantallas angostas
+     en vez de heredar el ajuste de 992px (Apple Design: tracking/leading
+     son específicos por tamaño, no un valor fijo) */
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
 }
 
 /* Redes Sociales & Botones de Contacto Liquid Glass */

@@ -358,6 +358,77 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
   }
 
+  /* --------------------------------------------------------------------------
+     8b. Carga Inteligente de Video de Fondo (adaptado a la plataforma)
+     En móvil, con "Reduced Motion" activado o con conexión lenta/datos
+     limitados, se omite la descarga del video y se muestra solo la imagen
+     poster estática. En desktop, cada video del slider se carga recién
+     cuando su slide se vuelve visible (no los 4 de una sola vez), y el
+     video fuera del slider (simulador) se carga solo al hacer scroll hasta
+     él. Esto es lo que reduce el peso y la lentitud en celular.
+     -------------------------------------------------------------------------- */
+  (function () {
+    const mqMobile = window.matchMedia('(max-width: 768px)');
+    const mqReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const conn = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
+    const slowConnection = !!(conn && (conn.saveData || /2g/.test(conn.effectiveType || '')));
+
+    function shouldSkipVideo() {
+      return mqMobile.matches || mqReducedMotion.matches || slowConnection;
+    }
+
+    function activateVideo(video) {
+      if (!video || !video.dataset.src || video.dataset.activated === 'true') return;
+      if (shouldSkipVideo()) return; // se queda mostrando el poster, sin descargar el video
+      video.dataset.activated = 'true';
+      video.src = video.dataset.src;
+      video.load();
+      video.play().catch(() => {});
+    }
+
+    const allHeroVideos = document.querySelectorAll('.hero-video');
+    const heroSlideVideos = [];
+    const standaloneVideos = [];
+    allHeroVideos.forEach((v) => (v.closest('.hero-slide') ? heroSlideVideos.push(v) : standaloneVideos.push(v)));
+
+    // Slider: solo se activa el video del slide que está visible en este momento
+    function activateActiveHeroSlide() {
+      heroSlides.forEach((slide) => {
+        if (slide.classList.contains('active')) {
+          activateVideo(slide.querySelector('.hero-video'));
+        }
+      });
+    }
+    activateActiveHeroSlide();
+    if (heroSlides.length) {
+      const heroVideoObserver = new MutationObserver(activateActiveHeroSlide);
+      heroSlides.forEach((slide) => heroVideoObserver.observe(slide, { attributes: true, attributeFilter: ['class'] }));
+    }
+
+    // Videos fuera del slider (ej. vista previa del simulador): se cargan
+    // solo cuando el usuario llega a esa sección al hacer scroll
+    if ('IntersectionObserver' in window && standaloneVideos.length) {
+      const lazyVideoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            activateVideo(entry.target);
+            lazyVideoObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '200px' });
+      standaloneVideos.forEach((v) => lazyVideoObserver.observe(v));
+    } else {
+      standaloneVideos.forEach(activateVideo);
+    }
+
+    // Si el usuario activa "reducir movimiento" mientras navega, pausamos
+    // cualquier video que ya se hubiera activado
+    mqReducedMotion.addEventListener('change', () => {
+      if (mqReducedMotion.matches) {
+        document.querySelectorAll('.hero-video[src]').forEach((v) => v.pause());
+      }
+    });
+  })();
 
   /* --------------------------------------------------------------------------
      CONTADOR DINÁMICO CON DISTORSIÓN GLITCH (+3,725)
