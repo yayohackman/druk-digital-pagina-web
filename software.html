@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrollo de Software & TALLER MASTER | DRUK Digital</title>
+  <meta name="description" content="Software de gestión y manejo de servicio técnico TALLER MASTER potenciado con Inteligencia Artificial. Automatización de órdenes, inventario, facturación y avisos automáticos a WhatsApp.">
+  <meta name="keywords" content="software servicio tecnico, taller master, sistema ordenes de trabajo, software inventario repuestos, notificaciones whatsapp ia taller, druk digital">
+  
+  <!-- Favicon Logo Oficial -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+
+  <!-- Google Fonts Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- CSS Principal Liquid Glass -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fondo Líquido Animado (Liquid Glass Effect) -->
+  <div class="liquid-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Capa de Triángulos y Poliedros 3D Animados -->
+  <div class="geo-shapes-layer" id="geoLayer">
+    <svg style="width:0;height:0;position:absolute;">
+      <defs>
+        <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#047857"/><stop offset="100%" stop-color="#051610"/></linearGradient>
+        <linearGradient id="f2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#065f46"/></linearGradient>
+        <linearGradient id="f3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#022c22"/></linearGradient>
+        <linearGradient id="f4" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#047857"/></linearGradient>
+        <filter id="glowE"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#34d399" flood-opacity="0.45"/></filter>
+      </defs>
+    </svg>
+    <svg class="geo-shape geo-triangulated-mesh geo-mesh-top" data-speed="14" data-rot="5" viewBox="0 0 1400 900" fill="none" style="top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px;">
+      <g stroke="rgba(226, 232, 240, 0.35)" stroke-width="1.2" class="connecting-mesh">
+        <polygon points="50,100 180,40 320,120" />
+        <polygon points="180,40 320,120 450,30" />
+        <polygon points="320,120 450,30 580,140" />
+        <polygon points="450,30 580,140 720,20" />
+        <polygon points="580,140 720,20 860,110" />
+      </g>
+      <g fill="rgba(52, 211, 153, 0.75)">
+        <circle cx="180" cy="40" r="4"/>
+        <circle cx="320" cy="120" r="4.5"/>
+        <circle cx="450" cy="30" r="4"/>
+        <circle cx="580" cy="140" r="4.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Header & Navegación Liquid Glass -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" title="Ir a Inicio - DRUK Digital">
+        <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
+        <span class="logo-tag-home"><i class="bi bi-house-door-fill"></i> Inicio</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          
+          <!-- Item 1: Servicio Técnico -->
+          <li class="nav-dropdown-item">
+            <a href="servicio-tecnico.html" class="nav-link dropdown-toggle">
+              Servicio Técnico <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-header">
+                <span><i class="bi bi-wrench-adjustable me-1"></i> Especialidades Técnicas</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="servicio-tecnico.html#card-laptop" class="dropdown-link">
+                  <i class="bi bi-laptop"></i>
+                  <div><strong>Reparación Laptops</strong><small>Multimarca, Pantallas & Gaming</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-cpu" class="dropdown-link">
+                  <i class="bi bi-pc-display"></i>
+                  <div><strong>Reparación CPU / PC</strong><small>Escritorio & Repotenciación</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-macbook" class="dropdown-link">
+                  <i class="bi bi-laptop-fill"></i>
+                  <div><strong>Reparación MacBook</strong><small>Air & Pro M1/M2/M3 / Placa</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-iphone" class="dropdown-link">
+                  <i class="bi bi-phone-fill"></i>
+                  <div><strong>Reparación iPhone</strong><small>Baterías, Módulos & Software</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-celulares" class="dropdown-link" style="grid-column: span 2;">
+                  <i class="bi bi-phone"></i>
+                  <div><strong>Reparación Celulares & Tablets</strong><small>Android, Pantallas, Pines y Baterías</small></div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 2: Repuestos -->
+          <li class="nav-dropdown-item">
+            <a href="repuestos.html" class="nav-link dropdown-toggle">
+              Repuestos <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-sm">
+              <div class="dropdown-header">
+                <span><i class="bi bi-box-seam me-1"></i> Catálogo de Repuestos</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-stack">
+                <a href="repuestos.html#repuestos-computacionales" class="dropdown-link">
+                  <i class="bi bi-cpu-fill"></i>
+                  <div><strong>Repuestos Computacionales</strong><small>SSD, RAM, Pantallas, Fuentes</small></div>
+                </a>
+                <a href="repuestos.html#repuestos-moviles" class="dropdown-link">
+                  <i class="bi bi-phone-fill"></i>
+                  <div><strong>Repuestos Móviles</strong><small>Pantallas OLED, Baterías, Pines de Carga</small></div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 3: Software (Activo) -->
+          <li><a href="software.html" class="nav-link active"><i class="bi bi-code-slash me-1"></i> Software</a></li>
+
+          <!-- Item 4: Submenú Desplegable de Ventas -->
+          <li class="nav-dropdown-item">
+            <a href="ventas.html" class="nav-link dropdown-toggle">
+              Ventas <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+
+            <!-- Submenú Desplegable de Ventas -->
+            <div class="dropdown-menu dropdown-menu-sm" style="width: 460px;">
+              <div class="dropdown-header">
+                <span><i class="bi bi-pc-display-horizontal me-1"></i> Catálogo de Ventas & Ensamble</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-stack">
+                <a href="ventas.html#laptops-aio" class="dropdown-link">
+                  <i class="bi bi-laptop"></i>
+                  <div>
+                    <strong>Laptops & Todo en Uno (AIO / iMac / MacBook)</strong>
+                    <small>Nuevas y de segundo uso garantizadas (Dell, Lenovo, Toshiba, Apple)</small>
+                  </div>
+                </a>
+
+                <a href="ventas.html#ensamble-cpus" class="dropdown-link">
+                  <i class="bi bi-cpu"></i>
+                  <div>
+                    <strong>Ensamble de CPUs (Estudiantil, Oficina & Gamer)</strong>
+                    <small>Armado de equipos a la medida, serie Gamer, diseño gráfico & arquitectura</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 5: Contacto -->
+          <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+
+          <!-- Item 6: Ubicación -->
+          <li><a href="index.html#ubicacion" class="nav-link">Ubicación</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Redes & WhatsApp -->
+      <div class="header-cta">
+        <div class="header-social-links">
+          <a href="https://www.instagram.com/drukdigitalec/" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="Instagram Oficial" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/drukdigital" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="Facebook Oficial" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://www.tiktok.com/@drukdigitalec" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="TikTok Oficial" aria-label="TikTok">
+            <i class="bi bi-tiktok"></i>
+          </a>
+          <a href="mailto:info@drukdigital.es" class="header-social-btn" title="Correo Oficial" aria-label="Email">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+        </div>
+
+        <a href="https://wa.me/593987334711" target="_blank" rel="noopener noreferrer" class="header-phone-badge">
+          <i class="bi bi-whatsapp" style="color: var(--accent-whatsapp); font-size: 1.15rem;"></i>
+          +593 98 733 4711
+        </a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="index.html" class="nav-link"><i class="bi bi-house-door me-2"></i> Inicio</a>
+      <a href="servicio-tecnico.html" class="nav-link"><i class="bi bi-tools me-2"></i> Servicio Técnico</a>
+      <a href="repuestos.html" class="nav-link"><i class="bi bi-box-seam me-2"></i> Repuestos Originales</a>
+      <a href="software.html" class="nav-link active"><i class="bi bi-code-slash me-2"></i> Software para Emprendedores | TALLER MASTER</a>
+
+      <a href="ventas.html" class="nav-link"><i class="bi bi-cart-check me-2"></i> Ventas & Ensamble de Equipos</a>
+      <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
+        <a href="ventas.html#laptops-aio" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Laptops Nuevas & Usadas / AIO</a>
+        <a href="ventas.html#ensamble-cpus" class="mobile-sublink"><i class="bi bi-pc-display-horizontal me-1"></i> Ensamble CPUs Estudiantiles & Gamer</a>
+      </div>
+
+      <a href="index.html#contacto" class="nav-link"><i class="bi bi-telephone-inbound me-2"></i> Contacto & Redes</a>
+      <a href="index.html#ubicacion" class="nav-link"><i class="bi bi-geo-alt me-2"></i> Ubicación & Mapa</a>
+
+      <div style="padding: 1rem 0; text-align: center;">
+        <a href="https://wa.me/593987334711" target="_blank" class="header-phone-badge" style="width: 100%; justify-content: center;">
+          <i class="bi bi-whatsapp me-1" style="color: var(--accent-whatsapp);"></i>
+          +593 98 733 4711
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subpage Hero Banner -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="subpage-hero-content">
+        <div class="breadcrumbs">
+          <a href="index.html"><i class="bi bi-house-door"></i> Inicio</a>
+          <span>/</span>
+          <span class="current">Software</span>
+        </div>
+        <h1 class="subpage-title">
+          TALLER MASTER & <span class="gradient-text">Software con IA</span>
+        </h1>
+        <p class="subpage-desc">
+          El sistema definitivo de gestión y control para talleres de servicio técnico de laptops, celulares y electrónica. Automatiza órdenes, inventario, cobros y notificaciones inteligentes a WhatsApp.
+        </p>
+
+        <div class="subpage-quick-stats">
+          <div class="quick-stat-badge">
+            <i class="bi bi-robot" style="color: var(--emerald-bright);"></i> IA Integrada
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-whatsapp" style="color: var(--accent-whatsapp);"></i> Avisos Automáticos WhatsApp
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-qr-code" style="color: var(--silver);"></i> Tickets con Código QR
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-cloud-check-fill" style="color: #60a5fa;"></i> 100% en la Nube
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Módulos y Beneficios de TALLER MASTER -->
+  <section class="section software-section" id="desarrollo-software" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-emerald">
+          <i class="bi bi-cpu-fill me-1"></i> Sistema Integral de Gestión
+        </div>
+        <h2 class="section-title">Módulos Especializados</h2>
+        <p class="section-subtitle">
+          Diseñado por y para especialistas técnicos. Cada funcionalidad resuelve los dolores diarios de control, inventario y comunicación con el cliente.
+        </p>
+      </div>
+
+      <!-- Filtro por Módulo del Sistema -->
+      <div class="category-tabs">
+        <button class="tab-btn active" data-category="all">
+          <i class="bi bi-grid-fill me-1"></i> Todos los Módulos
+        </button>
+        <button class="tab-btn" data-category="ordenes">
+          <i class="bi bi-receipt me-1"></i> Órdenes de Trabajo (OT)
+        </button>
+        <button class="tab-btn" data-category="notificaciones">
+          <i class="bi bi-whatsapp me-1"></i> Notificaciones con IA
+        </button>
+        <button class="tab-btn" data-category="cobros">
+          <i class="bi bi-calculator me-1"></i> Caja & Facturación
+        </button>
+        <button class="tab-btn" data-category="inventarios">
+          <i class="bi bi-boxes me-1"></i> Inventario de Repuestos
+        </button>
+      </div>
+
+      <!-- Cuadrícula de Soluciones -->
+      <div class="solutions-grid">
+        
+        <!-- Solución 1 -->
+        <div class="solution-card" data-category="ordenes">
+          <div class="solution-header">
+            <div class="solution-icon">
+              <i class="bi bi-receipt-cutoff"></i>
+            </div>
+            <span class="badge badge-emerald">Recepción & Diagnóstico</span>
+          </div>
+          <h4>Órdenes de Trabajo & Tickets QR</h4>
+          <p style="color: var(--silver-muted); font-size: 0.9rem;">
+            Registra el ingreso de laptops, celulares y PCs con número de serie, fallas reportadas, accesorios y emisión de comprobantes digitales con código QR para tus clientes.
+          </p>
+          <ul class="solution-features">
+            <li><i class="bi bi-check2"></i> Comprobante con QR para seguimiento del cliente</li>
+            <li><i class="bi bi-check2"></i> Registro de fallas, clave de desbloqueo y accesorios</li>
+            <li><i class="bi bi-check2"></i> Asignación de técnico responsable y estado de reparación</li>
+          </ul>
+        </div>
+
+        <!-- Solución 2 -->
+        <div class="solution-card" data-category="notificaciones">
+          <div class="solution-header">
+            <div class="solution-icon">
+              <i class="bi bi-whatsapp"></i>
+            </div>
+            <span class="badge">Automatización con IA</span>
+          </div>
+          <h4>Avisos Automáticos a WhatsApp con IA</h4>
+          <p style="color: var(--silver-muted); font-size: 0.9rem;">
+            Notifica automáticamente al cliente cuando su equipo cambia de estado (En Diagnóstico, Presupuesto Listo, Reparado) con textos profesionales redactados por IA.
+          </p>
+          <ul class="solution-features">
+            <li><i class="bi bi-check2"></i> Avisos automáticos de presupuesto y entrega de equipo</li>
+            <li><i class="bi bi-check2"></i> Generador de diagnósticos técnicos con lenguaje claro</li>
+            <li><i class="bi bi-check2"></i> Botón de aprobación de reparaciones directo en WhatsApp</li>
+          </ul>
+        </div>
+
+        <!-- Solución 3 -->
+        <div class="solution-card" data-category="cobros">
+          <div class="solution-header">
+            <div class="solution-icon">
+              <i class="bi bi-cash-stack"></i>
+            </div>
+            <span class="badge badge-emerald">Cobros & Caja</span>
+          </div>
+          <h4>Control de Caja Chica & Facturación</h4>
+          <p style="color: var(--silver-muted); font-size: 0.9rem;">
+            Gestiona cobros de mano de obra, anticipos de clientes, arqueo de caja diaria y liquidación de ganancias sin descuadres ni pérdidas de información.
+          </p>
+          <ul class="solution-features">
+            <li><i class="bi bi-check2"></i> Registro de abonos y saldo pendiente por equipo</li>
+            <li><i class="bi bi-check2"></i> Arqueo de caja diaria y reporte de utilidades</li>
+            <li><i class="bi bi-check2"></i> Emisión de recibos y facturación electrónica</li>
+          </ul>
+        </div>
+
+        <!-- Solución 4 -->
+        <div class="solution-card" data-category="inventarios">
+          <div class="solution-header">
+            <div class="solution-icon">
+              <i class="bi bi-cpu"></i>
+            </div>
+            <span class="badge">Stock en Tiempo Real</span>
+          </div>
+          <h4>Inventario & Descuento de Repuestos</h4>
+          <p style="color: var(--silver-muted); font-size: 0.9rem;">
+            Descuento automático de pantallas, SSDs, baterías y piezas al utilizarlos en una reparación, con alertas de stock bajo e historial de consumo.
+          </p>
+          <ul class="solution-features">
+            <li><i class="bi bi-check2"></i> Descuento automático de piezas instaladas en la OT</li>
+            <li><i class="bi bi-check2"></i> Alertas de bajo stock de piezas críticas</li>
+            <li><i class="bi bi-check2"></i> Control de costos de compras y margen de ganancia</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Banner CTA Demo -->
+      <div class="subpage-cta-card" style="margin-top: 2.5rem;">
+        <div class="subpage-cta-text">
+          <h3>¿Deseas implementar TALLER MASTER en tu negocio?</h3>
+          <p>Solicita una demostración guiada sin compromiso o consulta sobre personalizaciones específicas para tu emprendimiento.</p>
+        </div>
+        <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20solicitar%20una%20demostraci%C3%B3n%20de%20TALLER%20MASTER." target="_blank" class="btn btn-whatsapp btn-lg">
+          <i class="bi bi-whatsapp me-2"></i> Solicitar Demo por WhatsApp: +593 98 733 4711
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
+          </a>
+          <p>
+            Especialistas en servicio técnico, repuestos originales y desarrollo de software a medida para el crecimiento de emprendimientos.
+          </p>
+          <div class="social-links" style="margin-top: 1rem;">
+            <a href="https://www.facebook.com/drukdigital" target="_blank" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/drukdigitalec/" target="_blank" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.tiktok.com/@drukdigitalec" target="_blank" class="social-icon-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://wa.me/593987334711" target="_blank" class="social-icon-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Soluciones Digitales</h4>
+          <ul>
+            <li><a href="software.html">TALLER MASTER para Talleres</a></li>
+            <li><a href="software.html">Notificaciones con IA</a></li>
+            <li><a href="software.html">Órdenes de Trabajo QR</a></li>
+            <li><a href="software.html">Inventario de Repuestos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="servicio-tecnico.html">Servicio Técnico Especializado</a></li>
+            <li><a href="repuestos.html">Catálogo de Repuestos</a></li>
+            <li><a href="index.html#contacto">Contacto, Cotizador & Ubicación</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRUK Digital. Todos los derechos reservados.</p>
+        <p>Servicio Técnico, Repuestos & Soluciones Digitales para Emprendedores</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20informaci%C3%B3n%20sobre%20el%20software%20TALLER%20MASTER." target="_blank" class="floating-whatsapp" aria-label="WhatsApp DRUK Digital">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Script JS Principal -->
+  <script src="app.js"></script>
+</body>
+</html>

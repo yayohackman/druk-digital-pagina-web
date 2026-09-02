@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venta de Laptops, AIO & Ensamble de CPUs | DRUK Digital</title>
+  <meta name="description" content="Venta de laptops nuevas y de segundo uso garantizadas (Dell, Lenovo, Apple, HP). Ensamble de computadoras CPU a la medida para gaming, oficina y diseño gráfico en Quito, Ecuador.">
+  <meta name="keywords" content="venta de laptops quito, ensamble de computadoras gamer, cpu gamer quito, venta de macbook, todo en uno aio, druk digital">
+  
+  <!-- Favicon Logo Oficial -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+
+  <!-- Google Fonts Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- CSS Principal Liquid Glass -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fondo Líquido Animado (Liquid Glass Effect) -->
+  <div class="liquid-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Capa de Triángulos y Poliedros 3D Animados -->
+  <div class="geo-shapes-layer" id="geoLayer">
+    <svg style="width:0;height:0;position:absolute;">
+      <defs>
+        <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#047857"/><stop offset="100%" stop-color="#051610"/></linearGradient>
+        <linearGradient id="f2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#065f46"/></linearGradient>
+        <linearGradient id="f3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#022c22"/></linearGradient>
+      </defs>
+    </svg>
+
+    <svg class="geo-shape geo-triangulated-mesh geo-mesh-top" data-speed="14" data-rot="5" viewBox="0 0 1400 900" fill="none" style="top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px;">
+      <g stroke="rgba(226, 232, 240, 0.35)" stroke-width="1.2" class="connecting-mesh">
+        <polygon points="50,100 180,40 320,120" />
+        <polygon points="180,40 320,120 450,30" />
+        <polygon points="320,120 450,30 580,140" />
+        <polygon points="450,30 580,140 720,20" />
+      </g>
+      <g fill="rgba(52, 211, 153, 0.75)">
+        <circle cx="180" cy="40" r="4"/>
+        <circle cx="320" cy="120" r="4.5"/>
+        <circle cx="450" cy="30" r="4"/>
+        <circle cx="580" cy="140" r="4.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Header & Navegación Liquid Glass -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" title="Ir a Inicio - DRUK Digital">
+        <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
+        <span class="logo-tag-home"><i class="bi bi-house-door-fill"></i> Inicio</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <!-- Item 1: Submenú Desplegable de Servicio Técnico -->
+          <li class="nav-dropdown-item">
+            <a href="servicio-tecnico.html" class="nav-link dropdown-toggle">
+              Servicio Técnico <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-header">
+                <span><i class="bi bi-wrench-adjustable me-1"></i> Especialidades Técnicas</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="servicio-tecnico.html#card-laptop" class="dropdown-link">
+                  <i class="bi bi-laptop"></i>
+                  <div><strong>Reparación Laptops</strong><small>Multimarca, Pantallas & Gaming</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-cpu" class="dropdown-link">
+                  <i class="bi bi-pc-display"></i>
+                  <div><strong>Reparación CPU / PC</strong><small>Escritorio & Repotenciación</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-aio" class="dropdown-link">
+                  <i class="bi bi-display"></i>
+                  <div><strong>Reparación All-in-One</strong><small>Equipos AIO integrados</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-imac" class="dropdown-link">
+                  <i class="bi bi-display-fill"></i>
+                  <div><strong>Reparación iMac</strong><small>Apple All-in-One & Fuentes</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-macbook" class="dropdown-link">
+                  <i class="bi bi-laptop-fill"></i>
+                  <div><strong>Reparación MacBook</strong><small>Air & Pro M1/M2/M3 / Placa</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-celulares" class="dropdown-link">
+                  <i class="bi bi-phone"></i>
+                  <div><strong>Reparación Celulares</strong><small>Android, Pantallas & Pines</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-tablets" class="dropdown-link">
+                  <i class="bi bi-tablet"></i>
+                  <div><strong>Reparación Tablets</strong><small>iPads & Android / Glass</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-iphone" class="dropdown-link">
+                  <i class="bi bi-phone-fill"></i>
+                  <div><strong>Reparación iPhone</strong><small>Baterías, Módulos & Software</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-smartwatch" class="dropdown-link" style="grid-column: span 2;">
+                  <i class="bi bi-smartwatch"></i>
+                  <div><strong>Reparación Smartwatch</strong><small>Apple Watch & Relojes Inteligentes</small></div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 2: Submenú Desplegable de Repuestos -->
+          <li class="nav-dropdown-item">
+            <a href="repuestos.html" class="nav-link dropdown-toggle">
+              Repuestos <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-sm">
+              <div class="dropdown-header">
+                <span><i class="bi bi-box-seam me-1"></i> Catálogo de Repuestos</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-stack">
+                <a href="repuestos.html#repuestos-computacionales" class="dropdown-link">
+                  <i class="bi bi-cpu-fill"></i>
+                  <div>
+                    <strong>Repuestos para Equipos Computacionales</strong>
+                    <small>Discos SSD NVMe, Memorias RAM, Pantallas Laptop/AIO, Fuentes</small>
+                  </div>
+                </a>
+                <a href="repuestos.html#repuestos-moviles" class="dropdown-link">
+                  <i class="bi bi-phone-fill"></i>
+                  <div>
+                    <strong>Repuestos para Equipos Móviles</strong>
+                    <small>Pantallas OLED/LCD, Baterías, Pines de Carga, Flex & Tapas</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 3: Software -->
+          <li><a href="software.html" class="nav-link"><i class="bi bi-code-slash me-1"></i> Software</a></li>
+
+          <!-- Item 4: Submenú Desplegable de Ventas (Activo) -->
+          <li class="nav-dropdown-item">
+            <a href="ventas.html" class="nav-link dropdown-toggle active">
+              Ventas <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-sm" style="width: 460px;">
+              <div class="dropdown-header">
+                <span><i class="bi bi-pc-display-horizontal me-1"></i> Catálogo de Ventas & Ensamble</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-stack">
+                <a href="ventas.html#laptops-aio" class="dropdown-link">
+                  <i class="bi bi-laptop"></i>
+                  <div>
+                    <strong>Laptops & Todo en Uno (AIO / iMac / MacBook)</strong>
+                    <small>Nuevas y de segundo uso garantizadas (Dell, Lenovo, Toshiba, Apple)</small>
+                  </div>
+                </a>
+                <a href="ventas.html#ensamble-cpus" class="dropdown-link">
+                  <i class="bi bi-cpu"></i>
+                  <div>
+                    <strong>Ensamble de CPUs (Estudiantil, Oficina & Gamer)</strong>
+                    <small>Armado de equipos a la medida, serie Gamer, diseño gráfico & arquitectura</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 5: Contacto -->
+          <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+
+          <!-- Item 6: Ubicación -->
+          <li><a href="index.html#ubicacion" class="nav-link">Ubicación</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Redes & WhatsApp -->
+      <div class="header-cta">
+        <div class="header-social-links">
+          <a href="https://www.instagram.com/drukdigitalec/" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="Instagram Oficial" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/drukdigital" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="Facebook Oficial" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://www.tiktok.com/@drukdigitalec" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="TikTok Oficial" aria-label="TikTok">
+            <i class="bi bi-tiktok"></i>
+          </a>
+          <a href="mailto:info@drukdigital.es" class="header-social-btn" title="Correo Oficial" aria-label="Email">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+        </div>
+
+        <a href="https://wa.me/593987334711" target="_blank" rel="noopener noreferrer" class="header-phone-badge">
+          <i class="bi bi-whatsapp" style="color: var(--accent-whatsapp); font-size: 1.15rem;"></i>
+          +593 98 733 4711
+        </a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="index.html" class="nav-link"><i class="bi bi-house-door me-2"></i> Inicio</a>
+      <a href="servicio-tecnico.html" class="nav-link"><i class="bi bi-tools me-2"></i> Servicio Técnico</a>
+      <a href="repuestos.html" class="nav-link"><i class="bi bi-box-seam me-2"></i> Repuestos Originales</a>
+      <a href="software.html" class="nav-link"><i class="bi bi-code-slash me-2"></i> Software para Emprendedores</a>
+
+      <a href="ventas.html" class="nav-link active"><i class="bi bi-cart-check me-2"></i> Ventas & Ensamble de Equipos</a>
+      <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
+        <a href="ventas.html#laptops-aio" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Laptops Nuevas & Usadas / AIO</a>
+        <a href="ventas.html#ensamble-cpus" class="mobile-sublink"><i class="bi bi-pc-display-horizontal me-1"></i> Ensamble CPUs Estudiantiles & Gamer</a>
+      </div>
+
+      <a href="index.html#contacto" class="nav-link"><i class="bi bi-telephone-inbound me-2"></i> Contacto & Redes</a>
+      <a href="index.html#ubicacion" class="nav-link"><i class="bi bi-geo-alt me-2"></i> Ubicación & Mapa</a>
+
+      <div style="padding: 1rem 0; text-align: center;">
+        <a href="https://wa.me/593987334711" target="_blank" class="header-phone-badge" style="width: 100%; justify-content: center;">
+          <i class="bi bi-whatsapp me-1" style="color: var(--accent-whatsapp);"></i>
+          +593 98 733 4711
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subpage Hero Banner -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="subpage-hero-content">
+        <div class="breadcrumbs">
+          <a href="index.html"><i class="bi bi-house-door"></i> Inicio</a>
+          <span>/</span>
+          <span class="current">Ventas</span>
+        </div>
+        <h1 class="subpage-title">
+          Venta de Laptops, AIO & <span class="gradient-text">Ensamble de CPUs</span>
+        </h1>
+        <p class="subpage-desc">
+          Cotizamos laptops nuevas y de segundo uso certificadas con garantía de las mejores marcas (Dell, Lenovo, Apple, HP). Ensamblamos computadoras CPU a la medida desde nivel estudiantil hasta serie Gamer y renderizado profesional.
+        </p>
+
+        <div class="subpage-quick-stats">
+          <div class="quick-stat-badge">
+            <i class="bi bi-laptop" style="color: var(--emerald-bright);"></i> Equipos Garantizados
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-cpu-fill" style="color: #fbbf24;"></i> Ensamble a la Medida
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-award-fill" style="color: var(--silver);"></i> Marcas Líderes
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-truck" style="color: var(--emerald-bright);"></i> Envíos a Nivel Nacional
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Catálogo de Ventas & Ensamble -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      
+      <div class="repuestos-grid">
+        
+        <!-- Tarjeta 1: Laptops & AIO -->
+        <div class="repuesto-card-main" id="laptops-aio">
+          <div class="solution-header">
+            <div class="solution-icon" style="width: 56px; height: 56px; font-size: 1.75rem;">
+              <i class="bi bi-laptop"></i>
+            </div>
+            <span class="badge badge-emerald">Nuevas & Seminuevas Garantizadas</span>
+          </div>
+          <h3>Laptops & Todo en Uno (AIO / iMac / MacBook)</h3>
+          <p style="color: var(--silver-muted); font-size: 0.95rem;">
+            Equipos rigurosamente seleccionados, testeados con pruebas de estrés y entregados con garantía directa en DRUK Digital.
+          </p>
+
+          <ul class="repuestos-list-features">
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Laptops Corporativas & Estudiantiles</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Dell Latitude / Inspiron, Lenovo ThinkPad / IdeaPad, HP ProBook / Pavilion, Asus Vivobook / TUF Gaming.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Apple MacBook Air & MacBook Pro</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Equipos con procesadores Intel y chips Apple Silicon M1, M2 y M3 con batería original en condición óptima.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Computadoras Todo en Uno (All-in-One) & iMac</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Pantallas grandes de 21.5" a 27" Full HD y 4K ideales para oficinas, recepciones comerciales y centros médicos.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Software y Configuración Inicial Incluida</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Sistema operativo limpio y optimizado, programas de ofimática, navegadores, antivirus y utilidades listas para trabajar.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 1rem;">
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20una%20Laptop%20o%20equipo%20Todo%20en%20Uno%20(AIO/MacBook)." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="bi bi-whatsapp me-2"></i> Cotizar Laptop / AIO en WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Ensamble de CPUs -->
+        <div class="repuesto-card-main" id="ensamble-cpus">
+          <div class="solution-header">
+            <div class="solution-icon" style="width: 56px; height: 56px; font-size: 1.75rem;">
+              <i class="bi bi-cpu"></i>
+            </div>
+            <span class="badge badge-emerald">Armado a la Medida & Alto Rendimiento</span>
+          </div>
+          <h3>Ensamble de CPUs (Estudiantil, Oficina & Gamer)</h3>
+          <p style="color: var(--silver-muted); font-size: 0.95rem;">
+            Diseñamos y ensamblamos la computadora exacta que necesitas según tu presupuesto, con componentes 100% nuevos y certificados.
+          </p>
+
+          <ul class="repuestos-list-features">
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>PCs Gamer de Alto Rendimiento</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Tarjetas de video NVIDIA GeForce RTX 30/40 Series y AMD Radeon, refrigeración líquida ARGB y gabinetes con flujo de aire optimizado.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Estaciones de Trabajo para Diseño & Arquitectura</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Procesadores potentes Intel Core i7/i9 y AMD Ryzen 7/9 optimizados para renderizado en AutoCAD, Revit, Lumion y Adobe Premiere.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>CPUs para Teletrabajo, Colegios & Facturación</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Equipos compactos, silenciosos y de bajo consumo eléctrico con discos sólidos ultrarrápidos y memorias de alta velocidad.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Pruebas de Estrés Térmico & Garantía Escrita</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Ensamble profesional, orden de cableado impecable, pruebas de temperatura antes de entrega y garantía oficial.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 1rem;">
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20el%20ensamble%20de%20una%20PC%20(Gamer/Oficina/Dise%C3%B1o)." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="bi bi-whatsapp me-2"></i> Cotizar Ensamble CPU en WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de Asesoría Rápida -->
+      <div class="subpage-cta-card" style="margin-top: 2.5rem;">
+        <div class="subpage-cta-text">
+          <h3>¿Necesitas asesoría para armar tu PC o elegir una Laptop?</h3>
+          <p>Indícanos qué programas o juegos usarás y tu presupuesto disponible para recomendarte la configuración más eficiente.</p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20asesor%C3%ADa%20personalizada%20para%20comprar%20o%20armar%20un%20equipo." target="_blank" class="btn btn-whatsapp btn-lg">
+            <i class="bi bi-whatsapp me-2"></i> Asesoría por WhatsApp: +593 98 733 4711
+          </a>
+          <a href="index.html#contacto" class="btn btn-primary btn-lg">
+            <i class="bi bi-telephone-inbound me-2"></i> Canales de Contacto
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
+          </a>
+          <p>
+            Especialistas en servicio técnico, repuestos originales y desarrollo de software a medida para el crecimiento de emprendimientos.
+          </p>
+          <div class="social-links" style="margin-top: 1rem;">
+            <a href="https://www.facebook.com/drukdigital" target="_blank" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/drukdigitalec/" target="_blank" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.tiktok.com/@drukdigitalec" target="_blank" class="social-icon-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://wa.me/593987334711" target="_blank" class="social-icon-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Ventas & Ensamble</h4>
+          <ul>
+            <li><a href="ventas.html#laptops-aio">Laptops Nuevas & Usadas</a></li>
+            <li><a href="ventas.html#laptops-aio">Equipos Todo en Uno (AIO)</a></li>
+            <li><a href="ventas.html#ensamble-cpus">CPUs Gamer de Alto Rendimiento</a></li>
+            <li><a href="ventas.html#ensamble-cpus">Estaciones de Trabajo para Diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="servicio-tecnico.html">Servicio Técnico Especializado</a></li>
+            <li><a href="repuestos.html">Catálogo de Repuestos</a></li>
+            <li><a href="software.html">TALLER MASTER Software</a></li>
+            <li><a href="index.html#contacto">Contacto & Ubicación</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRUK Digital. Todos los derechos reservados.</p>
+        <p>Servicio Técnico, Repuestos & Soluciones Digitales para Emprendedores</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20un%20equipo%20de%20computaci%C3%B3n." target="_blank" class="floating-whatsapp" aria-label="WhatsApp DRUK Digital">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Script JS Principal -->
+  <script src="app.js"></script>
+</body>
+</html>

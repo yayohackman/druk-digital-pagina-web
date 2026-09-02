@@ -28,48 +28,56 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --------------------------------------------------------------------------
-     2. Navegación e Interacción con Submenús (Soporte Multipágina & Anclajes)
+     2. Navegación e Interacción con Submenús (Servicio Técnico, Repuestos & Software)
      -------------------------------------------------------------------------- */
-  function handleCardHighlightAndOpen(targetId) {
-    if (!targetId) return;
-    const cleanId = targetId.includes('#') ? '#' + targetId.split('#')[1] : targetId;
-    const targetCard = document.querySelector(cleanId);
-    if (targetCard) {
-      setTimeout(() => {
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        document.querySelectorAll('.service-card, .repuesto-card-main').forEach(c => c.classList.remove('highlight'));
-        targetCard.classList.add('highlight');
-        setTimeout(() => targetCard.classList.remove('highlight'), 3000);
-
-        const accordionBtn = targetCard.querySelector('.accordion-toggle');
-        const accordionContent = targetCard.querySelector('.accordion-content');
-        if (accordionBtn && accordionContent) {
-          accordionBtn.classList.add('active');
-          accordionContent.classList.add('open');
-        }
-      }, 200);
-    }
-  }
-
-  // Si la página se abrió directamente con un hash en la URL (ej: servicio-tecnico.html#card-macbook)
-  if (window.location.hash) {
-    handleCardHighlightAndOpen(window.location.hash);
-  }
-
   const dropdownLinks = document.querySelectorAll('.dropdown-link, .mobile-sublink');
+
   dropdownLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.includes('#')) {
-        const [targetPage, targetId] = href.split('#');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const targetId = link.getAttribute('href');
+      const softwareCat = link.dataset.software;
+      
+      // Manejar Servicio Técnico (#card-...)
+      if (targetId && targetId.startsWith('#card-')) {
+        const targetCard = document.querySelector(targetId);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        // Si el enlace apunta a la misma página actual
-        if (!targetPage || targetPage === currentPage) {
-          e.preventDefault();
-          handleCardHighlightAndOpen('#' + targetId);
-          if (history.pushState) {
-            history.pushState(null, null, '#' + targetId);
+          document.querySelectorAll('.service-card').forEach(c => c.classList.remove('highlight'));
+          targetCard.classList.add('highlight');
+          setTimeout(() => targetCard.classList.remove('highlight'), 3000);
+
+          const accordionBtn = targetCard.querySelector('.accordion-toggle');
+          const accordionContent = targetCard.querySelector('.accordion-content');
+          if (accordionBtn && accordionContent) {
+            accordionBtn.classList.add('active');
+            accordionContent.classList.add('open');
+          }
+        }
+      }
+
+      // Manejar Repuestos (#repuestos-...)
+      if (targetId && targetId.startsWith('#repuestos-')) {
+        const targetRepuestoCard = document.querySelector(targetId);
+        if (targetRepuestoCard) {
+          targetRepuestoCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          document.querySelectorAll('.repuesto-card-main').forEach(c => c.classList.remove('highlight'));
+          targetRepuestoCard.classList.add('highlight');
+          setTimeout(() => targetRepuestoCard.classList.remove('highlight'), 3000);
+        }
+      }
+
+      // Manejar Desarrollo de Software (#desarrollo-software)
+      if (softwareCat) {
+        const softwareSection = document.querySelector('#desarrollo-software');
+        if (softwareSection) {
+          softwareSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          // Activar botón de tab correspondiente
+          const targetTabBtn = document.querySelector(`.category-tabs .tab-btn[data-category="${softwareCat}"]`);
+          if (targetTabBtn) {
+            targetTabBtn.click();
           }
         }
       }
@@ -102,40 +110,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --------------------------------------------------------------------------
-     4. Simulador Interactivo de Funciones de Software (Si está presente en el DOM)
+     4. Simulador Interactivo de Funciones de Software
      -------------------------------------------------------------------------- */
+  const featureSwitches = document.querySelectorAll('.feature-switch');
   const previewFeaturesList = document.getElementById('previewFeaturesList');
-  if (previewFeaturesList) {
-    const featureSwitches = document.querySelectorAll('.feature-switch');
-    const featureLabels = {
-      'ot': 'Órdenes de Trabajo & Ticket QR',
-      'ai_whatsapp': 'Avisos WhatsApp con IA',
-      'billing': 'Control de Caja & Cobros',
-      'inventory': 'Inventario de Repuestos',
-      'cloud': 'Respaldo Cloud & Multiusuario'
-    };
 
-    function updateSimulatorPreview() {
-      previewFeaturesList.innerHTML = '';
-      featureSwitches.forEach(sw => {
-        if (sw.checked) {
-          const key = sw.dataset.feature;
-          const tag = document.createElement('span');
-          tag.className = 'preview-feature-tag';
-          tag.innerHTML = `<i class="bi bi-check-circle-fill me-1"></i> ${featureLabels[key] || key}`;
-          previewFeaturesList.appendChild(tag);
-        }
-      });
-    }
+  const featureLabels = {
+    'ot': 'Órdenes de Trabajo & Ticket QR',
+    'ai_whatsapp': 'Avisos WhatsApp con IA',
+    'billing': 'Control de Caja & Cobros',
+    'inventory': 'Inventario de Repuestos',
+    'cloud': 'Respaldo Cloud & Multiusuario'
+  };
+
+  function updateSimulatorPreview() {
+    if (!previewFeaturesList) return;
+    previewFeaturesList.innerHTML = '';
 
     featureSwitches.forEach(sw => {
-      sw.addEventListener('change', updateSimulatorPreview);
+      if (sw.checked) {
+        const key = sw.dataset.feature;
+        const tag = document.createElement('span');
+        tag.className = 'preview-feature-tag';
+        tag.innerHTML = `<i class="bi bi-check-circle-fill me-1"></i> ${featureLabels[key] || key}`;
+        previewFeaturesList.appendChild(tag);
+      }
     });
-    updateSimulatorPreview();
   }
 
+  featureSwitches.forEach(sw => {
+    sw.addEventListener('change', updateSimulatorPreview);
+  });
+  updateSimulatorPreview();
+
   /* --------------------------------------------------------------------------
-     5. Cotizador Interactivo WhatsApp Dual (Si está presente en el DOM)
+     5. Cotizador Interactivo Dual & Generador de WhatsApp
      -------------------------------------------------------------------------- */
   const calcTypeBtns = document.querySelectorAll('.calc-type-btn');
   const formService = document.getElementById('calcFormService');
@@ -143,66 +152,64 @@ document.addEventListener('DOMContentLoaded', () => {
   const whatsappPreviewText = document.getElementById('whatsappPreviewText');
   const btnSendWhatsapp = document.getElementById('btnSendWhatsapp');
 
-  if (whatsappPreviewText && btnSendWhatsapp) {
-    let currentCalcMode = 'service'; // 'service' | 'parts'
+  let currentCalcMode = 'service'; // 'service' | 'parts'
 
-    calcTypeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        calcTypeBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  calcTypeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      calcTypeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-        currentCalcMode = btn.dataset.type;
-
-        if (currentCalcMode === 'service') {
-          if (formService) formService.style.display = 'flex';
-          if (formParts) formParts.style.display = 'none';
-        } else {
-          if (formService) formService.style.display = 'none';
-          if (formParts) formParts.style.display = 'flex';
-        }
-        updateWhatsAppPreview();
-      });
-    });
-
-    function updateWhatsAppPreview() {
-      let messageText = '';
+      currentCalcMode = btn.dataset.type;
 
       if (currentCalcMode === 'service') {
-        const device = document.getElementById('techDeviceSelect')?.value || 'Computadora / CPU';
-        const brand = document.getElementById('techBrandInput')?.value || 'No especificado';
-        const issue = document.getElementById('techIssueSelect')?.value || 'Diagnóstico General';
-        const detail = document.getElementById('techDetailInput')?.value || '';
-
-        messageText = `*¡Hola DRUK Digital!* 🛠️⚡\nSolicito cotización de *Servicio Técnico*:\n- *Equipo:* ${device}\n- *Marca/Modelo:* ${brand}\n- *Falla/Servicio:* ${issue}`;
-        if (detail.trim() !== '') {
-          messageText += `\n- *Detalles adicionales:* ${detail}`;
-        }
+        if (formService) formService.style.display = 'flex';
+        if (formParts) formParts.style.display = 'none';
       } else {
-        const partCategory = document.getElementById('partCategorySelect')?.value || 'Repuesto General';
-        const partBrand = document.getElementById('partBrandInput')?.value || 'No especificado';
-        const partSpecs = document.getElementById('partSpecsInput')?.value || 'No especificado';
-        const partInstall = document.getElementById('partInstallSelect')?.value || 'No especificado';
-
-        messageText = `*¡Hola DRUK Digital!* 📦🔧\nSolicito cotización de *Repuesto*:\n- *Categoría:* ${partCategory}\n- *Para Equipo:* ${partBrand}\n- *Especificaciones:* ${partSpecs}\n- *Instalación:* ${partInstall}`;
+        if (formService) formService.style.display = 'none';
+        if (formParts) formParts.style.display = 'flex';
       }
+      updateWhatsAppPreview();
+    });
+  });
 
-      if (whatsappPreviewText) {
-        whatsappPreviewText.textContent = messageText;
-      }
+  function updateWhatsAppPreview() {
+    let messageText = '';
 
-      if (btnSendWhatsapp) {
-        const encodedMsg = encodeURIComponent(messageText);
-        btnSendWhatsapp.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMsg}`;
+    if (currentCalcMode === 'service') {
+      const device = document.getElementById('techDeviceSelect')?.value || 'Computadora / CPU';
+      const brand = document.getElementById('techBrandInput')?.value || 'No especificado';
+      const issue = document.getElementById('techIssueSelect')?.value || 'Diagnóstico General';
+      const detail = document.getElementById('techDetailInput')?.value || '';
+
+      messageText = `*¡Hola DRUK Digital!* 🛠️⚡\nSolicito cotización de *Servicio Técnico*:\n- *Equipo:* ${device}\n- *Marca/Modelo:* ${brand}\n- *Falla/Servicio:* ${issue}`;
+      if (detail.trim() !== '') {
+        messageText += `\n- *Detalles adicionales:* ${detail}`;
       }
+    } else {
+      const partCategory = document.getElementById('partCategorySelect')?.value || 'Repuesto General';
+      const partBrand = document.getElementById('partBrandInput')?.value || 'No especificado';
+      const partSpecs = document.getElementById('partSpecsInput')?.value || 'No especificado';
+      const partInstall = document.getElementById('partInstallSelect')?.value || 'No especificado';
+
+      messageText = `*¡Hola DRUK Digital!* 📦🔧\nSolicito cotización de *Repuesto*:\n- *Categoría:* ${partCategory}\n- *Para Equipo:* ${partBrand}\n- *Especificaciones:* ${partSpecs}\n- *Instalación:* ${partInstall}`;
     }
 
-    document.querySelectorAll('#calcFormService select, #calcFormService input, #calcFormParts select, #calcFormParts input').forEach(input => {
-      input.addEventListener('change', updateWhatsAppPreview);
-      input.addEventListener('input', updateWhatsAppPreview);
-    });
+    if (whatsappPreviewText) {
+      whatsappPreviewText.textContent = messageText;
+    }
 
-    updateWhatsAppPreview();
+    if (btnSendWhatsapp) {
+      const encodedMsg = encodeURIComponent(messageText);
+      btnSendWhatsapp.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMsg}`;
+    }
   }
+
+  document.querySelectorAll('#calcFormService select, #calcFormService input, #calcFormParts select, #calcFormParts input').forEach(input => {
+    input.addEventListener('change', updateWhatsAppPreview);
+    input.addEventListener('input', updateWhatsAppPreview);
+  });
+
+  updateWhatsAppPreview();
 
   /* --------------------------------------------------------------------------
      6. Navegación Móvil (Drawer)

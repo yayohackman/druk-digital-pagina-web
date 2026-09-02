@@ -30,17 +30,17 @@
 
   <!-- Capa de Triángulos, Poliedros y Rectángulos 3D Animados con Red de Líneas Conectoras -->
   <div class="geo-shapes-layer" id="geoLayer">
-    <!-- DEFINICIONES REUTILIZABLES DE GRADIENTES 3D (PLATA METÁLICO & ESMERALDA VIBRANTE) -->
+    <!-- DEFINICIONES REUTILIZABLES DE GRADIENTES 3D -->
     <svg style="width:0;height:0;position:absolute;">
       <defs>
-        <!-- Gradients Esmeralda Vibrante (Imagen 2) -->
+        <!-- Gradients Esmeralda Vibrante -->
         <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#047857"/><stop offset="100%" stop-color="#051610"/></linearGradient>
         <linearGradient id="f2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#065f46"/></linearGradient>
         <linearGradient id="f3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#022c22"/></linearGradient>
         <linearGradient id="f4" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#047857"/></linearGradient>
         <filter id="glowE"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#34d399" flood-opacity="0.45"/></filter>
 
-        <!-- Gradients Plata Metálico Cristalino (Imagen 1) -->
+        <!-- Gradients Plata Metálico Cristalino -->
         <linearGradient id="sf1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#cbd5e1"/></linearGradient>
         <linearGradient id="sf2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e2e8f0"/><stop offset="100%" stop-color="#64748b"/></linearGradient>
         <linearGradient id="sf3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#94a3b8"/><stop offset="100%" stop-color="#334155"/></linearGradient>
@@ -49,7 +49,7 @@
       </defs>
     </svg>
 
-    <!-- RED TRIANGULADA DE LÍNEAS Y VÉRTICES (Plexus Low-Poly Constellation Mesh) - ZONA SUPERIOR -->
+    <!-- RED TRIANGULADA DE LÍNEAS Y VÉRTICES - ZONA SUPERIOR -->
     <svg class="geo-shape geo-triangulated-mesh geo-mesh-top" data-speed="14" data-rot="5" viewBox="0 0 1400 900" fill="none" style="top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px;">
       <g stroke="rgba(226, 232, 240, 0.35)" stroke-width="1.2" class="connecting-mesh">
         <polygon points="50,100 180,40 320,120" />
@@ -60,32 +60,6 @@
         <polygon points="720,20 860,110 1000,30" />
         <polygon points="860,110 1000,30 1150,140" />
         <polygon points="1000,30 1150,140 1320,50" />
-
-        <polygon points="50,100 320,120 120,260" />
-        <polygon points="320,120 580,140 380,280" />
-        <polygon points="320,120 120,260 380,280" />
-        <polygon points="580,140 860,110 650,290" />
-        <polygon points="580,140 380,280 650,290" />
-        <polygon points="860,110 1150,140 920,270" />
-        <polygon points="860,110 650,290 920,270" />
-        <polygon points="1150,140 1320,50 1220,280" />
-        <polygon points="1150,140 920,270 1220,280" />
-
-        <polygon points="120,260 380,280 220,440" />
-        <polygon points="380,280 650,290 480,460" />
-        <polygon points="380,280 220,440 480,460" />
-        <polygon points="650,290 920,270 760,450" />
-        <polygon points="650,290 480,460 760,450" />
-        <polygon points="920,270 1220,280 1020,440" />
-        <polygon points="920,270 760,450 1020,440" />
-
-        <polygon points="220,440 480,460 340,620" />
-        <polygon points="480,460 760,450 600,640" />
-        <polygon points="480,460 340,620 600,640" />
-        <polygon points="760,450 1020,440 880,630" />
-        <polygon points="760,450 600,640 880,630" />
-        <polygon points="1020,440 1280,480 1120,650" />
-        <polygon points="1020,440 880,630 1120,650" />
       </g>
 
       <g fill="rgba(52, 211, 153, 0.75)">
@@ -97,349 +71,24 @@
         <circle cx="860" cy="110" r="4.5"/>
         <circle cx="1000" cy="30" r="4"/>
         <circle cx="1150" cy="140" r="4.5"/>
-        <circle cx="120" cy="260" r="4.5"/>
-        <circle cx="380" cy="280" r="4.5"/>
-        <circle cx="650" cy="290" r="4.5"/>
-        <circle cx="920" cy="270" r="4.5"/>
-        <circle cx="220" cy="440" r="4.5"/>
-        <circle cx="480" cy="460" r="4.5"/>
-        <circle cx="760" cy="450" r="4.5"/>
-        <circle cx="1020" cy="440" r="4.5"/>
-      </g>
-    </svg>
-
-    <!-- RED TRIANGULADA DE LÍNEAS Y VÉRTICES - ZONA MEDIA (Servicio Técnico & Repuestos) -->
-    <svg class="geo-shape geo-triangulated-mesh geo-mesh-mid" data-speed="-16" data-rot="-6" viewBox="0 0 1400 900" fill="none" style="top: 1500px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px;">
-      <g stroke="rgba(52, 211, 153, 0.35)" stroke-width="1.2" class="connecting-mesh">
-        <polygon points="80,80 240,30 400,110" />
-        <polygon points="240,30 400,110 540,20" />
-        <polygon points="400,110 540,20 700,130" />
-        <polygon points="540,20 700,130 840,40" />
-        <polygon points="700,130 840,40 980,120" />
-        <polygon points="840,40 980,120 1140,30" />
-        <polygon points="980,120 1140,30 1280,140" />
-
-        <polygon points="80,80 400,110 180,250" />
-        <polygon points="400,110 700,130 460,270" />
-        <polygon points="400,110 180,250 460,270" />
-        <polygon points="700,130 980,120 740,280" />
-        <polygon points="700,130 460,270 740,280" />
-        <polygon points="980,120 1280,140 1020,260" />
-        <polygon points="980,120 740,280 1020,260" />
-
-        <polygon points="180,250 460,270 280,430" />
-        <polygon points="460,270 740,280 560,450" />
-        <polygon points="460,270 280,430 560,450" />
-        <polygon points="740,280 1020,260 840,440" />
-        <polygon points="740,280 560,450 840,440" />
-
-        <polygon points="280,430 560,450 400,610" />
-        <polygon points="560,450 840,440 680,630" />
-        <polygon points="560,450 400,610 680,630" />
-        <polygon points="840,440 1120,460 960,620" />
-        <polygon points="840,440 680,630 960,620" />
-      </g>
-
-      <g fill="#ffffff">
-        <circle cx="240" cy="30" r="4"/>
-        <circle cx="400" cy="110" r="4.5"/>
-        <circle cx="700" cy="130" r="4.5"/>
-        <circle cx="980" cy="120" r="4.5"/>
-        <circle cx="180" cy="250" r="4.5"/>
-        <circle cx="460" cy="270" r="4.5"/>
-        <circle cx="740" cy="280" r="4.5"/>
-        <circle cx="1020" cy="260" r="4.5"/>
-        <circle cx="280" cy="430" r="4.5"/>
-        <circle cx="560" cy="450" r="4.5"/>
-        <circle cx="840" cy="440" r="4.5"/>
-      </g>
-    </svg>
-
-    <!-- RED TRIANGULADA DE LÍNEAS Y VÉRTICES - ZONA INFERIOR (Software, Cotizador & Footer) -->
-    <svg class="geo-shape geo-triangulated-mesh geo-mesh-bot" data-speed="15" data-rot="7" viewBox="0 0 1400 900" fill="none" style="top: 3200px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px;">
-      <g stroke="rgba(226, 232, 240, 0.35)" stroke-width="1.2" class="connecting-mesh">
-        <polygon points="60,90 200,30 360,110" />
-        <polygon points="200,30 360,110 500,20" />
-        <polygon points="360,110 500,20 660,130" />
-        <polygon points="500,20 660,130 800,40" />
-        <polygon points="660,130 800,40 940,120" />
-        <polygon points="800,40 940,120 1100,30" />
-        <polygon points="940,120 1100,30 1240,140" />
-
-        <polygon points="60,90 360,110 140,250" />
-        <polygon points="360,110 660,130 420,270" />
-        <polygon points="360,110 140,250 420,270" />
-        <polygon points="660,130 940,120 700,280" />
-        <polygon points="660,130 420,270 700,280" />
-        <polygon points="940,120 1240,140 980,260" />
-        <polygon points="940,120 700,280 980,260" />
-
-        <polygon points="140,250 420,270 240,430" />
-        <polygon points="420,270 700,280 520,450" />
-        <polygon points="420,270 240,430 520,450" />
-        <polygon points="700,280 980,260 800,440" />
-        <polygon points="700,280 520,450 800,440" />
-
-        <polygon points="240,430 520,450 360,610" />
-        <polygon points="520,450 800,440 640,630" />
-        <polygon points="520,450 360,610 640,630" />
-        <polygon points="800,440 1080,460 920,620" />
-        <polygon points="800,440 640,630 920,620" />
-      </g>
-
-      <g fill="#34d399">
-        <circle cx="200" cy="30" r="4"/>
-        <circle cx="360" cy="110" r="4.5"/>
-        <circle cx="660" cy="130" r="4.5"/>
-        <circle cx="940" cy="120" r="4.5"/>
-        <circle cx="140" cy="250" r="4.5"/>
-        <circle cx="420" cy="270" r="4.5"/>
-        <circle cx="700" cy="280" r="4.5"/>
-        <circle cx="980" cy="260" r="4.5"/>
-        <circle cx="240" cy="430" r="4.5"/>
-        <circle cx="520" cy="450" r="4.5"/>
-        <circle cx="800" cy="440" r="4.5"/>
-      </g>
-    </svg>
-
-
-    <!-- ZONA 1: HERO / PORTADA (ARRIBA) -->
-    <!-- Poliedro 3D Esmeralda Hero (Pirámide Verde Imagen 2) -->
-    <svg class="geo-shape geo-poly-hero-emerald" data-speed="25" data-rot="12" viewBox="0 0 300 300">
-      <g filter="url(#glowE)">
-        <polygon points="150,20 260,80 260,200 150,260 40,200 40,80" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-        <polygon points="150,20 260,80 150,140" fill="url(#f2)"/>
-        <polygon points="260,80 260,200 150,140" fill="url(#f1)"/>
-        <polygon points="260,200 150,260 150,140" fill="url(#f3)"/>
-        <polygon points="150,260 40,200 150,140" fill="url(#f1)"/>
-        <polygon points="40,200 40,80 150,140" fill="url(#f4)"/>
-        <polygon points="40,80 150,20 150,140" fill="url(#f2)"/>
-      </g>
-    </svg>
-
-    <!-- Poliedro 3D Plata Metálico Hero (Cubo Plata Imagen 1) -->
-    <svg class="geo-shape geo-poly-hero-silver" data-speed="-20" data-rot="-10" viewBox="0 0 280 280">
-      <g filter="url(#glowS)">
-        <polygon points="140,20 240,75 240,195 140,250 40,195 40,75" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-        <polygon points="140,20 240,75 140,135" fill="url(#sf1)"/>
-        <polygon points="240,75 240,195 140,135" fill="url(#sf2)"/>
-        <polygon points="240,195 140,250 140,135" fill="url(#sf3)"/>
-        <polygon points="140,250 40,195 140,135" fill="url(#sf2)"/>
-        <polygon points="40,195 40,75 140,135" fill="url(#sf4)"/>
-        <polygon points="40,75 140,20 140,135" fill="url(#sf1)"/>
-      </g>
-    </svg>
-
-    <!-- Pirámide 3D Esmeralda Hero Derecha -->
-    <svg class="geo-shape geo-poly-extra-hero" data-speed="18" data-rot="15" viewBox="0 0 220 220" style="top: 110px; right: 8%; width: 200px; height: 200px;">
-      <g filter="url(#glowE)">
-        <polygon points="110,15 195,175 25,175" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
-        <polygon points="110,15 195,175 110,125" fill="url(#f2)"/>
-        <polygon points="195,175 25,175 110,125" fill="url(#f1)"/>
-        <polygon points="25,175 110,15 110,125" fill="url(#f3)"/>
-      </g>
-    </svg>
-
-    <!-- Triángulo Piramidal Plata Hero -->
-    <svg class="geo-shape geo-tri-hero-1" data-speed="30" data-rot="18" viewBox="0 0 160 160">
-      <g filter="url(#glowS)">
-        <polygon points="80,15 145,135 15,135" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
-        <polygon points="80,15 145,135 80,95" fill="url(#sf1)"/>
-        <polygon points="145,135 15,135 80,95" fill="url(#sf2)"/>
-        <polygon points="15,135 80,15 80,95" fill="url(#sf3)"/>
-      </g>
-    </svg>
-
-
-    <!-- ZONA 2: SERVICIO TÉCNICO (MEDIO ARRIBA - 900px a 1800px) -->
-    <!-- Rectángulo Prisma 3D Esmeralda -->
-    <svg class="geo-shape geo-rect-tech-emerald" data-speed="-22" data-rot="14" viewBox="0 0 260 340">
-      <g filter="url(#glowE)">
-        <polygon points="30,30 180,10 230,80 80,100" fill="url(#f2)"/>
-        <polygon points="180,10 230,80 230,280 180,210" fill="url(#f1)"/>
-        <polygon points="30,30 180,10 180,210 30,230" fill="url(#f4)"/>
-        <polygon points="30,230 180,210 230,280 80,300" fill="url(#f3)"/>
-      </g>
-    </svg>
-
-    <!-- Poliedro 3D Plata Izquierda -->
-    <svg class="geo-shape geo-poly-tech-silver" data-speed="22" data-rot="-12" viewBox="0 0 240 240">
-      <g filter="url(#glowS)">
-        <polygon points="120,15 210,65 210,175 120,225 30,175 30,65" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-        <polygon points="120,15 210,65 120,120" fill="url(#sf1)"/>
-        <polygon points="210,65 210,175 120,120" fill="url(#sf2)"/>
-        <polygon points="210,175 120,225 120,120" fill="url(#sf3)"/>
-        <polygon points="120,225 30,175 120,120" fill="url(#sf2)"/>
-        <polygon points="30,175 30,65 120,120" fill="url(#sf4)"/>
-      </g>
-    </svg>
-
-    <!-- Poliedro 3D Esmeralda Servicio Técnico Centro -->
-    <svg class="geo-shape geo-poly-tech-extra" data-speed="-18" data-rot="10" viewBox="0 0 250 250" style="top: 1520px; left: 42%; width: 210px; height: 210px;">
-      <g filter="url(#glowE)">
-        <polygon points="125,15 215,65 215,185 125,235 35,185 35,65" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
-        <polygon points="125,15 215,65 125,125" fill="url(#f2)"/>
-        <polygon points="215,65 215,185 125,125" fill="url(#f1)"/>
-        <polygon points="215,185 125,235 125,125" fill="url(#f3)"/>
-        <polygon points="125,235 35,185 125,125" fill="url(#f1)"/>
-        <polygon points="35,185 35,65 125,125" fill="url(#f4)"/>
-      </g>
-    </svg>
-
-    <!-- Triángulo 3D Plata Centro -->
-    <svg class="geo-shape geo-tri-tech-silver" data-speed="28" data-rot="16" viewBox="0 0 140 140">
-      <g filter="url(#glowS)">
-        <polygon points="70,10 130,120 10,120" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
-        <polygon points="70,10 130,120 70,80" fill="url(#sf1)"/>
-        <polygon points="130,120 10,120 70,80" fill="url(#sf2)"/>
-        <polygon points="10,120 70,10 70,80" fill="url(#sf3)"/>
-      </g>
-    </svg>
-
-
-    <!-- ZONA 3: REPUESTOS ORIGINALES (MEDIO CENTRO - 1800px a 2700px) -->
-    <!-- Rectángulo Prisma 3D Plata Repuestos -->
-    <svg class="geo-shape geo-rect-parts-silver" data-speed="24" data-rot="-12" viewBox="0 0 280 320">
-      <g filter="url(#glowS)">
-        <polygon points="40,20 200,10 240,90 80,100" fill="url(#sf1)"/>
-        <polygon points="200,10 240,90 240,270 200,190" fill="url(#sf2)"/>
-        <polygon points="40,20 200,10 200,190 40,210" fill="url(#sf4)"/>
-        <polygon points="40,210 200,190 240,270 80,290" fill="url(#sf3)"/>
-      </g>
-    </svg>
-
-    <!-- Poliedro 3D Plata Repuestos Izquierda -->
-    <svg class="geo-shape geo-poly-parts-extra" data-speed="-20" data-rot="15" viewBox="0 0 260 260" style="top: 2380px; left: 4%; width: 220px; height: 220px;">
-      <g filter="url(#glowS)">
-        <polygon points="130,20 230,75 230,185 130,240 30,185 30,75" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/>
-        <polygon points="130,20 230,75 130,130" fill="url(#sf1)"/>
-        <polygon points="230,75 230,185 130,130" fill="url(#sf2)"/>
-        <polygon points="230,185 130,240 130,130" fill="url(#sf3)"/>
-        <polygon points="130,240 30,185 130,130" fill="url(#sf2)"/>
-        <polygon points="30,185 30,75 130,130" fill="url(#sf4)"/>
-      </g>
-    </svg>
-
-    <!-- Pirámide 3D Esmeralda Repuestos -->
-    <svg class="geo-shape geo-tri-parts-emerald" data-speed="-25" data-rot="14" viewBox="0 0 150 150">
-      <g filter="url(#glowE)">
-        <polygon points="75,10 140,130 10,130" fill="url(#f2)"/>
-        <polygon points="140,130 10,130 75,85" fill="url(#f1)"/>
-        <polygon points="10,130 75,10 75,85" fill="url(#f3)"/>
-      </g>
-    </svg>
-
-
-    <!-- ZONA 4: DESARROLLO DE SOFTWARE (MEDIO ABAJO - 2700px a 3600px) -->
-    <!-- Poliedro 3D Esmeralda Software Derecha -->
-    <svg class="geo-shape geo-poly-soft-emerald" data-speed="26" data-rot="16" viewBox="0 0 260 260">
-      <g filter="url(#glowE)">
-        <polygon points="130,15 230,70 230,190 130,245 30,190 30,70" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
-        <polygon points="130,15 230,70 130,130" fill="url(#f2)"/>
-        <polygon points="230,70 230,190 130,130" fill="url(#f1)"/>
-        <polygon points="230,190 130,245 130,130" fill="url(#f3)"/>
-        <polygon points="130,245 30,190 130,130" fill="url(#f1)"/>
-        <polygon points="30,190 30,70 130,130" fill="url(#f4)"/>
-      </g>
-    </svg>
-
-    <!-- Poliedro Extra 3D Plata Software Izquierda -->
-    <svg class="geo-shape geo-poly-soft-extra" data-speed="-22" data-rot="-12" viewBox="0 0 270 270" style="top: 3200px; left: 5%; width: 220px; height: 220px;">
-      <g filter="url(#glowS)">
-        <polygon points="135,15 235,70 235,195 135,250 35,195 35,70" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/>
-        <polygon points="135,15 235,70 135,130" fill="url(#sf1)"/>
-        <polygon points="235,70 235,195 135,130" fill="url(#sf2)"/>
-        <polygon points="235,195 135,250 135,130" fill="url(#sf3)"/>
-        <polygon points="135,250 35,195 135,130" fill="url(#sf2)"/>
-        <polygon points="35,195 35,70 135,130" fill="url(#sf4)"/>
-      </g>
-    </svg>
-
-    <!-- Rectángulo Prisma 3D Esmeralda Software -->
-    <svg class="geo-shape geo-rect-soft-emerald" data-speed="-20" data-rot="-10" viewBox="0 0 250 310">
-      <g filter="url(#glowE)">
-        <polygon points="30,20 190,10 220,80 60,90" fill="url(#f4)"/>
-        <polygon points="190,10 220,80 220,260 190,190" fill="url(#f1)"/>
-        <polygon points="30,20 190,10 190,190 30,200" fill="url(#f2)"/>
-      </g>
-    </svg>
-
-    <!-- Triángulo 3D Plata Software -->
-    <svg class="geo-shape geo-tri-soft-silver" data-speed="24" data-rot="-14" viewBox="0 0 160 160">
-      <g filter="url(#glowS)">
-        <polygon points="80,10 150,140 10,140" fill="url(#sf1)"/>
-        <polygon points="150,140 10,140 80,90" fill="url(#sf2)"/>
-        <polygon points="10,140 80,10 80,90" fill="url(#sf3)"/>
-      </g>
-    </svg>
-
-
-    <!-- ZONA 5: COTIZADOR & UBICACIÓN / FOOTER (ABAJO - 3600px a FIN DE PÁGINA) -->
-    <!-- Poliedro 3D Plata Footer Izquierda -->
-    <svg class="geo-shape geo-poly-footer-silver" data-speed="-22" data-rot="-12" viewBox="0 0 270 270">
-      <g filter="url(#glowS)">
-        <polygon points="135,15 240,70 240,195 135,250 30,195 30,70" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
-        <polygon points="135,15 240,70 135,130" fill="url(#sf1)"/>
-        <polygon points="240,70 240,195 135,130" fill="url(#sf2)"/>
-        <polygon points="240,195 135,250 135,130" fill="url(#sf3)"/>
-        <polygon points="135,250 30,195 135,130" fill="url(#sf2)"/>
-        <polygon points="30,195 30,70 135,130" fill="url(#sf4)"/>
-      </g>
-    </svg>
-
-    <!-- Poliedro Extra 3D Esmeralda Footer Centro -->
-    <svg class="geo-shape geo-poly-footer-extra" data-speed="18" data-rot="10" viewBox="0 0 250 250" style="top: 4500px; left: 42%; width: 200px; height: 200px;">
-      <g filter="url(#glowE)">
-        <polygon points="125,15 215,65 215,185 125,235 35,185 35,65" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
-        <polygon points="125,15 215,65 125,125" fill="url(#f2)"/>
-        <polygon points="215,65 215,185 125,125" fill="url(#f1)"/>
-        <polygon points="215,185 125,235 125,125" fill="url(#f3)"/>
-        <polygon points="125,235 35,185 125,125" fill="url(#f4)"/>
-        <polygon points="35,185 35,65 125,125" fill="url(#f2)"/>
-      </g>
-    </svg>
-
-    <!-- Rectángulo Prisma 3D Plata Footer Derecha -->
-    <svg class="geo-shape geo-rect-footer-silver" data-speed="25" data-rot="14" viewBox="0 0 240 300">
-      <g filter="url(#glowS)">
-        <polygon points="20,20 170,10 210,75 60,85" fill="url(#sf1)"/>
-        <polygon points="170,10 210,75 210,250 170,185" fill="url(#sf2)"/>
-        <polygon points="20,20 170,10 170,185 20,195" fill="url(#sf4)"/>
-      </g>
-    </svg>
-
-    <!-- Triángulo Piramidal Esmeralda Footer -->
-    <svg class="geo-shape geo-tri-footer-emerald" data-speed="-20" data-rot="10" viewBox="0 0 140 140">
-      <g filter="url(#glowE)">
-        <polygon points="70,10 130,120 10,120" fill="url(#f2)"/>
-        <polygon points="130,120 10,120 70,80" fill="url(#f1)"/>
-        <polygon points="10,120 70,10 70,80" fill="url(#f3)"/>
       </g>
     </svg>
   </div>
 
-  <!-- Botón Flotante de WhatsApp Oficial -->
-  <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20realizar%20una%20consulta." 
-     class="whatsapp-float" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     aria-label="Contactar por WhatsApp">
-    <div class="whatsapp-pulse"></div>
-    <i class="bi bi-whatsapp"></i>
-  </a>
-
   <!-- Header & Navegación Liquid Glass -->
   <header class="header">
     <div class="container navbar">
-      <a href="#" class="logo">
+      <a href="index.html" class="logo" title="Ir a Inicio - DRUK Digital">
         <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
+        <span class="logo-tag-home"><i class="bi bi-house-door-fill"></i> Inicio</span>
       </a>
 
       <nav>
         <ul class="nav-links">
-          <!-- Item 1: Submenú Desplegable de Servicio Técnico (9 categorías) -->
+
+          <!-- Item 1: Submenú Desplegable de Servicio Técnico -->
           <li class="nav-dropdown-item">
-            <a href="#servicio-tecnico" class="nav-link dropdown-toggle">
+            <a href="servicio-tecnico.html" class="nav-link dropdown-toggle">
               Servicio Técnico <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
             </a>
 
@@ -450,7 +99,7 @@
                 <span>DRUK Digital</span>
               </div>
               <div class="dropdown-grid">
-                <a href="#card-laptop" class="dropdown-link" data-device="laptop">
+                <a href="servicio-tecnico.html#card-laptop" class="dropdown-link" data-device="laptop">
                   <i class="bi bi-laptop"></i>
                   <div>
                     <strong>Reparación Laptops</strong>
@@ -458,7 +107,7 @@
                   </div>
                 </a>
 
-                <a href="#card-cpu" class="dropdown-link" data-device="cpu">
+                <a href="servicio-tecnico.html#card-cpu" class="dropdown-link" data-device="cpu">
                   <i class="bi bi-pc-display"></i>
                   <div>
                     <strong>Reparación CPU / PC</strong>
@@ -466,7 +115,7 @@
                   </div>
                 </a>
 
-                <a href="#card-aio" class="dropdown-link" data-device="aio">
+                <a href="servicio-tecnico.html#card-aio" class="dropdown-link" data-device="aio">
                   <i class="bi bi-display"></i>
                   <div>
                     <strong>Reparación All-in-One</strong>
@@ -474,7 +123,7 @@
                   </div>
                 </a>
 
-                <a href="#card-imac" class="dropdown-link" data-device="imac">
+                <a href="servicio-tecnico.html#card-imac" class="dropdown-link" data-device="imac">
                   <i class="bi bi-display-fill"></i>
                   <div>
                     <strong>Reparación iMac</strong>
@@ -482,7 +131,7 @@
                   </div>
                 </a>
 
-                <a href="#card-macbook" class="dropdown-link" data-device="macbook">
+                <a href="servicio-tecnico.html#card-macbook" class="dropdown-link" data-device="macbook">
                   <i class="bi bi-laptop-fill"></i>
                   <div>
                     <strong>Reparación MacBook</strong>
@@ -490,7 +139,7 @@
                   </div>
                 </a>
 
-                <a href="#card-celulares" class="dropdown-link" data-device="celulares">
+                <a href="servicio-tecnico.html#card-celulares" class="dropdown-link" data-device="celulares">
                   <i class="bi bi-phone"></i>
                   <div>
                     <strong>Reparación Celulares</strong>
@@ -498,7 +147,7 @@
                   </div>
                 </a>
 
-                <a href="#card-tablets" class="dropdown-link" data-device="tablets">
+                <a href="servicio-tecnico.html#card-tablets" class="dropdown-link" data-device="tablets">
                   <i class="bi bi-tablet"></i>
                   <div>
                     <strong>Reparación Tablets</strong>
@@ -506,7 +155,7 @@
                   </div>
                 </a>
 
-                <a href="#card-iphone" class="dropdown-link" data-device="iphone">
+                <a href="servicio-tecnico.html#card-iphone" class="dropdown-link" data-device="iphone">
                   <i class="bi bi-phone-fill"></i>
                   <div>
                     <strong>Reparación iPhone</strong>
@@ -514,7 +163,7 @@
                   </div>
                 </a>
 
-                <a href="#card-smartwatch" class="dropdown-link" data-device="smartwatch" style="grid-column: span 2;">
+                <a href="servicio-tecnico.html#card-smartwatch" class="dropdown-link" data-device="smartwatch" style="grid-column: span 2;">
                   <i class="bi bi-smartwatch"></i>
                   <div>
                     <strong>Reparación Smartwatch</strong>
@@ -527,7 +176,7 @@
 
           <!-- Item 2: Submenú Desplegable de Repuestos -->
           <li class="nav-dropdown-item">
-            <a href="#repuestos" class="nav-link dropdown-toggle">
+            <a href="repuestos.html" class="nav-link dropdown-toggle">
               Repuestos <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
             </a>
 
@@ -538,52 +187,35 @@
                 <span>DRUK Digital</span>
               </div>
               <div class="dropdown-stack">
-                <a href="#repuestos-computacionales" class="dropdown-link" data-repuesto="computacionales">
+                <a href="repuestos.html#repuestos-computacionales" class="dropdown-link" data-repuesto="computacionales">
                   <i class="bi bi-cpu-fill"></i>
                   <div>
                     <strong>Repuestos para Equipos Computacionales</strong>
-                    <small>Discos SSD NVMe, Memorias RAM, Pantallas Laptop/AIO, Fuentes & Pasta Térmica</small>
+                    <small>Discos SSD NVMe, Memorias RAM, Pantallas Laptop/AIO, Fuentes</small>
                   </div>
                 </a>
 
-                <a href="#repuestos-moviles" class="dropdown-link" data-repuesto="moviles">
+                <a href="repuestos.html#repuestos-moviles" class="dropdown-link" data-repuesto="moviles">
                   <i class="bi bi-phone-fill"></i>
                   <div>
                     <strong>Repuestos para Equipos Móviles</strong>
-                    <small>Pantallas OLED/LCD, Baterías, Pines de Carga, Flex & Tapas Traseras</small>
+                    <small>Pantallas OLED/LCD, Baterías, Pines de Carga, Flex & Tapas</small>
                   </div>
                 </a>
               </div>
             </div>
           </li>
 
-          <!-- Item 3: Submenú Desplegable de Desarrollo de Software -->
-          <li class="nav-dropdown-item">
-            <a href="#desarrollo-software" class="nav-link dropdown-toggle">
-              Desarrollo de Software <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+          <!-- Item 3: Software -->
+          <li>
+            <a href="software.html" class="nav-link">
+              <i class="bi bi-code-slash me-1"></i> Software
             </a>
-
-            <!-- Submenú Desplegable de Software -->
-            <div class="dropdown-menu dropdown-menu-sm" style="width: 480px;">
-              <div class="dropdown-header">
-                <span><i class="bi bi-code-slash me-1"></i> Software para Emprendedores</span>
-                <span>DRUK Digital</span>
-              </div>
-              <div class="dropdown-stack">
-                <a href="#desarrollo-software" class="dropdown-link" data-software="all">
-                  <i class="bi bi-code-slash"></i>
-                  <div>
-                    <strong>TALLER MASTER</strong>
-                    <small>Automatiza procesos de reparacion, cobros e inventarios con nuestro software..... potenciado con IA!</small>
-                  </div>
-                </a>
-              </div>
-            </div>
           </li>
 
           <!-- Item 4: Submenú Desplegable de Ventas -->
           <li class="nav-dropdown-item">
-            <a href="#cotizador" class="nav-link dropdown-toggle">
+            <a href="ventas.html" class="nav-link dropdown-toggle">
               Ventas <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
             </a>
 
@@ -594,7 +226,7 @@
                 <span>DRUK Digital</span>
               </div>
               <div class="dropdown-stack">
-                <a href="#cotizador" class="dropdown-link">
+                <a href="ventas.html#laptops-aio" class="dropdown-link">
                   <i class="bi bi-laptop"></i>
                   <div>
                     <strong>Laptops & Todo en Uno (AIO / iMac / MacBook)</strong>
@@ -602,7 +234,7 @@
                   </div>
                 </a>
 
-                <a href="#cotizador" class="dropdown-link">
+                <a href="ventas.html#ensamble-cpus" class="dropdown-link">
                   <i class="bi bi-cpu"></i>
                   <div>
                     <strong>Ensamble de CPUs (Estudiantil, Oficina & Gamer)</strong>
@@ -639,7 +271,6 @@
         </div>
 
         <a href="https://wa.me/593987334711" target="_blank" rel="noopener noreferrer" class="header-phone-badge">
-          <i class="bi bi-telephone-fill" style="color: var(--emerald-bright); font-size: 1.1rem;"></i>
           <i class="bi bi-whatsapp" style="color: var(--accent-whatsapp); font-size: 1.15rem;"></i>
           +593 98 733 4711
         </a>
@@ -652,39 +283,40 @@
 
     <!-- Menú Desplegable Móvil Ampliado -->
     <div class="mobile-drawer" id="mobileDrawer">
-      <a href="#servicio-tecnico" class="nav-link"><i class="bi bi-tools me-2"></i> Servicio Técnico</a>
+      <a href="index.html" class="nav-link active"><i class="bi bi-house-door me-2"></i> Inicio</a>
+      
+      <a href="servicio-tecnico.html" class="nav-link"><i class="bi bi-tools me-2"></i> Servicio Técnico</a>
       <div class="mobile-sublinks">
-        <a href="#card-laptop" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Laptops</a>
-        <a href="#card-cpu" class="mobile-sublink"><i class="bi bi-pc-display me-1"></i> CPU / PC</a>
-        <a href="#card-aio" class="mobile-sublink"><i class="bi bi-display me-1"></i> AIO</a>
-        <a href="#card-imac" class="mobile-sublink"><i class="bi bi-display-fill me-1"></i> iMac</a>
-        <a href="#card-macbook" class="mobile-sublink"><i class="bi bi-laptop-fill me-1"></i> MacBook</a>
-        <a href="#card-celulares" class="mobile-sublink"><i class="bi bi-phone me-1"></i> Celulares</a>
-        <a href="#card-tablets" class="mobile-sublink"><i class="bi bi-tablet me-1"></i> Tablets</a>
-        <a href="#card-iphone" class="mobile-sublink"><i class="bi bi-phone-fill me-1"></i> iPhone</a>
-        <a href="#card-smartwatch" class="mobile-sublink"><i class="bi bi-smartwatch me-1"></i> Smartwatch</a>
+        <a href="servicio-tecnico.html#card-laptop" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Laptops</a>
+        <a href="servicio-tecnico.html#card-cpu" class="mobile-sublink"><i class="bi bi-pc-display me-1"></i> CPU / PC</a>
+        <a href="servicio-tecnico.html#card-aio" class="mobile-sublink"><i class="bi bi-display me-1"></i> AIO</a>
+        <a href="servicio-tecnico.html#card-imac" class="mobile-sublink"><i class="bi bi-display-fill me-1"></i> iMac</a>
+        <a href="servicio-tecnico.html#card-macbook" class="mobile-sublink"><i class="bi bi-laptop-fill me-1"></i> MacBook</a>
+        <a href="servicio-tecnico.html#card-celulares" class="mobile-sublink"><i class="bi bi-phone me-1"></i> Celulares</a>
+        <a href="servicio-tecnico.html#card-tablets" class="mobile-sublink"><i class="bi bi-tablet me-1"></i> Tablets</a>
+        <a href="servicio-tecnico.html#card-iphone" class="mobile-sublink"><i class="bi bi-phone-fill me-1"></i> iPhone</a>
+        <a href="servicio-tecnico.html#card-smartwatch" class="mobile-sublink"><i class="bi bi-smartwatch me-1"></i> Smartwatch</a>
       </div>
 
-      <a href="#repuestos" class="nav-link"><i class="bi bi-box-seam me-2"></i> Repuestos Originales</a>
+      <a href="repuestos.html" class="nav-link"><i class="bi bi-box-seam me-2"></i> Repuestos Originales</a>
       <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
-        <a href="#repuestos-computacionales" class="mobile-sublink"><i class="bi bi-cpu-fill me-1"></i> Equipos Computacionales</a>
-        <a href="#repuestos-moviles" class="mobile-sublink"><i class="bi bi-phone-fill me-1"></i> Equipos Móviles</a>
+        <a href="repuestos.html#repuestos-computacionales" class="mobile-sublink"><i class="bi bi-cpu-fill me-1"></i> Repuestos Computacionales</a>
+        <a href="repuestos.html#repuestos-moviles" class="mobile-sublink"><i class="bi bi-phone-fill me-1"></i> Repuestos Móviles</a>
       </div>
 
-      <a href="#desarrollo-software" class="nav-link"><i class="bi bi-code-slash me-2"></i> Software para Emprendedores | TALLER MASTER</a>
+      <a href="software.html" class="nav-link"><i class="bi bi-code-slash me-2"></i> Software para Emprendedores | TALLER MASTER</a>
 
-      <a href="#cotizador" class="nav-link"><i class="bi bi-cart-check me-2"></i> Ventas & Ensamble de Equipos</a>
+      <a href="ventas.html" class="nav-link"><i class="bi bi-cart-check me-2"></i> Ventas & Ensamble de Equipos</a>
       <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
-        <a href="#cotizador" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Laptops Nuevas & Usadas / AIO</a>
-        <a href="#cotizador" class="mobile-sublink"><i class="bi bi-pc-display-horizontal me-1"></i> Ensamble CPUs Estudiantiles & Gamer</a>
+        <a href="ventas.html#laptops-aio" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Laptops Nuevas & Usadas / AIO</a>
+        <a href="ventas.html#ensamble-cpus" class="mobile-sublink"><i class="bi bi-pc-display-horizontal me-1"></i> Ensamble CPUs Estudiantiles & Gamer</a>
       </div>
 
-      <a href="#contacto" class="nav-link"><i class="bi bi-telephone-inbound me-2"></i> Contacto & Redes Sociales</a>
-      <a href="#ubicacion" class="nav-link"><i class="bi bi-geo-alt-fill me-2"></i> Ubicación & Mapa</a>
+      <a href="#contacto" class="nav-link"><i class="bi bi-telephone-inbound me-2"></i> Contacto & Redes</a>
+      <a href="#ubicacion" class="nav-link"><i class="bi bi-geo-alt me-2"></i> Ubicación & Mapa</a>
 
       <div style="padding: 1rem 0; text-align: center;">
         <a href="https://wa.me/593987334711" target="_blank" class="header-phone-badge" style="width: 100%; justify-content: center;">
-          <i class="bi bi-telephone-fill me-1" style="color: var(--emerald-bright);"></i>
           <i class="bi bi-whatsapp me-1" style="color: var(--accent-whatsapp);"></i>
           +593 98 733 4711
         </a>
@@ -720,22 +352,15 @@
                     <strong style="color: var(--emerald-bright); display: inline-flex; align-items: center; gap: 4px;"><i class="bi bi-shield-check" style="font-size: 0.9rem;"></i> Diagnóstico Preventivo (PC - Laptop):</strong> Mantenimiento interno de componentes (limpieza), revisión de sistema operativo (drivers, antivirus, actualizaciones).
                   </div>
                   <div style="color: #cbd5e1;">
-                    <strong style="color: var(--emerald-bright); display: inline-flex; align-items: center; gap: 4px;"><i class="bi bi-tools" style="font-size: 0.9rem;"></i> Reparación Correctiva (PC - Laptop):</strong> Reemplazo de partes dañadas, reprogramación de BIOS, soldadura, reinstalación de Windows y macOS (formateo).
+                    <strong style="color: var(--emerald-bright); display: inline-flex; align-items: center; gap: 4px;"><i class="bi bi-tools" style="font-size: 0.9rem;"></i> Reparación Correctiva (PC - Laptop):</strong> Reemplazo de partes dañadas, reprogramación de BIOS, soldadura, reinstalación de Windows y macOS.
                   </div>
                   <div style="color: #cbd5e1;">
                     <strong style="color: var(--emerald-bright); display: inline-flex; align-items: center; gap: 4px;"><i class="bi bi-phone" style="font-size: 0.9rem;"></i> Reparación Correctiva (Celulares - Tablets):</strong> Soldadura, cambio de repuestos dañados (baterías, displays, tapas, pin de carga), reinstalación de Android e iOS.
                   </div>
                 </div>
               </div>
-              <div class="hero-actions">
-                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20realizar%20una%20consulta%20técnica." target="_blank" class="btn btn-primary">
-                  <i class="bi bi-whatsapp me-1.5" style="font-size: 1.05rem;"></i> Contáctanos
-                </a>
-                <a href="#servicio-tecnico" class="btn btn-outline">
-                  Ver Especialidades <i class="bi bi-arrow-right ms-1"></i>
-                </a>
-              </div>
 
+              <!-- Estadísticas subidas a la posición donde estaban los botones -->
               <div class="hero-stats">
                 <div class="stat-item">
                   <h4 id="counter-equipos-reparados" class="counter-dynamic-glitch" data-base="3725">+3,725</h4>
@@ -755,6 +380,15 @@
             <div class="hero-visual">
               <div class="hero-img-wrapper">
                 <video class="hero-video" data-src="robot tecnico.mp4" loop muted playsinline poster="hero_banner.jpg" preload="none"></video>
+              </div>
+              <!-- Botones colocados debajo del video -->
+              <div class="hero-actions">
+                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20realizar%20una%20consulta%20técnica." target="_blank" class="btn btn-primary">
+                  <i class="bi bi-whatsapp me-1.5" style="font-size: 1.05rem;"></i> Contáctanos
+                </a>
+                <a href="servicio-tecnico.html" class="btn btn-outline">
+                  Ver Especialidades <i class="bi bi-arrow-right ms-1"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -783,19 +417,12 @@
                     <strong style="color: var(--emerald-bright); display: inline-flex; align-items: center; gap: 4px;"><i class="bi bi-laptop" style="font-size: 0.9rem;"></i> Laptops:</strong> Teclados, baterías, pantallas, pin de carga, cargadores, SSD NVMe/M.2, memorias RAM, coolers, tarjetas Wi-Fi.
                   </div>
                   <div style="color: #cbd5e1;">
-                    <strong style="color: var(--emerald-bright); display: inline-flex; align-items: center; gap: 4px;"><i class="bi bi-pc-display" style="font-size: 0.9rem;"></i> PC:</strong> Mainboards, fuentes de poder, hydro coolers, tarjetas de video, discos duros, SSD SATA-3, cases PC, tarjetas Wi-Fi PCI.
+                    <strong style="color: var(--emerald-bright); display: inline-flex; align-items: center; gap: 4px;"><i class="bi bi-pc-display" style="font-size: 0.9rem;"></i> PC:</strong> Mainboards, fuentes de poder, hydro coolers, tarjetas de video, discos duros, SSD SATA-3, cases PC.
                   </div>
                 </div>
               </div>
-              <div class="hero-actions">
-                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20por%20un%20repuesto." target="_blank" class="btn btn-whatsapp">
-                  <i class="bi bi-whatsapp me-1"></i> Consultar Repuesto Directo
-                </a>
-                <a href="#repuestos" class="btn btn-outline">
-                  Ver Catálogo <i class="bi bi-arrow-right ms-1"></i>
-                </a>
-              </div>
 
+              <!-- Estadísticas subidas a la posición donde estaban los botones -->
               <div class="hero-stats">
                 <div class="stat-item">
                   <h4>Originales</h4>
@@ -816,6 +443,15 @@
               <div class="hero-img-wrapper">
                 <video class="hero-video" data-src="robot repuestos.mp4" loop muted playsinline poster="repuestos_banner.jpg" preload="none"></video>
               </div>
+              <!-- Botones colocados debajo del video -->
+              <div class="hero-actions">
+                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20por%20un%20repuesto." target="_blank" class="btn btn-whatsapp">
+                  <i class="bi bi-whatsapp me-1"></i> Consultar Repuesto Directo
+                </a>
+                <a href="repuestos.html" class="btn btn-outline">
+                  Ver Catálogo <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -833,15 +469,8 @@
               <p class="hero-description">
                 Automatiza procesos de reparación, cobros e inventarios con nuestro software..... ¡potenciado con IA!
               </p>
-              <div class="hero-actions">
-                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20software%20TALLER%20MASTER." target="_blank" class="btn btn-primary">
-                  <i class="bi bi-tools me-1"></i> Solicitar Demo / Sistema
-                </a>
-                <a href="#desarrollo-software" class="btn btn-outline">
-                  Ver Beneficios <i class="bi bi-arrow-right ms-1"></i>
-                </a>
-              </div>
 
+              <!-- Estadísticas subidas a la posición donde estaban los botones -->
               <div class="hero-stats">
                 <div class="stat-item">
                   <h4>Órdenes de Trabajo</h4>
@@ -862,6 +491,15 @@
               <div class="hero-img-wrapper">
                 <video class="hero-video" data-src="robot programando.mp4" loop muted playsinline poster="robot programando.jpg" preload="none"></video>
               </div>
+              <!-- Botones colocados debajo del video -->
+              <div class="hero-actions">
+                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20software%20TALLER%20MASTER." target="_blank" class="btn btn-primary">
+                  <i class="bi bi-tools me-1"></i> Solicitar Demo / Sistema
+                </a>
+                <a href="software.html" class="btn btn-outline">
+                  Ver Beneficios <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -879,15 +517,8 @@
               <p class="hero-description">
                 Cotizamos Laptops nuevas y de segundo uso de las mejores marcas (Dell, Lenovo, Toshiba... y más). Ensamblamos CPUs desde nivel Estudiantil hasta serie Gamer.
               </p>
-              <div class="hero-actions">
-                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20un%20equipo%20o%20CPU%20Gamer." target="_blank" class="btn btn-primary">
-                  <i class="bi bi-cart-check me-1"></i> Cotizar Equipo / CPU Gamer
-                </a>
-                <a href="#cotizador" class="btn btn-outline">
-                  Cotizador Online <i class="bi bi-calculator ms-1"></i>
-                </a>
-              </div>
 
+              <!-- Estadísticas subidas a la posición donde estaban los botones -->
               <div class="hero-stats">
                 <div class="stat-item">
                   <h4>Gamer & Pro</h4>
@@ -907,6 +538,15 @@
             <div class="hero-visual">
               <div class="hero-img-wrapper">
                 <video class="hero-video" data-src="venta pc laptop.mp4" loop muted playsinline poster="venta_banner.png" preload="none"></video>
+              </div>
+              <!-- Botones colocados debajo del video -->
+              <div class="hero-actions">
+                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20un%20equipo%20o%20CPU%20Gamer." target="_blank" class="btn btn-primary">
+                  <i class="bi bi-cart-check me-1"></i> Cotizar Equipo / CPU Gamer
+                </a>
+                <a href="ventas.html" class="btn btn-outline">
+                  Ver Catálogo Ventas <i class="bi bi-arrow-right ms-1"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -928,712 +568,120 @@
     </div>
   </section>
 
-  <!-- Sección 1: Servicio Técnico Multidispositivo (9 Categorías Especializadas) -->
-  <section class="section" id="servicio-tecnico">
+  <!-- Sección: Pilares y Accesos Directos Modulares -->
+  <section class="section" style="padding-top: 3rem; padding-bottom: 3rem;">
     <div class="container">
       <div class="section-header">
         <div class="badge badge-emerald">
-          <i class="bi bi-wrench-adjustable-circle me-1"></i> Diagnóstico & Reparación
+          <i class="bi bi-grid-3x3-gap-fill me-1"></i> Nuestros Pilares
         </div>
-        <h2 class="section-title">Servicio Técnico Especializado</h2>
+        <h2 class="section-title">Soluciones Integrales DRUK Digital</h2>
         <p class="section-subtitle">
-          Atendemos fallas de hardware y software con diagnósticos precisos en 9 categorías de equipos con tiempos récord de entrega.
+          Descubre nuestras áreas especializadas diseñadas para mantener tu tecnología al 100% y potenciar tu negocio.
         </p>
       </div>
 
-      <div class="service-cards-grid">
+      <div class="service-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
         
-        <!-- Tarjeta 1: Laptops -->
-        <article class="service-card" id="card-laptop">
+        <!-- Pilar 1: Servicio Técnico -->
+        <article class="service-card pilar-card">
           <div class="service-icon-box">
-            <i class="bi bi-laptop"></i>
+            <i class="bi bi-tools"></i>
           </div>
-          <h3 class="service-title">Reparación de Laptops</h3>
+          <h3 class="service-title">Servicio Técnico Especializado</h3>
           <p class="service-desc">
-            Mantenimiento técnico para laptops de todas las marcas (HP, Lenovo, Dell, Asus, Acer, MSI, Gigabyte).
+            Reparación profesional en 9 categorías de equipos: Laptops, MacBooks, iMac, PCs Gamer/Oficina, Celulares, iPhone, Tablets y Smartwatch.
           </p>
           <div class="symptoms-tags">
-            <span class="symptom-tag">Pantallas Quebradas</span>
-            <span class="symptom-tag">Repastado Térmico</span>
-            <span class="symptom-tag">Cambio de Teclados</span>
+            <span class="symptom-tag">Microsoldadura</span>
+            <span class="symptom-tag">Cambio de Pantallas</span>
+            <span class="symptom-tag">Mantenimiento Térmico</span>
             <span class="symptom-tag">Upgrade SSD/RAM</span>
           </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>Sobrecalentamiento y ventilador ruidoso</h5>
-              <p>Limpieza del sistema disipador, lubricación de turbinas y colocación de pasta térmica de alta densidad (Artic MX-4).</p>
-            </div>
-            <div class="diagnosis-item">
-              <h5>Bisagras rotas o carcasa abierta</h5>
-              <p>Reconstrucción con resina industrial y ajuste de tensión en bisagras para evitar roturas de pantalla.</p>
-            </div>
+          <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="servicio-tecnico.html" class="btn btn-primary" style="width: 100%;">
+              <i class="bi bi-arrow-right-circle me-1"></i> Ver Especialidades Técnicas
+            </a>
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20un%20servicio%20t%C3%A9cnico." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="bi bi-whatsapp me-1"></i> WhatsApp Directo
+            </a>
           </div>
         </article>
 
-        <!-- Tarjeta 2: CPU / PC Escritorio -->
-        <article class="service-card" id="card-cpu">
+        <!-- Pilar 2: Repuestos Originales -->
+        <article class="service-card pilar-card">
           <div class="service-icon-box">
-            <i class="bi bi-pc-display"></i>
+            <i class="bi bi-box-seam"></i>
           </div>
-          <h3 class="service-title">Reparación CPU / PC Escritorio</h3>
+          <h3 class="service-title">Repuestos Originales & Certificados</h3>
           <p class="service-desc">
-            Mantenimiento y armado de computadoras de oficina, diseño gráfico y PCs Gamer de alta gama.
+            Venta e instalación de componentes garantizados para computadoras, laptops y celulares. Discos SSD NVMe, pantallas OLED, baterías y más.
           </p>
           <div class="symptoms-tags">
-            <span class="symptom-tag">Lentitud / Formateo</span>
-            <span class="symptom-tag">Falla de Fuentes</span>
-            <span class="symptom-tag">Tarjetas de Video</span>
-            <span class="symptom-tag">Optimización BIOS</span>
+            <span class="symptom-tag">SSDs & RAM Kingston</span>
+            <span class="symptom-tag">Pantallas Laptop & Celular</span>
+            <span class="symptom-tag">Baterías Certificadas</span>
+            <span class="symptom-tag">Fuentes 80 Plus</span>
           </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>PC Enciende pero no da video</h5>
-              <p>Revisión de voltajes de fuente, diagnóstico de tarjeta madre, pruebas de RAM y GPU.</p>
-            </div>
-            <div class="diagnosis-item">
-              <h5>Pantallazos Azules (BSOD)</h5>
-              <p>Inspección de sectores de disco duro/SSD, prueba de estabilidad de memorias y reinstalación limpia de sistema.</p>
-            </div>
+          <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="repuestos.html" class="btn btn-primary" style="width: 100%;">
+              <i class="bi bi-arrow-right-circle me-1"></i> Ver Catálogo de Repuestos
+            </a>
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20por%20un%20repuesto." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="bi bi-whatsapp me-1"></i> Cotizar Repuesto
+            </a>
           </div>
         </article>
 
-        <!-- Tarjeta 3: All-in-One (AIO) -->
-        <article class="service-card" id="card-aio">
+        <!-- Pilar 3: Software Taller Master -->
+        <article class="service-card pilar-card">
           <div class="service-icon-box">
-            <i class="bi bi-display"></i>
+            <i class="bi bi-code-slash"></i>
           </div>
-          <h3 class="service-title">Reparación All-in-One (AIO)</h3>
+          <h3 class="service-title">Software para Emprendedores | TALLER MASTER</h3>
           <p class="service-desc">
-            Reparación de equipos integrados Todo-en-Uno (HP, Lenovo, Dell, Asus) con repuestos originales.
+            Software de gestión de talleres con Inteligencia Artificial. Automatiza órdenes de trabajo, inventarios, avisos automáticos a WhatsApp y caja chica.
           </p>
           <div class="symptoms-tags">
-            <span class="symptom-tag">Fuentes Internas</span>
-            <span class="symptom-tag">Discos SSD NVMe</span>
-            <span class="symptom-tag">Limpieza Térmica</span>
-            <span class="symptom-tag">Paneles Táctiles</span>
+            <span class="symptom-tag">Tickets con Código QR</span>
+            <span class="symptom-tag">Avisos IA a WhatsApp</span>
+            <span class="symptom-tag">Inventario & Caja</span>
+            <span class="symptom-tag">Respaldo Cloud</span>
           </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>AIO No enciende o parpadea luz LED</h5>
-              <p>Reparación de circuitos de alimentación interna, cambio de convertidores DC-DC o reemplazo de cargador externo.</p>
-            </div>
+          <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="software.html" class="btn btn-primary" style="width: 100%;">
+              <i class="bi bi-arrow-right-circle me-1"></i> Conocer TALLER MASTER
+            </a>
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20una%20demo%20de%20TALLER%20MASTER." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="bi bi-whatsapp me-1"></i> Solicitar Demo
+            </a>
           </div>
         </article>
 
-        <!-- Tarjeta 4: iMac (Apple) -->
-        <article class="service-card" id="card-imac">
+        <!-- Pilar 4: Ventas & Ensamble de Equipos -->
+        <article class="service-card pilar-card">
           <div class="service-icon-box">
-            <i class="bi bi-display-fill"></i>
+            <i class="bi bi-pc-display-horizontal"></i>
           </div>
-          <h3 class="service-title">Reparación Apple iMac</h3>
+          <h3 class="service-title">Venta de Laptops & Ensamble de CPUs</h3>
           <p class="service-desc">
-            Servicio técnico especializado para computadoras Apple iMac (Slim, Retina 4K/5K, chips M1/M3).
+            Venta de laptops corporativas, AIO y MacBooks garantizadas. Ensamblamos computadoras Gamer, arquitectura y oficina a tu medida.
           </p>
           <div class="symptoms-tags">
-            <span class="symptom-tag">Cambio a SSD Blade</span>
-            <span class="symptom-tag">Fuente de Poder</span>
-            <span class="symptom-tag">Sellado de Pantalla</span>
-            <span class="symptom-tag">macOS Update</span>
+            <span class="symptom-tag">Laptops Dell & Lenovo</span>
+            <span class="symptom-tag">CPUs Gamer RTX</span>
+            <span class="symptom-tag">Apple MacBook & AIO</span>
+            <span class="symptom-tag">Garantía Certificada</span>
           </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>Icono de carpeta con signo de interrogación</h5>
-              <p>Falla de almacenamiento o sistema macOS dañado. Reemplazo por disco SSD ultrarrápido con instalación de macOS original.</p>
-            </div>
+          <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="ventas.html" class="btn btn-primary" style="width: 100%;">
+              <i class="bi bi-arrow-right-circle me-1"></i> Ver Catálogo de Ventas
+            </a>
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20un%20equipo%20o%20CPU%20Gamer." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="bi bi-whatsapp me-1"></i> Cotizar Equipo
+            </a>
           </div>
         </article>
-
-        <!-- Tarjeta 5: MacBook (Apple) -->
-        <article class="service-card" id="card-macbook">
-          <div class="service-icon-box">
-            <i class="bi bi-laptop-fill"></i>
-          </div>
-          <h3 class="service-title">Reparación Apple MacBook</h3>
-          <p class="service-desc">
-            Especialistas en MacBook Air y MacBook Pro (modelos Intel y procesadores Apple Silicon M1, M2, M3).
-          </p>
-          <div class="symptoms-tags">
-            <span class="symptom-tag">Microsoldadura Placa</span>
-            <span class="symptom-tag">Pantallas Retina</span>
-            <span class="symptom-tag">Batería Original</span>
-            <span class="symptom-tag">Teclados / Trackpad</span>
-          </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>MacBook mojado o no enciende</h5>
-              <p>Limpieza ultrasónica de microplaca, reparación de líneas de carga USB-C y sustitución de integrados de potencia.</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tarjeta 6: Celulares -->
-        <article class="service-card" id="card-celulares">
-          <div class="service-icon-box">
-            <i class="bi bi-phone"></i>
-          </div>
-          <h3 class="service-title">Reparación de Celulares</h3>
-          <p class="service-desc">
-            Soluciones inmediatas para teléfonos Android (Samsung, Xiaomi, Motorola, Huawei, Oppo, Vivo, Honor).
-          </p>
-          <div class="symptoms-tags">
-            <span class="symptom-tag">Pantallas OLED/LCD</span>
-            <span class="symptom-tag">Baterías</span>
-            <span class="symptom-tag">Pin Tipo C</span>
-            <span class="symptom-tag">Fallo de Software</span>
-          </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>Celular no reconoce la carga</h5>
-              <p>Cambio de placa de carga sub-board o soldadura directa de conector USB Tipo C reforzado.</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tarjeta 7: Tablets -->
-        <article class="service-card" id="card-tablets">
-          <div class="service-icon-box">
-            <i class="bi bi-tablet"></i>
-          </div>
-          <h3 class="service-title">Reparación de Tablets</h3>
-          <p class="service-desc">
-            Reparación de tablets educativas, de trabajo y diseño (Samsung Tab, Lenovo, Xiaomi Pad, Huawei).
-          </p>
-          <div class="symptoms-tags">
-            <span class="symptom-tag">Cambio de Glass</span>
-            <span class="symptom-tag">Batería Agotada</span>
-            <span class="symptom-tag">Conector de Carga</span>
-            <span class="symptom-tag">Flashing Software</span>
-          </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>Táctil no responde o vidrio fisurado</h5>
-              <p>Sustitución de cristal táctil laminado con pegamento OCA preservando el panel de imagen original.</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tarjeta 8: iPhone (Apple) -->
-        <article class="service-card" id="card-iphone">
-          <div class="service-icon-box">
-            <i class="bi bi-phone-fill"></i>
-          </div>
-          <h3 class="service-title">Reparación Apple iPhone</h3>
-          <p class="service-desc">
-            Servicio dedicado para iPhone (desde iPhone 8 hasta las últimas generaciones de iPhone 14/15/16 Pro Max).
-          </p>
-          <div class="symptoms-tags">
-            <span class="symptom-tag">Pantallas Originales</span>
-            <span class="symptom-tag">Salud de Batería 100%</span>
-            <span class="symptom-tag">Tapa Trasera Láser</span>
-            <span class="symptom-tag">Face ID / Placa</span>
-          </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>Aviso de batería degradada o reinicios</h5>
-              <p>Instalación de batería de alta calidad con reprogramación de datos de salud y aviso oficial en iOS.</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tarjeta 9: Smartwatch -->
-        <article class="service-card" id="card-smartwatch">
-          <div class="service-icon-box">
-            <i class="bi bi-smartwatch"></i>
-          </div>
-          <h3 class="service-title">Reparación de Smartwatch</h3>
-          <p class="service-desc">
-            Reparación de relojes inteligentes (Apple Watch Series/SE/Ultra, Samsung Galaxy Watch, Xiaomi, Huawei).
-          </p>
-          <div class="symptoms-tags">
-            <span class="symptom-tag">Cristal de Pantalla</span>
-            <span class="symptom-tag">Batería Reloj</span>
-            <span class="symptom-tag">Sellado de Agua</span>
-            <span class="symptom-tag">Sensores</span>
-          </div>
-
-          <button class="accordion-toggle" aria-expanded="false">
-            <span>Ver Diagnósticos Frecuentes</span>
-            <i class="bi bi-chevron-down"></i>
-          </button>
-          <div class="accordion-content">
-            <div class="diagnosis-item">
-              <h5>Pantalla despegada o cristal rajado</h5>
-              <p>Laminado de pantalla de zafiro/OLED y cambio de empaque hermético contra agua y polvo.</p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección: Repuestos Originales (Computacionales & Móviles) -->
-  <section class="section" id="repuestos" style="background: rgba(5, 22, 16, 0.4); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge badge-emerald">
-          <i class="bi bi-box-seam me-1"></i> Stock Certificado
-        </div>
-        <h2 class="section-title">Repuestos Originales & Componentes</h2>
-        <p class="section-subtitle">
-          Venta e instalación de repuestos garantizados para equipos computacionales y móviles con garantía directa en tienda.
-        </p>
-      </div>
-
-      <div class="repuestos-grid">
-        
-        <!-- Tarjeta 1: Repuestos Computacionales -->
-        <div class="repuesto-card-main" id="repuestos-computacionales">
-          <div class="solution-header">
-            <div class="solution-icon" style="width: 56px; height: 56px; font-size: 1.75rem;">
-              <i class="bi bi-cpu-fill"></i>
-            </div>
-            <span class="badge badge-emerald">Para Laptops, CPU, AIO & Mac</span>
-          </div>
-          <h3>Repuestos para Equipos Computacionales</h3>
-          <p style="color: var(--silver-muted); font-size: 0.95rem;">
-            Componentes de alta gama y sustitutos certificados para potenciar y reparar computadoras de escritorio y portátiles.
-          </p>
-
-          <ul class="repuestos-list-features">
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Discos de Estado Sólido SSD (NVMe M.2 / SATA)</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Kingston, Samsung EVO, Western Digital (256GB, 512GB, 1TB, 2TB)</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Memorias RAM (DDR3, DDR4, DDR5)</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Para Laptop (SODIMM) y PC (DIMM) Kingston Fury, Corsair 3200MHz/5600MHz</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Pantallas LED / IPS para Laptops & AIO</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Displays 14", 15.6", 17.3" HD, Full HD 144Hz y pantallas Retina MacBook</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Fuentes de Poder & Cargadores Originales</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Fuentes certificadas 80 Plus Bronce/Gold y cargadores tipo C Magsafe</p>
-              </div>
-            </li>
-          </ul>
-
-          <a href="https://wa.me/593987334711?text=%C2%A1Hola!%20Deseo%20consultar%20disponibilidad%20de%20un%20repuesto%20computacional." target="_blank" class="btn btn-primary" style="margin-top: 0.5rem;">
-            <i class="bi bi-telephone-fill me-1"></i> Consultar Repuesto PC: +593 98 733 4711
-          </a>
-        </div>
-
-        <!-- Tarjeta 2: Repuestos Móviles -->
-        <div class="repuesto-card-main" id="repuestos-moviles">
-          <div class="solution-header">
-            <div class="solution-icon" style="width: 56px; height: 56px; font-size: 1.75rem;">
-              <i class="bi bi-phone-fill"></i>
-            </div>
-            <span class="badge badge-emerald">Para Celulares, Tablets & iPhone</span>
-          </div>
-          <h3>Repuestos para Equipos Móviles</h3>
-          <p style="color: var(--silver-muted); font-size: 0.95rem;">
-            Módulos, cristales, baterías y componentes electrónicos para celulares Android, iPhone, iPads y Smartwatch.
-          </p>
-
-          <ul class="repuestos-list-features">
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Módulos de Pantalla (AMOLED, Super OLED, Incell)</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Samsung Galaxy, iPhone, Xiaomi Redmi/Poco, Motorola, Huawei</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Baterías Certificadas de Carga Rápida</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Baterías de alta densidad 100% compatibles con protección contra sobrecalentamiento</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Pines de Carga, Flex & Micrófonos</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Conectores Tipo C, módulos de audio, cámaras frontal/trasera y flex de encendido</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <div>
-                <strong>Cristales Táctiles (Glass) & Tapas Traseras</strong>
-                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Cristales Gorilla Glass para reparación de micas de celular, iPad y Apple Watch</p>
-              </div>
-            </li>
-          </ul>
-
-          <a href="https://wa.me/593987334711?text=%C2%A1Hola!%20Deseo%20consultar%20disponibilidad%20de%20un%20repuesto%20m%C3%B3vil." target="_blank" class="btn btn-primary" style="margin-top: 0.5rem;">
-            <i class="bi bi-telephone-fill me-1"></i> Consultar Repuesto Móvil: +593 98 733 4711
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección: Software para Emprendedores - TALLER MASTER -->
-  <section class="section software-section" id="desarrollo-software">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge badge-emerald">
-          <i class="bi bi-code-slash me-1"></i> Software para Emprendedores
-        </div>
-        <h2 class="section-title">TALLER MASTER</h2>
-        <p class="section-subtitle">
-          Software de Gestión y Manejo de Servicio Técnico. Automatiza procesos de reparación, cobros e inventarios con nuestro software..... ¡potenciado con IA!
-        </p>
-      </div>
-
-      <!-- Filtro por Módulo / Beneficio del Sistema -->
-      <div class="category-tabs">
-        <button class="tab-btn active" data-category="all">
-          <i class="bi bi-grid-fill me-1"></i> Módulos del Sistema
-        </button>
-        <button class="tab-btn" data-category="ordenes">
-          <i class="bi bi-receipt me-1"></i> Órdenes de Trabajo (OT)
-        </button>
-        <button class="tab-btn" data-category="notificaciones">
-          <i class="bi bi-whatsapp me-1"></i> Notificaciones con IA
-        </button>
-        <button class="tab-btn" data-category="cobros">
-          <i class="bi bi-calculator me-1"></i> Caja & Facturación
-        </button>
-        <button class="tab-btn" data-category="inventarios">
-          <i class="bi bi-boxes me-1"></i> Inventario de Repuestos
-        </button>
-      </div>
-
-      <!-- Cuadrícula de Soluciones -->
-      <div class="solutions-grid">
-        
-        <!-- Solución 1 -->
-        <div class="solution-card" data-category="ordenes">
-          <div class="solution-header">
-            <div class="solution-icon">
-              <i class="bi bi-receipt-cutoff"></i>
-            </div>
-            <span class="badge badge-emerald">Recepción & Diagnóstico</span>
-          </div>
-          <h4>Órdenes de Trabajo & Tickets QR</h4>
-          <p style="color: var(--silver-muted); font-size: 0.9rem;">
-            Registra el ingreso de laptops, celulares y PCs con número de serie, fallas reportadas, accesorios y emisión de comprobantes digitales con código QR para tus clientes.
-          </p>
-          <ul class="solution-features">
-            <li><i class="bi bi-check2"></i> Comprobante con QR para seguimiento del cliente</li>
-            <li><i class="bi bi-check2"></i> Registro de fallas, clave y accesorios</li>
-            <li><i class="bi bi-check2"></i> Asignación de técnico y estado de reparación</li>
-          </ul>
-        </div>
-
-        <!-- Solución 2 -->
-        <div class="solution-card" data-category="notificaciones">
-          <div class="solution-header">
-            <div class="solution-icon">
-              <i class="bi bi-whatsapp"></i>
-            </div>
-            <span class="badge">Automatización con IA</span>
-          </div>
-          <h4>Avisos Automáticos a WhatsApp con IA</h4>
-          <p style="color: var(--silver-muted); font-size: 0.9rem;">
-            Notifica automáticamente al cliente cuando su equipo cambia de estado (En Diagnóstico, Presupuesto Listo, Reparado) con textos profesionales redactados por IA.
-          </p>
-          <ul class="solution-features">
-            <li><i class="bi bi-check2"></i> Avisos automáticos de presupuesto y entrega</li>
-            <li><i class="bi bi-check2"></i> Generador de diagnósticos técnicos con IA</li>
-            <li><i class="bi bi-check2"></i> Aprobación de reparaciones directo en WhatsApp</li>
-          </ul>
-        </div>
-
-        <!-- Solución 3 -->
-        <div class="solution-card" data-category="cobros">
-          <div class="solution-header">
-            <div class="solution-icon">
-              <i class="bi bi-cash-stack"></i>
-            </div>
-            <span class="badge badge-emerald">Cobros & Caja</span>
-          </div>
-          <h4>Control de Caja Chica & Facturación</h4>
-          <p style="color: var(--silver-muted); font-size: 0.9rem;">
-            Gestiona cobros de mano de obra, anticipos de clientes, arqueo de caja diaria y liquidación de ganancias sin descuadres ni perdidas de información.
-          </p>
-          <ul class="solution-features">
-            <li><i class="bi bi-check2"></i> Registro de abonos y saldo pendiente por equipo</li>
-            <li><i class="bi bi-check2"></i> Arqueo de caja diaria y reporte de utilidades</li>
-            <li><i class="bi bi-check2"></i> Emisión de recibos y facturación electrónica</li>
-          </ul>
-        </div>
-
-        <!-- Solución 4 -->
-        <div class="solution-card" data-category="inventarios">
-          <div class="solution-header">
-            <div class="solution-icon">
-              <i class="bi bi-cpu"></i>
-            </div>
-            <span class="badge">Stock en Tiempo Real</span>
-          </div>
-          <h4>Inventario & Descuento de Repuestos</h4>
-          <p style="color: var(--silver-muted); font-size: 0.9rem;">
-            Descuento automático de pantallas, SSDs, baterías y piezas al utilizarlos en una reparación, con alertas de stock bajo e historial de consumo.
-          </p>
-          <ul class="solution-features">
-            <li><i class="bi bi-check2"></i> Descuento automático de piezas instaladas</li>
-            <li><i class="bi bi-check2"></i> Alertas de bajo stock de piezas críticas</li>
-            <li><i class="bi bi-check2"></i> Control de costos de compras y margen de ganancia</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Demostración / Simulador Interactivo de Funciones -->
-      <div class="demo-simulator">
-        <div class="simulator-info">
-          <div class="badge badge-emerald mb-2">
-            <i class="bi bi-sliders me-1"></i> Simulador Interactivo
-          </div>
-          <h3>Prueba Módulos de TALLER MASTER</h3>
-          <p style="color: var(--silver-muted); font-size: 0.95rem;">
-            Activa las características de TALLER MASTER y observa cómo estructuran la gestión y manejo de tu taller en tiempo real.
-          </p>
-
-          <div class="simulator-controls">
-            <div class="feature-toggle">
-              <span><i class="bi bi-receipt me-2"></i> Órdenes de Trabajo (OT) & Ticket QR</span>
-              <label class="switch">
-                <input type="checkbox" class="feature-switch" data-feature="ot" checked>
-                <span class="slider"></span>
-              </label>
-            </div>
-
-            <div class="feature-toggle">
-              <span><i class="bi bi-whatsapp me-2"></i> Avisos Automáticos a WhatsApp con IA</span>
-              <label class="switch">
-                <input type="checkbox" class="feature-switch" data-feature="ai_whatsapp" checked>
-                <span class="slider"></span>
-              </label>
-            </div>
-
-            <div class="feature-toggle">
-              <span><i class="bi bi-calculator me-2"></i> Control de Caja Chica & Cobros</span>
-              <label class="switch">
-                <input type="checkbox" class="feature-switch" data-feature="billing" checked>
-                <span class="slider"></span>
-              </label>
-            </div>
-
-            <div class="feature-toggle">
-              <span><i class="bi bi-boxes me-2"></i> Inventario & Descuento de Repuestos</span>
-              <label class="switch">
-                <input type="checkbox" class="feature-switch" data-feature="inventory" checked>
-                <span class="slider"></span>
-              </label>
-            </div>
-
-            <div class="feature-toggle">
-              <span><i class="bi bi-cloud-arrow-up me-2"></i> Respaldo Nube Multiusuario</span>
-              <label class="switch">
-                <input type="checkbox" class="feature-switch" data-feature="cloud" checked>
-                <span class="slider"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="simulator-preview">
-          <video class="hero-video" data-src="robot programando.mp4" loop muted playsinline poster="robot programando.jpg" preload="none"></video>
-          <div class="simulator-overlay">
-            <span class="live-badge"><i class="bi bi-broadcast me-1"></i> Vista Previa en Vivo</span>
-            <div>
-              <h4 style="color: var(--silver); font-size: 1.1rem; margin-bottom: 0.5rem;">TALLER MASTER | Software de Gestión</h4>
-              <div class="preview-features-list" id="previewFeaturesList">
-                <!-- Se poblará por JS -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Sección: Cotizador Interactivo WhatsApp Dual -->
-  <section class="section" id="cotizador">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge badge-whatsapp">
-          <i class="bi bi-whatsapp me-1"></i> Cotización Instantánea
-        </div>
-        <h2 class="section-title">Cotizador Interactivo Online</h2>
-        <p class="section-subtitle">
-          Selecciona tu tipo de requerimiento, completa los datos clave y envía tu solicitud directamente a nuestro WhatsApp oficial para recibir atención inmediata.
-        </p>
-      </div>
-
-      <div class="calculator-box">
-        
-        <!-- Botones Selector de Tipo -->
-        <div class="calc-type-selector">
-          <button class="calc-type-btn active" data-type="service">
-            <i class="bi bi-wrench-adjustable me-2"></i> Servicio Técnico
-          </button>
-          <button class="calc-type-btn" data-type="parts">
-            <i class="bi bi-box-seam me-2"></i> Cotizador de Repuestos
-          </button>
-        </div>
-
-        <!-- Formulario 1: Servicio Técnico -->
-        <form class="calc-form" id="calcFormService" onsubmit="return false;">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="techDeviceSelect"><i class="bi bi-laptop me-1"></i> Tipo de Dispositivo</label>
-              <select class="form-control" id="techDeviceSelect">
-                <option value="Laptop / Portátil">Laptop / Computadora Portátil</option>
-                <option value="Computadora CPU / PC Gamer">Computadora CPU / PC Escritorio</option>
-                <option value="All-in-One (AIO)">Computadora All-in-One (AIO)</option>
-                <option value="Apple iMac">Apple iMac</option>
-                <option value="Apple MacBook (Air/Pro)">Apple MacBook (Air/Pro)</option>
-                <option value="Smartphone / Celular">Smartphone / Celular</option>
-                <option value="Tablet (iPad / Android)">Tablet (iPad / Android)</option>
-                <option value="Apple iPhone">Apple iPhone</option>
-                <option value="Smartwatch / Apple Watch">Smartwatch / Apple Watch</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="techBrandInput"><i class="bi bi-tag me-1"></i> Marca y Modelo</label>
-              <input type="text" class="form-control" id="techBrandInput" placeholder="Ej: MacBook Pro M2, iPhone 14 Pro, HP Pavilion, Dell...">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="techIssueSelect"><i class="bi bi-exclamation-triangle me-1"></i> Falla o Servicio Requerido</label>
-              <select class="form-control" id="techIssueSelect">
-                <option value="Mantenimiento preventivo y repastado térmico">Mantenimiento preventivo / Limpieza profunda</option>
-                <option value="No enciende / Falla de energía">No enciende / Falla de energía o carga</option>
-                <option value="Pantalla quebrada / Sin video">Pantalla quebrada / Parpadeo / Sin imagen</option>
-                <option value="Reconstrucción de bisagras o carcasa">Reconstrucción de bisagras / Carcasa rotas</option>
-                <option value="Formateo e instalación de SO / Drivers">Formateo, programas y optimización</option>
-                <option value="Falla de Placa Madre / Microsoldadura">Reparación de Placa Madre / Microsoldadura</option>
-                <option value="Cambio de Batería o Pin de carga">Cambio de Batería o Pin de carga</option>
-                <option value="Diagnóstico Técnico General">Diagnóstico Técnico General</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="techDetailInput"><i class="bi bi-chat-left-text me-1"></i> Detalles adicionales (Opcional)</label>
-              <input type="text" class="form-control" id="techDetailInput" placeholder="Ej: Se apaga al jugar, líquido derramado, bisagra derecha rota...">
-            </div>
-          </div>
-        </form>
-
-        <!-- Formulario 2: Cotizador de Repuestos -->
-        <form class="calc-form" id="calcFormParts" style="display: none;" onsubmit="return false;">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="partCategorySelect"><i class="bi bi-cpu-fill me-1"></i> Categoría de Repuesto</label>
-              <select class="form-control" id="partCategorySelect">
-                <option value="Disco SSD NVMe / SATA">Disco Estado Sólido SSD (NVMe / M.2 / SATA)</option>
-                <option value="Memoria RAM (DDR4 / DDR5 / DDR3)">Memoria RAM (SODIMM Laptop / DIMM PC)</option>
-                <option value="Pantalla / Display LED IPS">Pantalla / Display LED IPS (Laptop, AIO, MacBook)</option>
-                <option value="Batería Certificada">Batería Certificada (Laptop, iPhone, Celular)</option>
-                <option value="Teclado / Flex / Carcasa">Teclado / Flex de Video / Carcasa</option>
-                <option value="Cargador Original / Fuente de Poder">Cargador Original / Fuente de Poder 80 Plus</option>
-                <option value="Pin de Carga / Táctil OCA">Pin de Carga Tipo C / Cristal Táctil Glass</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="partBrandInput"><i class="bi bi-laptop me-1"></i> Marca y Modelo del Equipo</label>
-              <input type="text" class="form-control" id="partBrandInput" placeholder="Ej: HP 15-dw0000, Dell Inspiron 3501, Lenovo V15, MacBook Air M1...">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="partSpecsInput"><i class="bi bi-sliders me-1"></i> Especificaciones / Capacidad</label>
-              <input type="text" class="form-control" id="partSpecsInput" placeholder="Ej: SSD 512GB NVMe, RAM 16GB 3200MHz, Pantalla 15.6 FHD 30 pines...">
-            </div>
-
-            <div class="form-group">
-              <label for="partInstallSelect"><i class="bi bi-tools me-1"></i> Servicio de Instalación</label>
-              <select class="form-control" id="partInstallSelect">
-                <option value="Sí, incluir instalación técnica en tienda">Sí, incluir instalación y pruebas en laboratorio DRUK Digital</option>
-                <option value="No, solo compra del repuesto">No, solo deseo comprar el repuesto</option>
-              </select>
-            </div>
-          </div>
-        </form>
-
-        <!-- Previsualización del Mensaje -->
-        <div class="calc-summary-box">
-          <div class="summary-header">
-            <span style="font-weight: 700; color: var(--silver); font-size: 0.95rem;">
-              <i class="bi bi-eye-fill me-1"></i> Vista Previa del Mensaje para WhatsApp:
-            </span>
-            <span class="badge badge-whatsapp">Listo para enviar</span>
-          </div>
-
-          <div class="whatsapp-preview-text" id="whatsappPreviewText">
-            <!-- Generado dinámicamente -->
-          </div>
-
-          <a href="#" class="btn btn-whatsapp" id="btnSendWhatsapp" target="_blank" rel="noopener noreferrer" style="width: 100%; margin-top: 0.5rem;">
-            <i class="bi bi-whatsapp me-2"></i> Enviar Cotización por WhatsApp
-          </a>
-        </div>
 
       </div>
     </div>
@@ -1648,7 +696,7 @@
         </div>
         <h2 class="section-title">Contacto Directo & Redes Sociales</h2>
         <p class="section-subtitle">
-          Comunícate con nuestros especialistas de soporte técnico o solicita asesoría para tu software en tiempo real.
+          Comunícate con nuestros especialistas de soporte técnico o solicita asesoría para tus equipos en tiempo real.
         </p>
       </div>
 
@@ -1666,7 +714,7 @@
 
           <div class="info-item">
             <i class="bi bi-envelope-at-fill" style="color: var(--emerald-bright); font-size: 1.2rem;"></i>
-            <span><strong>Correo Electrónico:</strong> <a href="mailto:contacto@drukdigital.com" style="color: var(--silver); text-decoration: none;">contacto@drukdigital.com</a></span>
+            <span><strong>Correo Electrónico:</strong> <a href="mailto:info@drukdigital.es" style="color: var(--silver); text-decoration: none;">info@drukdigital.es</a></span>
           </div>
 
           <!-- Botones de Redes Sociales -->
@@ -1697,9 +745,9 @@
 
         <div style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(5, 22, 16, 0.4); border-radius: 16px; border: 1px solid var(--glass-border);">
           <i class="bi bi-headset" style="font-size: 3rem; color: var(--emerald-bright);"></i>
-          <h4 style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--silver);">Atención Personalizada Pre & Post Venta</h4>
+          <h4 style="margin-top: 0.5rem; font-size: 1.1rem; color: var(--silver); text-align: center;">Atención Personalizada Pre & Post Venta</h4>
           <p style="font-size: 0.85rem; color: var(--silver-muted); text-align: center; margin-top: 0.5rem;">
-            Te guiamos paso a paso con la reparación de tu equipo o el diseño de tu sistema web.
+            Te guiamos paso a paso con la compra de tu equipo, repuestos o servicio técnico especializado.
           </p>
         </div>
       </div>
@@ -1709,56 +757,50 @@
   <!-- Sección: Ubicación Física & Mapa Google Maps -->
   <section class="section" id="ubicacion" style="background: rgba(5, 22, 16, 0.4); border-top: 1px solid var(--glass-border);">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 2rem;">
         <div class="badge badge-emerald">
           <i class="bi bi-geo-alt-fill me-1"></i> Visítanos en Tienda
         </div>
-        <h2 class="section-title">Ubicación & Mapa Interactivo</h2>
-        <p class="section-subtitle">
-          Encuentra nuestro laboratorio técnico principal para entrega y recojo presencial de equipos y repuestos.
-        </p>
+        <h2 class="section-title">Ubicación</h2>
       </div>
 
-      <div class="location-box" style="grid-template-columns: 1fr 1fr;">
-        <div class="location-info">
-          <h3 style="font-size: 1.4rem; color: var(--silver); margin-bottom: 1rem;">
-            <i class="bi bi-building me-1" style="color: var(--emerald-bright);"></i> Centro Técnico DRUK Digital
-          </h3>
-          
-          <div class="info-item">
-            <i class="bi bi-geo-alt-fill" style="color: var(--emerald-bright); font-size: 1.25rem;"></i>
-            <span><strong>Dirección:</strong> Av. de la República, 170521 Quito, Ecuador</span>
-          </div>
-
-          <div class="info-item">
-            <i class="bi bi-clock-fill" style="color: var(--emerald-bright); font-size: 1.25rem;"></i>
-            <span><strong>Horario de Atención:</strong> Lunes a Sábado de 8:30 AM - 7:30 PM (Horario corrido)</span>
-          </div>
-
-          <div class="info-item">
-            <i class="bi bi-telephone-fill" style="color: var(--emerald-bright); font-size: 1.25rem;"></i>
-            <span><strong>Teléfono Directo:</strong> <a href="https://wa.me/593987334711" target="_blank" style="color: var(--silver); text-decoration: none;">+593 98 733 4711</a></span>
-          </div>
-
-          <div style="margin-top: 1.25rem;">
-            <a href="https://maps.app.goo.gl/Pn5C9WFekvHkiR7o8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <i class="bi bi-sign-turn-right-fill me-2"></i> Cómo Llegar con Google Maps
-            </a>
-          </div>
-        </div>
-
-        <!-- Mapa Interactivo Google Maps Embed -->
-        <div class="map-container" style="border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border); position: relative; min-height: 350px;">
+      <div class="location-box" style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 1050px; margin: 0 auto;">
+        <!-- 1. Mapa Interactivo Google Maps en la parte superior -->
+        <div class="map-container" style="border-radius: 18px; overflow: hidden; border: 1px solid var(--glass-border); position: relative; height: 380px; width: 100%; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(52, 211, 153, 0.15);">
           <iframe 
             src="https://maps.google.com/maps?q=DRUK%20Digital,%20Av.%20de%20la%20Rep%C3%BAblica,%20170521%20Quito,%20Ecuador&t=&z=17&ie=UTF8&iwloc=&output=embed" 
             width="100%" 
             height="100%" 
-            style="border:0; min-height: 350px;" 
+            style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
             title="Google Maps DRUK Digital Quito Ecuador">
           </iframe>
+        </div>
+
+        <!-- 2. Datos de Ubicación debajo del mapa -->
+        <div class="location-info" style="display: flex; flex-direction: column; gap: 1rem; background: rgba(5, 22, 16, 0.55); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem 2rem; backdrop-filter: blur(16px);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.85rem;">
+            <h3 style="font-size: 1.35rem; color: var(--silver); margin: 0; display: inline-flex; align-items: center; gap: 8px;">
+              <i class="bi bi-building" style="color: var(--emerald-bright);"></i> Centro Técnico DRUK Digital
+            </h3>
+            <a href="https://maps.app.goo.gl/Pn5C9WFekvHkiR7o8" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.55rem 1.35rem;">
+              <i class="bi bi-sign-turn-right-fill me-2"></i> Cómo Llegar con Google Maps
+            </a>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 0.25rem;">
+            <div class="info-item" style="margin-bottom: 0;">
+              <i class="bi bi-geo-alt-fill" style="color: var(--emerald-bright); font-size: 1.3rem;"></i>
+              <span><strong>Dirección:</strong> Av. de la República, 170521 Quito, Ecuador</span>
+            </div>
+
+            <div class="info-item" style="margin-bottom: 0;">
+              <i class="bi bi-clock-fill" style="color: var(--emerald-bright); font-size: 1.3rem;"></i>
+              <span><strong>Horario de Atención:</strong> Lunes a Sábado de 8:30 AM - 7:30 PM (Horario corrido)</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1769,7 +811,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">
+          <a href="index.html" class="logo">
             <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
           </a>
           <p>
@@ -1786,18 +828,17 @@
         <div class="footer-links">
           <h4>Repuestos & Servicios</h4>
           <ul>
-            <li><a href="#repuestos-computacionales">Repuestos Computacionales</a></li>
-            <li><a href="#repuestos-moviles">Repuestos Móviles</a></li>
-            <li><a href="#card-laptop">Reparación de Laptops</a></li>
-            <li><a href="#card-macbook">Reparación de MacBook</a></li>
-            <li><a href="#card-iphone">Reparación de iPhone</a></li>
+            <li><a href="servicio-tecnico.html">Servicio Técnico Especializado</a></li>
+            <li><a href="repuestos.html">Catálogo de Repuestos</a></li>
+            <li><a href="software.html">TALLER MASTER Software</a></li>
+            <li><a href="ventas.html">Ventas & Ensamble de Equipos</a></li>
           </ul>
         </div>
 
         <div class="footer-links">
           <h4>Navegación</h4>
           <ul>
-            <li><a href="#desarrollo-software">Software para Emprendimientos</a></li>
+            <li><a href="index.html">Página Principal</a></li>
             <li><a href="#contacto">Contacto & Redes Sociales</a></li>
             <li><a href="#ubicacion">Ubicación & Mapa</a></li>
           </ul>
@@ -1810,6 +851,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="floating-whatsapp" aria-label="WhatsApp DRUK Digital">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
   <!-- Script JS Principal -->
   <script src="app.js"></script>

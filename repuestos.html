@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repuestos Originales & Certificados | DRUK Digital</title>
+  <meta name="description" content="Venta e instalación de repuestos originales para Laptops, PCs, Mac, iPhone, Celulares Android y Tablets. Discos SSD, Memorias RAM, Pantallas y Baterías en Quito.">
+  <meta name="keywords" content="repuestos computadoras quito, pantallas laptop, baterias iphone quito, memorias ram ddr4 ddr5, discos ssd nvme, repuestos celulares">
+  
+  <!-- Favicon Logo Oficial -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+
+  <!-- Google Fonts Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- CSS Principal Liquid Glass -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Fondo Líquido Animado (Liquid Glass Effect) -->
+  <div class="liquid-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Capa de Triángulos y Poliedros 3D Animados -->
+  <div class="geo-shapes-layer" id="geoLayer">
+    <svg style="width:0;height:0;position:absolute;">
+      <defs>
+        <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#047857"/><stop offset="100%" stop-color="#051610"/></linearGradient>
+        <linearGradient id="f2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#065f46"/></linearGradient>
+        <linearGradient id="f3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#022c22"/></linearGradient>
+        <linearGradient id="f4" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#047857"/></linearGradient>
+        <filter id="glowE"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#34d399" flood-opacity="0.45"/></filter>
+      </defs>
+    </svg>
+    <svg class="geo-shape geo-triangulated-mesh geo-mesh-top" data-speed="14" data-rot="5" viewBox="0 0 1400 900" fill="none" style="top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px;">
+      <g stroke="rgba(226, 232, 240, 0.35)" stroke-width="1.2" class="connecting-mesh">
+        <polygon points="50,100 180,40 320,120" />
+        <polygon points="180,40 320,120 450,30" />
+        <polygon points="320,120 450,30 580,140" />
+        <polygon points="450,30 580,140 720,20" />
+      </g>
+      <g fill="rgba(52, 211, 153, 0.75)">
+        <circle cx="180" cy="40" r="4"/>
+        <circle cx="320" cy="120" r="4.5"/>
+        <circle cx="450" cy="30" r="4"/>
+        <circle cx="580" cy="140" r="4.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Header & Navegación Liquid Glass -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo" title="Ir a Inicio - DRUK Digital">
+        <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
+        <span class="logo-tag-home"><i class="bi bi-house-door-fill"></i> Inicio</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          
+          <!-- Item 1: Servicio Técnico -->
+          <li class="nav-dropdown-item">
+            <a href="servicio-tecnico.html" class="nav-link dropdown-toggle">
+              Servicio Técnico <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-header">
+                <span><i class="bi bi-wrench-adjustable me-1"></i> Especialidades Técnicas</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-grid">
+                <a href="servicio-tecnico.html#card-laptop" class="dropdown-link">
+                  <i class="bi bi-laptop"></i>
+                  <div><strong>Reparación Laptops</strong><small>Multimarca, Pantallas & Gaming</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-cpu" class="dropdown-link">
+                  <i class="bi bi-pc-display"></i>
+                  <div><strong>Reparación CPU / PC</strong><small>Escritorio & Repotenciación</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-macbook" class="dropdown-link">
+                  <i class="bi bi-laptop-fill"></i>
+                  <div><strong>Reparación MacBook</strong><small>Air & Pro M1/M2/M3 / Placa</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-iphone" class="dropdown-link">
+                  <i class="bi bi-phone-fill"></i>
+                  <div><strong>Reparación iPhone</strong><small>Baterías, Módulos & Software</small></div>
+                </a>
+                <a href="servicio-tecnico.html#card-celulares" class="dropdown-link" style="grid-column: span 2;">
+                  <i class="bi bi-phone"></i>
+                  <div><strong>Reparación Celulares & Tablets</strong><small>Android, Pantallas, Pines y Baterías</small></div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 2: Submenú Desplegable de Repuestos -->
+          <li class="nav-dropdown-item">
+            <a href="repuestos.html" class="nav-link dropdown-toggle active">
+              Repuestos <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-sm">
+              <div class="dropdown-header">
+                <span><i class="bi bi-box-seam me-1"></i> Catálogo de Repuestos</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-stack">
+                <a href="repuestos.html#repuestos-computacionales" class="dropdown-link">
+                  <i class="bi bi-cpu-fill"></i>
+                  <div>
+                    <strong>Repuestos para Equipos Computacionales</strong>
+                    <small>Discos SSD NVMe, Memorias RAM, Pantallas Laptop/AIO, Fuentes</small>
+                  </div>
+                </a>
+                <a href="repuestos.html#repuestos-moviles" class="dropdown-link">
+                  <i class="bi bi-phone-fill"></i>
+                  <div>
+                    <strong>Repuestos para Equipos Móviles</strong>
+                    <small>Pantallas OLED/LCD, Baterías, Pines de Carga, Flex & Tapas</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 3: Software -->
+          <li><a href="software.html" class="nav-link"><i class="bi bi-code-slash me-1"></i> Software</a></li>
+
+          <!-- Item 4: Submenú Desplegable de Ventas -->
+          <li class="nav-dropdown-item">
+            <a href="ventas.html" class="nav-link dropdown-toggle">
+              Ventas <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+
+            <!-- Submenú Desplegable de Ventas -->
+            <div class="dropdown-menu dropdown-menu-sm" style="width: 460px;">
+              <div class="dropdown-header">
+                <span><i class="bi bi-pc-display-horizontal me-1"></i> Catálogo de Ventas & Ensamble</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-stack">
+                <a href="ventas.html#laptops-aio" class="dropdown-link">
+                  <i class="bi bi-laptop"></i>
+                  <div>
+                    <strong>Laptops & Todo en Uno (AIO / iMac / MacBook)</strong>
+                    <small>Nuevas y de segundo uso garantizadas (Dell, Lenovo, Toshiba, Apple)</small>
+                  </div>
+                </a>
+
+                <a href="ventas.html#ensamble-cpus" class="dropdown-link">
+                  <i class="bi bi-cpu"></i>
+                  <div>
+                    <strong>Ensamble de CPUs (Estudiantil, Oficina & Gamer)</strong>
+                    <small>Armado de equipos a la medida, serie Gamer, diseño gráfico & arquitectura</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Item 5: Contacto -->
+          <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+
+          <!-- Item 6: Ubicación -->
+          <li><a href="index.html#ubicacion" class="nav-link">Ubicación</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Redes & WhatsApp -->
+      <div class="header-cta">
+        <div class="header-social-links">
+          <a href="https://www.instagram.com/drukdigitalec/" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="Instagram Oficial" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/drukdigital" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="Facebook Oficial" aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://www.tiktok.com/@drukdigitalec" target="_blank" rel="noopener noreferrer" class="header-social-btn" title="TikTok Oficial" aria-label="TikTok">
+            <i class="bi bi-tiktok"></i>
+          </a>
+          <a href="mailto:info@drukdigital.es" class="header-social-btn" title="Correo Oficial" aria-label="Email">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+        </div>
+
+        <a href="https://wa.me/593987334711" target="_blank" rel="noopener noreferrer" class="header-phone-badge">
+          <i class="bi bi-whatsapp" style="color: var(--accent-whatsapp); font-size: 1.15rem;"></i>
+          +593 98 733 4711
+        </a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="index.html" class="nav-link"><i class="bi bi-house-door me-2"></i> Inicio</a>
+      <a href="servicio-tecnico.html" class="nav-link"><i class="bi bi-tools me-2"></i> Servicio Técnico</a>
+      <a href="repuestos.html" class="nav-link active"><i class="bi bi-box-seam me-2"></i> Repuestos Originales</a>
+      <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
+        <a href="repuestos.html#repuestos-computacionales" class="mobile-sublink"><i class="bi bi-cpu-fill me-1"></i> Repuestos Computacionales (PC/Laptop/Mac)</a>
+        <a href="repuestos.html#repuestos-moviles" class="mobile-sublink"><i class="bi bi-phone-fill me-1"></i> Repuestos Móviles (Celulares/Tablets/iPhone)</a>
+      </div>
+      <a href="software.html" class="nav-link"><i class="bi bi-code-slash me-2"></i> Software para Emprendedores</a>
+
+      <a href="ventas.html" class="nav-link"><i class="bi bi-cart-check me-2"></i> Ventas & Ensamble de Equipos</a>
+      <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
+        <a href="ventas.html#laptops-aio" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Laptops Nuevas & Usadas / AIO</a>
+        <a href="ventas.html#ensamble-cpus" class="mobile-sublink"><i class="bi bi-pc-display-horizontal me-1"></i> Ensamble CPUs Estudiantiles & Gamer</a>
+      </div>
+
+      <a href="index.html#contacto" class="nav-link"><i class="bi bi-telephone-inbound me-2"></i> Contacto & Redes</a>
+      <a href="index.html#ubicacion" class="nav-link"><i class="bi bi-geo-alt me-2"></i> Ubicación & Mapa</a>
+
+      <div style="padding: 1rem 0; text-align: center;">
+        <a href="https://wa.me/593987334711" target="_blank" class="header-phone-badge" style="width: 100%; justify-content: center;">
+          <i class="bi bi-whatsapp me-1" style="color: var(--accent-whatsapp);"></i>
+          +593 98 733 4711
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subpage Hero Banner -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="subpage-hero-content">
+        <div class="breadcrumbs">
+          <a href="index.html"><i class="bi bi-house-door"></i> Inicio</a>
+          <span>/</span>
+          <span class="current">Repuestos</span>
+        </div>
+        <h1 class="subpage-title">
+          Repuestos <span class="gradient-text">Originales & Certificados</span>
+        </h1>
+        <p class="subpage-desc">
+          Disponemos de amplio stock de componentes de primera línea para laptops, computadoras de escritorio, Mac, celulares y tablets con garantía directa e instalación profesional en nuestro laboratorio.
+        </p>
+
+        <div class="subpage-quick-stats">
+          <div class="quick-stat-badge">
+            <i class="bi bi-box-seam-fill" style="color: var(--emerald-bright);"></i> Stock Inmediato
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-award-fill" style="color: #fbbf24;"></i> Garantía Escrita
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-tools" style="color: var(--silver);"></i> Instalación en Tienda
+          </div>
+          <div class="quick-stat-badge">
+            <i class="bi bi-truck" style="color: var(--emerald-bright);"></i> Envíos a Nivel Nacional
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección: Contenido Principal de Repuestos -->
+  <section class="section" id="repuestos" style="padding-top: 1rem;">
+    <div class="container">
+      
+      <div class="repuestos-grid">
+        
+        <!-- Tarjeta 1: Repuestos Computacionales -->
+        <div class="repuesto-card-main" id="repuestos-computacionales">
+          <div class="solution-header">
+            <div class="solution-icon" style="width: 56px; height: 56px; font-size: 1.75rem;">
+              <i class="bi bi-cpu-fill"></i>
+            </div>
+            <span class="badge badge-emerald">Para Laptops, PC, AIO & Mac</span>
+          </div>
+          <h3>Repuestos para Equipos Computacionales</h3>
+          <p style="color: var(--silver-muted); font-size: 0.95rem;">
+            Componentes de alta gama y sustitutos certificados para potenciar y reparar computadoras de escritorio y portátiles.
+          </p>
+
+          <ul class="repuestos-list-features">
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Discos de Estado Sólido SSD (NVMe M.2 / SATA 2.5")</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Kingston NV2, Samsung 980 EVO, Western Digital Green/Blue (256GB, 512GB, 1TB, 2TB).</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Memorias RAM (DDR3, DDR4, DDR5)</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Para Laptop (SODIMM) y PC Gamer/Oficina (DIMM) Kingston Fury Beast, Corsair Vengeance 3200MHz/5600MHz.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Pantallas LED / IPS / 144Hz para Laptops & AIO</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Displays 14", 15.6", 17.3" HD, Full HD Slim 30/40 pines y pantallas Retina para MacBook Air / Pro.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Fuentes de Poder & Cargadores Originales</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Fuentes certificadas 80 Plus Bronce/Gold (500W a 850W) y cargadores originales multimarca y MagSafe.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Teclados, Coolers, Baterías de Laptop & Pasta Térmica</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Teclados en español con retroiluminación, ventiladores disipadores y pasta térmica Arctic MX-4.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20disponibilidad%20y%20precio%20de%20un%20repuesto%20computacional%20(SSD,%20RAM,%20Pantalla,%20Fuente...)." target="_blank" class="btn btn-whatsapp">
+              <i class="bi bi-whatsapp me-2"></i> Consultar Repuesto PC / Laptop
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Repuestos Móviles -->
+        <div class="repuesto-card-main" id="repuestos-moviles">
+          <div class="solution-header">
+            <div class="solution-icon" style="width: 56px; height: 56px; font-size: 1.75rem;">
+              <i class="bi bi-phone-fill"></i>
+            </div>
+            <span class="badge badge-emerald">Para Celulares, Tablets & iPhone</span>
+          </div>
+          <h3>Repuestos para Equipos Móviles</h3>
+          <p style="color: var(--silver-muted); font-size: 0.95rem;">
+            Módulos, cristales, baterías y componentes electrónicos para celulares Android, iPhone, iPads y Smartwatch.
+          </p>
+
+          <ul class="repuestos-list-features">
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Módulos de Pantalla (AMOLED, Super AMOLED, Incell, Original)</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Samsung Galaxy (A, S, Note), iPhone (desde iPhone X hasta 16 Pro Max), Xiaomi Redmi/Poco, Motorola.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Baterías Certificadas de Carga Rápida (100% Salud)</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Celdas de alta densidad con chip inteligente de protección de temperatura y sobrecarga.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Pines de Carga Tipo C, Sub-Boards & Micrófonos</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Placas de carga rápida completas con componentes integrados de audio y antena de señal.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Cristales Táctiles (Glass OCA) & Tapas Traseras Láser</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Cristales de recambio para pantallas que aún dan imagen, tapas de cristal traseras para iPhone y Samsung.</p>
+              </div>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <strong>Cámaras, Flexores de Volumen & Sensores Face ID</strong>
+                <p style="font-size: 0.85rem; color: var(--silver-muted); margin-top: 0.1rem;">Repuestos minuciosamente testeados para garantizar la total funcionalidad de tu dispositivo.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20disponibilidad%20y%20precio%20de%20un%20repuesto%20m%C3%B3vil%20(Pantalla,%20Bater%C3%ADa,%20Pin%20de%20carga...)." target="_blank" class="btn btn-whatsapp">
+              <i class="bi bi-whatsapp me-2"></i> Consultar Repuesto Celular / iPhone
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de Garantía & Asesoría Rápida -->
+      <div class="subpage-cta-card">
+        <div class="subpage-cta-text">
+          <h3>¿Necesitas cotizar repuesto con instalación incluida?</h3>
+          <p>Escríbenos directamente indicando la marca y modelo de tu equipo para confirmarte stock y precio en minutos.</p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20cotizar%20un%20repuesto%20con%20instalaci%C3%B3n." target="_blank" class="btn btn-whatsapp btn-lg">
+            <i class="bi bi-whatsapp me-2"></i> WhatsApp: +593 98 733 4711
+          </a>
+          <a href="index.html#contacto" class="btn btn-primary btn-lg">
+            <i class="bi bi-telephone-inbound me-2"></i> Ver Canales de Contacto
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="DRUK Digital Logo Oficial" class="logo-img">
+          </a>
+          <p>
+            Especialistas en servicio técnico, repuestos originales y desarrollo de software a medida para el crecimiento de emprendimientos.
+          </p>
+          <div class="social-links" style="margin-top: 1rem;">
+            <a href="https://www.facebook.com/drukdigital" target="_blank" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/drukdigitalec/" target="_blank" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.tiktok.com/@drukdigitalec" target="_blank" class="social-icon-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://wa.me/593987334711" target="_blank" class="social-icon-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Categorías de Repuestos</h4>
+          <ul>
+            <li><a href="repuestos.html#repuestos-computacionales">Discos Sólidos SSD & RAM</a></li>
+            <li><a href="repuestos.html#repuestos-computacionales">Pantallas de Laptop & AIO</a></li>
+            <li><a href="repuestos.html#repuestos-moviles">Pantallas Celulares & OLED</a></li>
+            <li><a href="repuestos.html#repuestos-moviles">Baterías Originales iPhone</a></li>
+            <li><a href="repuestos.html#repuestos-moviles">Pines de Carga & Flexores</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="servicio-tecnico.html">Servicio Técnico Especializado</a></li>
+            <li><a href="software.html">TALLER MASTER Software</a></li>
+            <li><a href="index.html#contacto">Contacto, Cotizador & Ubicación</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DRUK Digital. Todos los derechos reservados.</p>
+        <p>Servicio Técnico, Repuestos & Soluciones Digitales para Emprendedores</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20disponibilidad%20de%20un%20repuesto." target="_blank" class="floating-whatsapp" aria-label="WhatsApp DRUK Digital">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Script JS Principal -->
+  <script src="app.js"></script>
+</body>
+</html>

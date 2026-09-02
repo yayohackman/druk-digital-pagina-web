@@ -660,71 +660,33 @@ button {
   height: 100%;
 }
 
-/* Tarjeta / Badge Destacada del Logo con Brillo y Texto Inicio */
+/* Tarjeta / Badge Destacada del Logo */
 .logo {
   display: inline-flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  padding: 4px 12px 3px 12px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1.5px solid rgba(52, 211, 153, 0.75);
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 16px;
-  box-shadow: 0 0 16px rgba(52, 211, 153, 0.45), 0 4px 15px rgba(0, 0, 0, 0.18), inset 0 0 8px rgba(52, 211, 153, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), inset 0 1px 2px rgba(255, 255, 255, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
   text-decoration: none;
-  position: relative;
-  animation: logoPulseGlow 3s infinite ease-in-out;
-}
-
-@keyframes logoPulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 14px rgba(52, 211, 153, 0.45), 0 4px 15px rgba(0, 0, 0, 0.18), inset 0 0 6px rgba(52, 211, 153, 0.2);
-    border-color: rgba(52, 211, 153, 0.7);
-  }
-  50% {
-    box-shadow: 0 0 26px rgba(52, 211, 153, 0.85), 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 0 12px rgba(52, 211, 153, 0.45);
-    border-color: #10b981;
-  }
 }
 
 .logo:hover {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 0 28px rgba(52, 211, 153, 0.95), 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(52, 211, 153, 0.5);
-  border-color: #059669;
-  background: #ffffff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 1);
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .logo-img {
-  height: 38px;
+  height: 52px;
   width: auto;
   object-fit: contain;
   display: block;
-}
-
-.logo-tag-home {
-  font-size: 0.68rem;
-  font-weight: 800;
-  color: #022c22;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  line-height: 1;
-  background: linear-gradient(135deg, rgba(52, 211, 153, 0.35) 0%, rgba(16, 185, 129, 0.25) 100%);
-  padding: 2px 8px;
-  border-radius: 10px;
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  transition: all 0.25s ease;
-}
-
-.logo:hover .logo-tag-home {
-  background: var(--emerald-bright);
-  color: #051610;
-  box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
 }
 
 .nav-links {
@@ -1125,29 +1087,13 @@ button {
   margin-top: 0.25rem;
 }
 
-.hero-visual .hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  margin-top: 1.15rem;
-  width: 100%;
-}
-
-.hero-visual .hero-actions .btn {
-  flex: 1;
-  justify-content: center;
-  text-align: center;
-  min-width: 180px;
-}
-
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  padding-top: 0.85rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--glass-border);
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .stat-item h4 {
@@ -1164,8 +1110,6 @@ button {
 
 .hero-visual {
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 .hero-img-wrapper {
@@ -1187,7 +1131,7 @@ button {
 .hero-img-wrapper img,
 .hero-img-wrapper video {
   width: 100%;
-  height: 420px;
+  height: 480px;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -2246,251 +2190,3 @@ input:checked + .slider:before {
     color: inherit;
   }
 }
-
-/* ==========================================================================
-   ESTILOS PARA SUBPÁGINAS (SUBPAGE HERO, BREADCRUMBS & CTA CARDS)
-   ========================================================================== */
-.subpage-hero {
-  padding-top: 130px;
-  padding-bottom: 2.5rem;
-  position: relative;
-  z-index: 2;
-}
-
-.subpage-hero-content {
-  background: linear-gradient(135deg, rgba(10, 38, 28, 0.65) 0%, rgba(5, 22, 16, 0.75) 100%);
-  border: 1px solid var(--glass-border-hover);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(52, 211, 153, 0.15);
-}
-
-.breadcrumbs {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.88rem;
-  color: var(--silver-muted);
-  margin-bottom: 1rem;
-}
-
-.breadcrumbs a {
-  color: var(--silver);
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: color 0.2s ease;
-}
-
-.breadcrumbs a:hover {
-  color: var(--emerald-bright);
-}
-
-.breadcrumbs .current {
-  color: var(--emerald-bright);
-  font-weight: 600;
-}
-
-.subpage-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-  line-height: 1.15;
-}
-
-.subpage-desc {
-  font-size: 1.05rem;
-  color: #cbd5e1;
-  max-width: 850px;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.subpage-quick-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.quick-stat-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: rgba(5, 22, 16, 0.6);
-  border: 1px solid rgba(52, 211, 153, 0.3);
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  backdrop-filter: blur(8px);
-}
-
-/* Tarjeta CTA Inferior de Subpágina */
-.subpage-cta-card {
-  margin-top: 3rem;
-  padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(10, 38, 28, 0.8) 0%, rgba(5, 22, 16, 0.9) 100%);
-  border: 1px solid var(--glass-border-hover);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-}
-
-.subpage-cta-text h3 {
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.subpage-cta-text p {
-  color: var(--silver-muted);
-  font-size: 0.95rem;
-  max-width: 650px;
-  margin: 0;
-}
-
-/* Botón Flotante de WhatsApp Global con Movimiento & Pulso de Ondas */
-.floating-whatsapp {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 58px;
-  height: 58px;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.85rem;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
-  z-index: 999;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: floatWhatsapp 3s infinite ease-in-out;
-}
-
-/* Anillo / Onda Expansiva de WhatsApp */
-.floating-whatsapp::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border-radius: 50%;
-  background: rgba(37, 211, 102, 0.45);
-  z-index: -1;
-  animation: whatsappWave 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
-}
-
-.floating-whatsapp::after {
-  content: '';
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  right: -12px;
-  bottom: -12px;
-  border-radius: 50%;
-  background: rgba(37, 211, 102, 0.25);
-  z-index: -2;
-  animation: whatsappWave 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32) 0.5s;
-}
-
-@keyframes floatWhatsapp {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
-  }
-  50% {
-    transform: translateY(-8px) scale(1.06);
-    box-shadow: 0 16px 35px rgba(37, 211, 102, 0.8), 0 0 25px rgba(37, 211, 102, 0.6);
-  }
-}
-
-@keyframes whatsappWave {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(1.65);
-    opacity: 0;
-  }
-}
-
-.floating-whatsapp:hover {
-  transform: scale(1.15) rotate(8deg);
-  box-shadow: 0 14px 40px rgba(37, 211, 102, 0.95);
-  color: #ffffff;
-  animation-play-state: paused;
-}
-
-/* Tarjetas de Pilares en Home */
-.pilar-card {
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.pilar-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--glass-border-hover);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(52, 211, 153, 0.2);
-}
-
-/* Responsive Overrides para Dispositivos Móviles */
-@media (max-width: 900px) {
-  .subpage-hero {
-    padding-top: 105px;
-    padding-bottom: 1.5rem;
-  }
-
-  .subpage-hero-content {
-    padding: 1.5rem 1.25rem;
-  }
-
-  .subpage-cta-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem;
-    gap: 1.25rem;
-  }
-
-  .subpage-cta-card .btn {
-    width: 100%;
-  }
-
-  .location-box {
-    grid-template-columns: 1fr !important;
-  }
-
-  .floating-whatsapp {
-    bottom: 18px;
-    right: 18px;
-    width: 52px;
-    height: 52px;
-    font-size: 1.6rem;
-  }
-
-  .hero-visual .hero-actions {
-    flex-direction: column;
-    gap: 0.65rem;
-    margin-top: 1rem;
-  }
-
-  .hero-visual .hero-actions .btn {
-    width: 100%;
-    min-width: unset;
-  }
-}
-
