@@ -32,12 +32,23 @@
   <div class="geo-shapes-layer" id="geoLayer">
     <svg style="width:0;height:0;position:absolute;">
       <defs>
+        <!-- Gradients Esmeralda Vibrante -->
         <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#047857"/><stop offset="100%" stop-color="#051610"/></linearGradient>
         <linearGradient id="f2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#065f46"/></linearGradient>
         <linearGradient id="f3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#022c22"/></linearGradient>
+        <linearGradient id="f4" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#047857"/></linearGradient>
+        <filter id="glowE"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#34d399" flood-opacity="0.45"/></filter>
+
+        <!-- Gradients Plata Metálico Cristalino -->
+        <linearGradient id="sf1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#cbd5e1"/></linearGradient>
+        <linearGradient id="sf2" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e2e8f0"/><stop offset="100%" stop-color="#64748b"/></linearGradient>
+        <linearGradient id="sf3" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#94a3b8"/><stop offset="100%" stop-color="#334155"/></linearGradient>
+        <linearGradient id="sf4" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#94a3b8"/></linearGradient>
+        <filter id="glowS"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#ffffff" flood-opacity="0.35"/></filter>
       </defs>
     </svg>
 
+    <!-- RED TRIANGULADA DE LÍNEAS Y VÉRTICES -->
     <svg class="geo-shape geo-triangulated-mesh geo-mesh-top" data-speed="14" data-rot="5" viewBox="0 0 1400 900" fill="none" style="top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1400px;">
       <g stroke="rgba(226, 232, 240, 0.35)" stroke-width="1.2" class="connecting-mesh">
         <polygon points="50,100 180,40 320,120" />
@@ -50,6 +61,52 @@
         <circle cx="320" cy="120" r="4.5"/>
         <circle cx="450" cy="30" r="4"/>
         <circle cx="580" cy="140" r="4.5"/>
+      </g>
+    </svg>
+
+    <!-- Poliedro 3D Esmeralda (Pirámide Verde) -->
+    <svg class="geo-shape geo-poly-hero-emerald" data-speed="25" data-rot="12" viewBox="0 0 300 300">
+      <g filter="url(#glowE)">
+        <polygon points="150,20 260,80 260,200 150,260 40,200 40,80" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <polygon points="150,20 260,80 150,140" fill="url(#f2)"/>
+        <polygon points="260,80 260,200 150,140" fill="url(#f1)"/>
+        <polygon points="260,200 150,260 150,140" fill="url(#f3)"/>
+        <polygon points="150,260 40,200 150,140" fill="url(#f1)"/>
+        <polygon points="40,200 40,80 150,140" fill="url(#f4)"/>
+        <polygon points="40,80 150,20 150,140" fill="url(#f2)"/>
+      </g>
+    </svg>
+
+    <!-- Poliedro 3D Plata Metálico (Cubo Plata) -->
+    <svg class="geo-shape geo-poly-hero-silver" data-speed="-20" data-rot="-10" viewBox="0 0 280 280">
+      <g filter="url(#glowS)">
+        <polygon points="140,20 240,75 240,195 140,250 40,195 40,75" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+        <polygon points="140,20 240,75 140,135" fill="url(#sf1)"/>
+        <polygon points="240,75 240,195 140,135" fill="url(#sf2)"/>
+        <polygon points="240,195 140,250 140,135" fill="url(#sf3)"/>
+        <polygon points="140,250 40,195 140,135" fill="url(#sf2)"/>
+        <polygon points="40,195 40,75 140,135" fill="url(#sf4)"/>
+        <polygon points="40,75 140,20 140,135" fill="url(#sf1)"/>
+      </g>
+    </svg>
+
+    <!-- Pirámide 3D Esmeralda Derecha -->
+    <svg class="geo-shape geo-poly-extra-hero" data-speed="18" data-rot="15" viewBox="0 0 220 220" style="top: 110px; right: 8%; width: 200px; height: 200px;">
+      <g filter="url(#glowE)">
+        <polygon points="110,15 195,175 25,175" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+        <polygon points="110,15 195,175 110,125" fill="url(#f2)"/>
+        <polygon points="195,175 25,175 110,125" fill="url(#f1)"/>
+        <polygon points="25,175 110,15 110,125" fill="url(#f3)"/>
+      </g>
+    </svg>
+
+    <!-- Triángulo Piramidal Plata -->
+    <svg class="geo-shape geo-tri-hero-1" data-speed="30" data-rot="18" viewBox="0 0 160 160">
+      <g filter="url(#glowS)">
+        <polygon points="80,15 145,135 15,135" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+        <polygon points="80,15 145,135 80,95" fill="url(#sf1)"/>
+        <polygon points="145,135 15,135 80,95" fill="url(#sf2)"/>
+        <polygon points="15,135 80,15 80,95" fill="url(#sf3)"/>
       </g>
     </svg>
   </div>
