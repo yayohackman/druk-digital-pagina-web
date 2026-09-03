@@ -3179,3 +3179,202 @@ body.parts-lightbox-open { overflow: hidden; }
   .parts-lightbox-close,
   .parts-lightbox-nav { width: 38px; height: 38px; }
 }
+
+
+/* ==========================================================================
+   AJUSTES RESPONSIVOS GLOBALES — celulares y tablets (las 5 páginas)
+   ========================================================================== */
+
+/* Nada debe poder arrastrarse de lado en ninguna pantalla */
+html { overflow-x: clip; }
+
+/* Las mallas trianguladas se centraban con transform: translateX(-50%), pero la
+   animación floatGeoSlow pisa ese transform (una animación gana siempre sobre el
+   estilo en línea), así que quedaban corridas a la derecha y sacaban scroll
+   horizontal en celular. Se centran con márgenes automáticos, que no se pisan. */
+.geo-triangulated-mesh,
+.geo-wireframe-lines {
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ==========================================================================
+   CABECERA Y MENÚ DE HAMBURGUESA (hasta 900px, para cubrir tablets verticales)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .nav-links,
+  .header-cta,
+  .dropdown-menu { display: none !important; }
+
+  .navbar { height: 74px; }
+
+  .logo { padding: 3px 10px 2px; }
+  .logo-img { height: 32px; }
+  .logo-tag-home { font-size: 0.62rem; padding: 2px 7px; }
+
+  /* El botón no tenía tamaño propio: dependía del glifo del icono, así que el
+     área para tocarlo quedaba en unos 29px (o en cero si la fuente de iconos
+     tardaba en cargar). Ahora es un botón de 46px con su propio fondo. */
+  .mobile-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    font-size: 1.55rem;
+    line-height: 1;
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1.5px solid rgba(5, 22, 16, 0.28);
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  .mobile-toggle i { display: block; width: 1em; height: 1em; line-height: 1; }
+
+  .mobile-toggle:active {
+    background: var(--emerald-bright);
+    border-color: #ffffff;
+    transform: scale(0.94);
+  }
+
+  /* ---------- Cajón de navegación ---------- */
+  .mobile-drawer {
+    top: 74px;
+    max-height: calc(100vh - 74px);
+    padding: 1.1rem 1.1rem 2.25rem;
+    gap: 0.4rem;
+    background: #071c14;
+    overscroll-behavior: contain;
+  }
+
+  /* Los títulos de sección heredaban el color oscuro (#0f172a) que usa la
+     cabecera clara y quedaban casi invisibles sobre el fondo verde del cajón:
+     solo se leían los sub-enlaces plateados. */
+  .mobile-drawer .nav-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(10, 38, 28, 0.92);
+    border: 1px solid rgba(226, 232, 240, 0.18);
+  }
+
+  .mobile-drawer .nav-link::after { display: none; }
+  .mobile-drawer .nav-link i { color: var(--emerald-bright); }
+
+  .mobile-drawer .nav-link.active {
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.3) 0%, rgba(19, 78, 56, 0.92) 100%);
+    border-color: var(--emerald-bright);
+    color: #ffffff;
+  }
+
+  .mobile-drawer .nav-link:active {
+    background: rgba(19, 78, 56, 0.95);
+    border-color: var(--emerald-bright);
+    color: #ffffff;
+  }
+
+  .mobile-sublinks {
+    grid-template-columns: 1fr !important;
+    gap: 0.3rem;
+    padding-left: 0.8rem;
+    margin: 0.15rem 0 0.65rem;
+    border-left: 2px solid rgba(52, 211, 153, 0.4);
+  }
+
+  .mobile-sublink {
+    padding: 0.62rem 0.8rem;
+    font-size: 0.87rem;
+    border-radius: 10px;
+    color: #cbd5e1;
+  }
+
+  .mobile-sublink i { color: var(--emerald-bright); }
+
+  /* Mientras el menú está abierto, la página de atrás no se mueve */
+  body.nav-open { overflow: hidden; }
+}
+
+/* ==========================================================================
+   CONTENIDO EN PANTALLAS PEQUEÑAS
+   ========================================================================== */
+@media (max-width: 620px) {
+  .container { padding: 0 1.15rem; }
+
+  .section { padding: 56px 0; }
+  .section-header { margin-bottom: 2.25rem; gap: 0.75rem; }
+  .section-title { font-size: 1.75rem; }
+  .section-subtitle { font-size: 0.95rem; }
+
+  .hero { padding-top: 108px; padding-bottom: 60px; }
+  .subpage-hero { padding-top: 96px; }
+
+  /* Las insignias en mayúsculas con mucho espaciado se partían en dos líneas */
+  .badge {
+    padding: 7px 15px;
+    font-size: 0.71rem;
+    letter-spacing: 1px;
+  }
+
+  /* Un párrafo largo centrado cuesta leerlo en una columna angosta */
+  .hero-description,
+  .hero-description *,
+  .trust-badge-card,
+  .info-item { text-align: left; }
+
+  .hero-description { padding: 0.85rem 1rem; font-size: 1rem; }
+
+  /* Botones a lo ancho: más fáciles de tocar y no se parten en dos líneas */
+  .btn { width: 100%; padding: 13px 20px; font-size: 0.98rem; }
+  .btn-sm { width: auto; }
+  .hero-actions { width: 100%; }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .breadcrumbs { font-size: 0.82rem; }
+
+  /* El icono y la insignia de cada tarjeta, uno debajo del otro */
+  .solution-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+
+  .service-card,
+  .solution-card { padding: 1.5rem 1.25rem; gap: 1rem; }
+
+  .service-title { font-size: 1.2rem; }
+  .symptom-tag { font-size: 0.76rem; padding: 0.3rem 0.7rem; }
+  .accordion-toggle { padding: 0.8rem 1.1rem; font-size: 0.9rem; }
+
+  .calculator-box { padding: 1.5rem 1.15rem; }
+  .demo-simulator { padding: 1.5rem 1.15rem; gap: 1.5rem; }
+  .simulator-info h3 { font-size: 1.4rem; }
+  .form-control { padding: 12px 15px; font-size: 0.95rem; }
+  .feature-toggle { padding: 0.75rem 1rem; }
+  .feature-toggle span { font-size: 0.88rem; }
+
+  .trust-badge-card { padding: 1rem 1.15rem; gap: 0.9rem; }
+  .trust-icon { width: 42px; height: 42px; font-size: 1.3rem; }
+  .location-info { padding: 1.5rem 1.25rem; }
+
+  .footer { padding: 45px 0 25px; }
+  .footer-grid { gap: 2rem; margin-bottom: 2rem; }
+  .footer-links h4 { font-size: 1rem; margin-bottom: 0.9rem; }
+
+  .subpage-title { margin-bottom: 0.6rem; }
+  .subpage-desc { font-size: 0.96rem; margin-bottom: 1.15rem; }
+  .quick-stat-badge { font-size: 0.8rem; padding: 5px 12px; }
+}
+
+/* Pantallas muy angostas (360px y menos) */
+@media (max-width: 380px) {
+  .container { padding: 0 1rem; }
+  .section-title { font-size: 1.6rem; }
+  .hero-title { font-size: 1.8rem; }
+  .logo-img { height: 29px; }
+  .badge { font-size: 0.67rem; letter-spacing: 0.6px; }
+}

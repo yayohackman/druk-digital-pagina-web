@@ -211,21 +211,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileDrawer = document.getElementById('mobileDrawer');
 
   if (mobileToggle && mobileDrawer) {
+    function setDrawer(open) {
+      mobileDrawer.classList.toggle('active', open);
+      document.body.classList.toggle('nav-open', open);
+      mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileToggle.querySelector('i').className = open ? 'bi bi-x-lg' : 'bi bi-list';
+    }
+
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.setAttribute('aria-controls', 'mobileDrawer');
+
     mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('active');
-      const icon = mobileToggle.querySelector('i');
-      if (mobileDrawer.classList.contains('active')) {
-        icon.className = 'bi bi-x-lg';
-      } else {
-        icon.className = 'bi bi-list';
-      }
+      setDrawer(!mobileDrawer.classList.contains('active'));
     });
 
     document.querySelectorAll('.mobile-drawer a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('active');
-        mobileToggle.querySelector('i').className = 'bi bi-list';
-      });
+      link.addEventListener('click', () => setDrawer(false));
+    });
+
+    // Cerrar con Escape o al pasar a escritorio
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('active')) setDrawer(false);
+    });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => {
+      if (e.matches) setDrawer(false);
     });
   }
 
