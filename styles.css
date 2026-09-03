@@ -2574,3 +2574,608 @@ input:checked + .slider:before {
   }
 }
 
+
+/* ==========================================================================
+   CATÁLOGO VISUAL INTERACTIVO DE REPUESTOS DE LAPTOP  (repuestos.html)
+   Se apoya en el fondo animado de polígonos ya existente (.geo-shapes-layer)
+   ========================================================================== */
+
+/* Keyframe genérico usado también por el filtro de soluciones de software */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.parts-catalog-section {
+  position: relative;
+  z-index: 2;
+  scroll-margin-top: 100px; /* para que el header fijo no tape el título al llegar por enlace */
+}
+
+/* ---------- Encabezado del catálogo ---------- */
+.parts-catalog-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.parts-catalog-title {
+  font-size: clamp(1.65rem, 3.2vw, 2.25rem);
+  margin: 0.9rem 0 0.55rem;
+  line-height: 1.15;
+}
+
+.parts-catalog-sub {
+  color: var(--silver-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0;
+}
+
+.parts-count-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 999px;
+  background: rgba(5, 22, 16, 0.65);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: var(--silver);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.parts-count-chip i { color: var(--emerald-bright); }
+.parts-count-chip strong { color: #ffffff; font-weight: 800; }
+
+/* ---------- Barra de filtros ---------- */
+.parts-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.parts-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.62rem 1.15rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(226, 232, 240, 0.16) 0%, rgba(148, 163, 184, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--silver);
+  font-size: 0.87rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.parts-filter-btn i {
+  font-size: 0.95rem;
+  color: var(--emerald-bright);
+  transition: color 0.28s ease;
+}
+
+.parts-filter-btn:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(226, 232, 240, 0.3) 0%, rgba(203, 213, 225, 0.2) 100%);
+}
+
+.parts-filter-btn.is-active {
+  background: linear-gradient(135deg, rgba(241, 245, 249, 0.95) 0%, rgba(203, 213, 225, 0.85) 100%);
+  border-color: #ffffff;
+  color: #051610;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35), 0 0 18px rgba(52, 211, 153, 0.35), inset 0 1px 1px #ffffff;
+}
+
+.parts-filter-btn.is-active i { color: #047857; }
+
+/* ---------- Grilla ---------- */
+.parts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ---------- Tarjeta de repuesto ---------- */
+.part-card {
+  --rx: 0deg;
+  --ry: 0deg;
+  --ty: 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+  transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s ease,
+              border-color 0.35s ease,
+              box-shadow 0.45s ease,
+              background 0.35s ease;
+  will-change: transform;
+}
+
+/* Mientras el cursor recorre la tarjeta seguimos el puntero sin retardo */
+.part-card.is-tilting {
+  transition: transform 0.1s linear,
+              border-color 0.35s ease,
+              box-shadow 0.45s ease,
+              background 0.35s ease;
+}
+
+.part-card:hover {
+  border-color: var(--emerald-bright);
+  background: var(--glass-card-hover);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55), 0 0 38px rgba(52, 211, 153, 0.3);
+}
+
+/* Aparición progresiva al hacer scroll (solo si el JS está activo) */
+.parts-grid.js-reveal .part-card { opacity: 0; --ty: 28px; }
+.parts-grid.js-reveal .part-card.is-revealed { opacity: 1; --ty: 0px; }
+.parts-grid.js-reveal .part-card.is-revealed:hover { --ty: -10px; }
+.part-card:hover { --ty: -10px; }
+
+.part-card.is-filtered-out { display: none; }
+
+/* ---------- Foto del repuesto ---------- */
+.part-media {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.15rem;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: linear-gradient(160deg, #ffffff 0%, #eef2f7 55%, #cfd8e3 100%);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.part-media img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.part-card:hover .part-media img { transform: scale(1.09) rotate(-1.5deg); }
+
+/* Destello que barre la foto al pasar el cursor */
+.part-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 36%, rgba(255, 255, 255, 0.9) 50%, transparent 64%);
+  transform: translateX(-130%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.part-card:hover .part-media::after { transform: translateX(130%); }
+
+.part-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  color: #04150f;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 16px rgba(4, 120, 87, 0.45);
+}
+
+.part-badge.is-order {
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+  color: #0f172a;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.part-zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: rgba(5, 22, 16, 0.85);
+  border: 1px solid rgba(52, 211, 153, 0.55);
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.part-card:hover .part-zoom { opacity: 1; transform: translateY(0) scale(1); }
+
+/* ---------- Cuerpo de la tarjeta ---------- */
+.part-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.part-cat {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--emerald-bright);
+}
+
+.part-name {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0;
+}
+
+.part-desc {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--silver-muted);
+  margin: 0;
+}
+
+.part-specs {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.part-specs li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: #cbd5e1;
+}
+
+.part-specs li i {
+  color: var(--emerald-bright);
+  font-size: 0.85rem;
+  margin-top: 0.12rem;
+  flex-shrink: 0;
+}
+
+.part-cta {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.part-cta a {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(226, 232, 240, 0.32) 0%, rgba(37, 211, 102, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.part-cta a:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #25d366 100%);
+  color: #051610;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+  border-color: #ffffff;
+}
+
+/* ---------- Estado vacío y nota ---------- */
+.parts-empty {
+  display: none;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--silver-muted);
+  background: rgba(5, 22, 16, 0.45);
+  border: 1px dashed var(--glass-border-hover);
+  border-radius: var(--radius-lg);
+}
+
+.parts-empty.is-visible { display: block; animation: fadeIn 0.4s ease both; }
+.parts-empty i { font-size: 2rem; color: var(--emerald-bright); display: block; margin-bottom: 0.75rem; }
+
+.parts-note {
+  margin-top: 1.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: rgba(5, 22, 16, 0.5);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--emerald-bright);
+  color: var(--silver-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.parts-note i { color: var(--emerald-bright); margin-right: 0.4rem; }
+
+/* ---------- Visor ampliado (lightbox) ---------- */
+.parts-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(2, 11, 8, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.parts-lightbox.is-open { opacity: 1; visibility: visible; }
+
+.parts-lightbox-panel {
+  position: relative;
+  width: min(940px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background: rgba(10, 38, 28, 0.97);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.75), 0 0 45px rgba(52, 211, 153, 0.22);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.parts-lightbox.is-open .parts-lightbox-panel { transform: translateY(0) scale(1); }
+
+.parts-lightbox-media {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 300px;
+  background: linear-gradient(160deg, #ffffff 0%, #eef2f7 55%, #cfd8e3 100%);
+}
+
+.parts-lightbox-media img {
+  max-width: 100%;
+  max-height: 46vh;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.parts-lightbox-body {
+  padding: 2rem 3.6rem 2rem 1.75rem; /* espacio a la derecha para el botón de cerrar */
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.parts-lightbox-body h3 { font-size: 1.35rem; color: #ffffff; margin: 0; }
+
+.parts-lightbox-close,
+.parts-lightbox-nav {
+  position: absolute;
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #ffffff;
+  cursor: pointer;
+  background: rgba(5, 22, 16, 0.88);
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  transition: all 0.25s ease;
+}
+
+.parts-lightbox-close:hover,
+.parts-lightbox-nav:hover {
+  background: var(--emerald-bright);
+  color: #051610;
+  border-color: #ffffff;
+  transform: scale(1.08);
+}
+
+.parts-lightbox-close { top: 12px; right: 12px; }
+.parts-lightbox-nav[hidden] { display: none; }
+.parts-lightbox-nav.is-prev { top: 50%; left: 12px; transform: translateY(-50%); }
+.parts-lightbox-nav.is-next { top: 50%; right: 12px; transform: translateY(-50%); }
+.parts-lightbox-nav.is-prev:hover { transform: translateY(-50%) scale(1.08); }
+.parts-lightbox-nav.is-next:hover { transform: translateY(-50%) scale(1.08); }
+
+body.parts-lightbox-open { overflow: hidden; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .parts-lightbox-panel { grid-template-columns: 1fr; max-height: 90vh; }
+  .parts-lightbox-media { min-height: 0; padding: 2.5rem 1.5rem 1.5rem; }
+  .parts-lightbox-media img { max-height: 34vh; }
+  .parts-lightbox-body { padding: 1.5rem; }
+  .parts-lightbox-nav.is-prev { left: 8px; }
+  .parts-lightbox-nav.is-next { right: 8px; }
+}
+
+@media (max-width: 620px) {
+  .parts-grid { grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: 1.1rem; }
+  .part-body { padding: 1rem 1rem 1.15rem; }
+  .part-name { font-size: 0.97rem; }
+  .parts-filter-bar { gap: 0.45rem; }
+  .parts-filter-btn { padding: 0.52rem 0.9rem; font-size: 0.8rem; }
+  .parts-catalog-head { align-items: flex-start; }
+}
+
+/* En equipos táctiles no aplicamos la inclinación 3D ni el zoom del cursor */
+@media (hover: none) {
+  .part-card:hover { --ty: 0px; transform: none; }
+  .part-card:hover .part-media img { transform: none; }
+  .part-zoom { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .part-card,
+  .part-card .part-media img,
+  .part-media::after,
+  .parts-lightbox-panel { transition: none !important; }
+  .parts-grid.js-reveal .part-card { opacity: 1; --ty: 0px; }
+  .part-card:hover { --ty: 0px; }
+}
+
+/* En móvil el desenfoque de fondo en 31 tarjetas cuesta demasiado en equipos
+   de gama media, así que lo cambiamos por un fondo sólido equivalente */
+@media (max-width: 768px) {
+  .part-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(9, 34, 25, 0.86);
+  }
+  .part-card:hover { background: rgba(16, 60, 44, 0.9); }
+}
+
+/* ==========================================================================
+   PANTALLAS PEQUEÑAS: barra de filtros deslizable y catálogos plegados
+   Con 31 fichas en una sola columna la página medía más de 23.000 px de alto,
+   imposible de recorrer en un celular. Aquí se muestran las primeras 4 de
+   cada catálogo y el resto se abre con un botón. Aplica hasta 900px para
+   cubrir también las tablets en vertical, que solo muestran 2 columnas.
+   ========================================================================== */
+
+.parts-more { display: none; }
+
+@media (max-width: 900px) {
+  .part-card.is-over-limit { display: none; }
+
+  .parts-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 360px;
+    margin: 1.35rem auto 0;
+    padding: 0.85rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(226, 232, 240, 0.2) 0%, rgba(19, 78, 56, 0.85) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    transition: all 0.25s ease;
+  }
+
+  .parts-more[hidden] { display: none; }
+
+  .parts-more:active {
+    background: linear-gradient(135deg, #ffffff 0%, var(--emerald-bright) 100%);
+    color: #051610;
+  }
+
+  .parts-more i { color: var(--emerald-bright); }
+  .parts-more:active i { color: #047857; }
+}
+
+/* El desenfoque de fondo en 31 tarjetas cuesta demasiado en celulares de gama
+   media, así que ahí se cambia por un fondo sólido equivalente (ver arriba) */
+
+/* Barra de filtros como tira deslizable, sangrada al borde de la pantalla
+   para que se note que hay más categorías a la derecha */
+@media (max-width: 700px) {
+  .parts-filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding: 0 1.5rem 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .parts-filter-bar::-webkit-scrollbar { display: none; }
+
+  .parts-filter-btn {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+}
+
+/* Ajustes finos de tipografía y espacio en celular */
+@media (max-width: 620px) {
+  .parts-catalog-section { padding-top: 2rem !important; scroll-margin-top: 88px; }
+  .parts-catalog-head { margin-bottom: 1.25rem; gap: 0.85rem; }
+  .parts-catalog-title { margin: 0.75rem 0 0.45rem; }
+  .parts-catalog-sub { font-size: 0.92rem; }
+  .parts-count-chip { padding: 0.42rem 0.95rem; font-size: 0.84rem; }
+  .parts-grid { gap: 1.1rem; }
+  .part-media { padding: 0.9rem; }
+  .parts-note { font-size: 0.86rem; padding: 0.9rem 1rem; margin-top: 1.35rem; }
+  .parts-empty { padding: 2rem 1.25rem; font-size: 0.9rem; }
+}
+
+/* El visor ampliado a pantalla casi completa en celular */
+@media (max-width: 560px) {
+  .parts-lightbox { padding: 0.75rem; }
+  .parts-lightbox-panel { max-height: 92vh; border-radius: var(--radius-md); }
+  .parts-lightbox-media { padding: 3rem 1.25rem 1.25rem; }
+  .parts-lightbox-media img { max-height: 30vh; }
+  .parts-lightbox-body { padding: 1.25rem; gap: 0.5rem; }
+  .parts-lightbox-body h3 { font-size: 1.15rem; }
+  .parts-lightbox-close,
+  .parts-lightbox-nav { width: 38px; height: 38px; }
+}

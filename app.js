@@ -522,5 +522,235 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
+
+  /* --------------------------------------------------------------------------
+     9. Catálogos Visuales Interactivos de Repuestos (repuestos.html)
+        Funciona con varios catálogos en la misma página (laptop y celular).
+        - Filtros por categoría, independientes en cada catálogo
+        - Aparición progresiva al hacer scroll
+        - Inclinación 3D siguiendo el cursor
+        - Visor ampliado (lightbox) compartido, con navegación
+     -------------------------------------------------------------------------- */
+  const partsCatalogs = document.querySelectorAll('.parts-catalog-section');
+
+  if (partsCatalogs.length) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    /* ================= Visor ampliado (uno solo para toda la página) ========= */
+    const lightbox = document.getElementById('partsLightbox');
+    let lbCards = [];
+    let lbIndex = 0;
+    let lastFocused = null;
+
+    const lb = lightbox ? {
+      img: lightbox.querySelector('[data-lb="img"]'),
+      cat: lightbox.querySelector('[data-lb="cat"]'),
+      name: lightbox.querySelector('[data-lb="name"]'),
+      desc: lightbox.querySelector('[data-lb="desc"]'),
+      specs: lightbox.querySelector('[data-lb="specs"]'),
+      cta: lightbox.querySelector('[data-lb="cta"]'),
+      close: lightbox.querySelector('.parts-lightbox-close'),
+      prev: lightbox.querySelector('.parts-lightbox-nav.is-prev'),
+      next: lightbox.querySelector('.parts-lightbox-nav.is-next')
+    } : null;
+
+    function fillLightbox(card) {
+      if (!lb || !card) return;
+      const img = card.querySelector('.part-media img');
+      if (lb.img && img) {
+        lb.img.src = img.getAttribute('src');
+        lb.img.alt = img.getAttribute('alt') || '';
+      }
+      if (lb.cat) lb.cat.textContent = card.querySelector('.part-cat')?.textContent || '';
+      if (lb.name) lb.name.textContent = card.querySelector('.part-name')?.textContent || '';
+      if (lb.desc) lb.desc.textContent = card.querySelector('.part-desc')?.textContent || '';
+      if (lb.specs) lb.specs.innerHTML = card.querySelector('.part-specs')?.innerHTML || '';
+      const cta = card.querySelector('.part-cta a');
+      if (lb.cta && cta) lb.cta.href = cta.getAttribute('href');
+    }
+
+    function openLightbox(card, siblings) {
+      if (!lightbox) return;
+      lbCards = siblings.filter((c) => !c.classList.contains('is-filtered-out') &&
+                                        !c.classList.contains('is-over-limit'));
+      lbIndex = Math.max(0, lbCards.indexOf(card));
+      fillLightbox(card);
+      lastFocused = document.activeElement;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('parts-lightbox-open');
+      const solo = lbCards.length < 2;
+      if (lb.prev) lb.prev.hidden = solo;
+      if (lb.next) lb.next.hidden = solo;
+      if (lb.close) lb.close.focus();
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('parts-lightbox-open');
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    function stepLightbox(dir) {
+      if (!lbCards.length) return;
+      lbIndex = (lbIndex + dir + lbCards.length) % lbCards.length;
+      fillLightbox(lbCards[lbIndex]);
+    }
+
+    if (lightbox && lb) {
+      if (lb.close) lb.close.addEventListener('click', closeLightbox);
+      if (lb.prev) lb.prev.addEventListener('click', () => stepLightbox(-1));
+      if (lb.next) lb.next.addEventListener('click', () => stepLightbox(1));
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') stepLightbox(-1);
+        if (e.key === 'ArrowRight') stepLightbox(1);
+      });
+    }
+
+    /* ================= Cada catálogo de la página ========================== */
+    partsCatalogs.forEach((section) => {
+      const grid = section.querySelector('.parts-grid');
+      if (!grid) return;
+
+      const cards = Array.from(grid.querySelectorAll('.part-card'));
+      const filterBtns = Array.from(section.querySelectorAll('.parts-filter-btn'));
+      const countEl = section.querySelector('.parts-count');
+      const emptyEl = section.querySelector('.parts-empty');
+
+      /* ---- Aparición progresiva al entrar en pantalla ---- */
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        grid.classList.add('js-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const card = entry.target;
+            const delay = parseInt(card.dataset.revealDelay || '0', 10);
+            setTimeout(() => card.classList.add('is-revealed'), delay);
+            revealObserver.unobserve(card);
+          });
+        }, { rootMargin: '0px 0px -60px 0px', threshold: 0.12 });
+
+        cards.forEach((card, i) => {
+          card.dataset.revealDelay = String((i % 4) * 90);
+          revealObserver.observe(card);
+        });
+      }
+
+      /* ---- Filtro por categoría + "ver más" en pantallas pequeñas ---- */
+      const COMPACT_LIMIT = 4;
+      const moreBtn = section.querySelector('.parts-more');
+      let currentFilter = 'all';
+      let expanded = false;
+
+      function render(opts) {
+        const animate = opts && opts.animate;
+        const reveal = opts && opts.reveal;
+
+        const matching = cards.filter(
+          (c) => currentFilter === 'all' || c.dataset.cat === currentFilter);
+        const shown = new Set(matching);
+
+        cards.forEach((c) => c.classList.toggle('is-filtered-out', !shown.has(c)));
+
+        // El recorte solo tiene efecto por debajo de 768px (lo decide el CSS)
+        const limit = expanded ? matching.length : COMPACT_LIMIT;
+        matching.forEach((c, i) => c.classList.toggle('is-over-limit', i >= limit));
+
+        matching.forEach((c) => {
+          if (animate && !reduceMotion) {
+            c.style.animation = 'none';
+            void c.offsetWidth; // reinicia la animación
+            c.style.animation = 'fadeIn 0.45s ease both';
+          }
+          if (reveal) c.classList.add('is-revealed');
+        });
+
+        if (countEl) countEl.textContent = String(matching.length);
+        if (emptyEl) emptyEl.classList.toggle('is-visible', matching.length === 0);
+
+        if (moreBtn) {
+          moreBtn.hidden = matching.length <= COMPACT_LIMIT;
+          moreBtn.innerHTML = expanded
+            ? '<i class="bi bi-chevron-up"></i> Ver menos'
+            : '<i class="bi bi-chevron-down"></i> Ver los ' + matching.length + ' repuestos';
+        }
+      }
+
+      if (moreBtn) {
+        moreBtn.addEventListener('click', () => {
+          expanded = !expanded;
+          render({ animate: true, reveal: true });
+          if (!expanded) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach((b) => {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+          currentFilter = btn.dataset.filter || 'all';
+          expanded = false;
+          render({ animate: true, reveal: true });
+        });
+      });
+
+      render();
+
+      /* ---- Inclinación 3D siguiendo el cursor ---- */
+      if (finePointer && !reduceMotion) {
+        cards.forEach((card) => {
+          card.addEventListener('mouseenter', () => card.classList.add('is-tilting'));
+
+          card.addEventListener('mousemove', (e) => {
+            const r = card.getBoundingClientRect();
+            const px = (e.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5
+            const py = (e.clientY - r.top) / r.height - 0.5;
+            card.style.setProperty('--ry', (px * 9).toFixed(2) + 'deg');
+            card.style.setProperty('--rx', (-py * 9).toFixed(2) + 'deg');
+          });
+
+          card.addEventListener('mouseleave', () => {
+            card.classList.remove('is-tilting');
+            card.style.setProperty('--rx', '0deg');
+            card.style.setProperty('--ry', '0deg');
+          });
+        });
+      }
+
+      /* ---- Abrir el visor ampliado ---- */
+      if (lightbox) {
+        cards.forEach((card) => {
+          const media = card.querySelector('.part-media');
+          if (!media) return;
+          media.setAttribute('tabindex', '0');
+          media.setAttribute('role', 'button');
+          media.addEventListener('click', () => openLightbox(card, cards));
+          media.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openLightbox(card, cards);
+            }
+          });
+        });
+      }
+    });
+  }
+
 });
 
