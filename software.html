@@ -18,6 +18,9 @@
   
   <!-- CSS Principal Liquid Glass -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Vercel Web Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -466,9 +469,21 @@
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 DRUK Digital. Todos los derechos reservados.</p>
-        <p>Servicio Técnico, Repuestos & Soluciones Digitales para Emprendedores</p>
+      <div class="footer-bottom" style="flex-direction: column; gap: 1rem;">
+        <div class="visitor-counter-wrapper">
+          <div class="visitor-counter-badge" id="visitorCounterBadge" title="Visitas totales a DRUK Digital">
+            <span class="visitor-live-dot"></span>
+            <i class="bi bi-eye-fill" style="color: var(--emerald-bright);"></i>
+            <span class="visitor-label">Visitas a la Web:</span>
+            <span class="visitor-count" id="visitorCountDisplay">
+              <img src="https://hits.sh/www.drukdigital.es.svg?style=flat-square&label=&color=10b981&labelColor=06281e" alt="Visitas" style="height: 18px; vertical-align: middle; border-radius: 4px; display: inline-block;">
+            </span>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 0.5rem;">
+          <p>&copy; 2026 DRUK Digital. Todos los derechos reservados.</p>
+          <p>Servicio Técnico, Repuestos & Soluciones Digitales para Emprendedores</p>
+        </div>
       </div>
     </div>
   </footer>

@@ -500,4 +500,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* --------------------------------------------------------------------------
+     CONTADOR DE VISITAS HÍBRIDO EN VIVO (DRUK DIGITAL)
+     -------------------------------------------------------------------------- */
+  const visitorCountDisplay = document.getElementById('visitorCountDisplay');
+  if (visitorCountDisplay) {
+    // Consultar el conteo real en hits.sh
+    fetch('https://hits.sh/www.drukdigital.es.svg?label=Visitas')
+      .then(res => res.text())
+      .then(svg => {
+        const match = svg.match(/<title>Visitas:\s*([\d,]+)<\/title>/);
+        if (match && match[1]) {
+          const rawCount = parseInt(match[1].replace(/,/g, ''), 10);
+          if (!isNaN(rawCount)) {
+            visitorCountDisplay.innerHTML = `<span class="visitor-number">+${rawCount.toLocaleString('es-EC')}</span>`;
+          }
+        }
+      })
+      .catch(() => {
+        // En caso de modo offline o bloqueo de red, el badge SVG actúa de fallback
+      });
+  }
+
 });
+

@@ -1957,6 +1957,86 @@ input:checked + .slider:before {
 }
 
 /* ==========================================================================
+   BADGE CONTADOR DE VISITAS LIQUID GLASS (HÍBRIDO)
+   ========================================================================== */
+.visitor-counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.visitor-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(6, 40, 30, 0.65);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 14px rgba(52, 211, 153, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.4rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--silver);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.visitor-counter-badge:hover {
+  border-color: var(--emerald-bright);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), 0 0 20px rgba(52, 211, 153, 0.35);
+  transform: translateY(-2px);
+}
+
+.visitor-live-dot {
+  width: 9px;
+  height: 9px;
+  background: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #34d399;
+  display: inline-block;
+  animation: pulseLiveDot 1.8s infinite;
+}
+
+@keyframes pulseLiveDot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(52, 211, 153, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+  }
+}
+
+.visitor-label {
+  font-weight: 500;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.visitor-count {
+  display: inline-flex;
+  align-items: center;
+}
+
+.visitor-number {
+  font-weight: 700;
+  color: #6ee7b7;
+  font-family: var(--font-heading);
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.55);
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 1400px) {
