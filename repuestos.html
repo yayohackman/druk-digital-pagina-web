@@ -268,31 +268,25 @@
             <a href="servicio-tecnico.html" class="nav-link dropdown-toggle">
               Servicio Técnico <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
             </a>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu" style="width: 620px;">
               <div class="dropdown-header">
                 <span><i class="bi bi-wrench-adjustable me-1"></i> Especialidades Técnicas</span>
                 <span>DRUK Digital</span>
               </div>
-              <div class="dropdown-grid">
-                <a href="servicio-tecnico.html#card-laptop" class="dropdown-link">
+              <div class="dropdown-stack">
+                <a href="servicio-tecnico.html#reparacion-computadoras" class="dropdown-link">
                   <i class="bi bi-laptop"></i>
-                  <div><strong>Reparación Laptops</strong><small>Multimarca, Pantallas & Gaming</small></div>
+                  <div>
+                    <strong>Reparación de Laptop, PC, AIO y Mac</strong>
+                    <small>Bisagras, pantallas, pin de carga, PC y todo en uno, MacBook e iMac, repotenciación con SSD y RAM, mantenimiento interno, Windows 11 PRO, Office y antivirus con licencia original</small>
+                  </div>
                 </a>
-                <a href="servicio-tecnico.html#card-cpu" class="dropdown-link">
-                  <i class="bi bi-pc-display"></i>
-                  <div><strong>Reparación CPU / PC</strong><small>Escritorio & Repotenciación</small></div>
-                </a>
-                <a href="servicio-tecnico.html#card-macbook" class="dropdown-link">
-                  <i class="bi bi-laptop-fill"></i>
-                  <div><strong>Reparación MacBook</strong><small>Air & Pro M1/M2/M3 / Placa</small></div>
-                </a>
-                <a href="servicio-tecnico.html#card-iphone" class="dropdown-link">
+                <a href="servicio-tecnico.html#reparacion-moviles" class="dropdown-link">
                   <i class="bi bi-phone-fill"></i>
-                  <div><strong>Reparación iPhone</strong><small>Baterías, Módulos & Software</small></div>
-                </a>
-                <a href="servicio-tecnico.html#card-celulares" class="dropdown-link" style="grid-column: span 2;">
-                  <i class="bi bi-phone"></i>
-                  <div><strong>Reparación Celulares & Tablets</strong><small>Android, Pantallas, Pines y Baterías</small></div>
+                  <div>
+                    <strong>Reparación de Celulares y Tablets</strong>
+                    <small>Cambio de display, micro soldadura, pin de carga, baterías, tapas, equipos mojados, actualización de Android e iOS y servicio técnico de tablets multimarca</small>
+                  </div>
                 </a>
               </div>
             </div>
@@ -416,6 +410,10 @@
     <div class="mobile-drawer" id="mobileDrawer">
       <a href="index.html" class="nav-link"><i class="bi bi-house-door me-2"></i> Inicio</a>
       <a href="servicio-tecnico.html" class="nav-link"><i class="bi bi-tools me-2"></i> Servicio Técnico</a>
+      <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
+        <a href="servicio-tecnico.html#reparacion-computadoras" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Reparación de Laptop, PC, AIO y Mac</a>
+        <a href="servicio-tecnico.html#reparacion-moviles" class="mobile-sublink"><i class="bi bi-phone-fill me-1"></i> Reparación de Celulares y Tablets</a>
+      </div>
       <a href="repuestos.html" class="nav-link active"><i class="bi bi-box-seam me-2"></i> Repuestos Originales</a>
       <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
         <a href="repuestos.html#repuestos-computacionales" class="mobile-sublink"><i class="bi bi-laptop me-1"></i> Repuestos para Laptops</a>
@@ -481,7 +479,7 @@
        Catálogo visual interactivo · repuestos laptops
        (flota sobre el fondo animado de polígonos .geo-shapes-layer)
        ====================================================================== -->
-  <section class="section parts-catalog-section" id="repuestos-computacionales" style="padding-top: 2.5rem; padding-bottom: 1rem;">
+  <section class="section parts-catalog-section" id="repuestos-computacionales" data-unit="repuestos" style="padding-top: 2.5rem; padding-bottom: 1rem;">
     <div class="container">
 
       <div class="parts-catalog-head">
@@ -489,7 +487,7 @@
           <span class="badge badge-emerald"><i class="bi bi-lightning-charge-fill"></i> Disponible en tienda</span>
           <h2 class="parts-catalog-title">Repuestos de <span class="gradient-text">Laptop</span> en Stock</h2>
           <p class="parts-catalog-sub">
-            Componentes para laptops, computadoras de escritorio, AIO y Mac que manejamos en nuestro laboratorio de Quito. Filtra por categoría, toca cualquier foto para verla en grande y consulta el precio directo por WhatsApp.
+            Componentes para laptops, MacBook Pro y MacBook Air que manejamos en nuestro laboratorio de Quito. Filtra por categoría, toca cualquier foto para verla en grande y consulta el precio directo por WhatsApp.
           </p>
         </div>
         <div class="parts-count-chip">
@@ -515,7 +513,7 @@
           <article class="part-card" data-cat="almacenamiento">
             <div class="part-media">
               <span class="part-badge">En stock</span>
-              <img src="repuestos%20laptops/ssd%20nvme.jpg" alt="Disco de estado sólido SSD NVMe M.2 2280 para laptop y computadora" loading="lazy" decoding="async">
+              <img src="repuestos%20laptops/kingston%20ssd%20m.2.webp" alt="Disco de estado sólido SSD Kingston NV3 PCIe 4.0 NVMe M.2 para laptop" loading="lazy" decoding="async">
               <span class="part-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
             </div>
             <div class="part-body">
@@ -523,7 +521,7 @@
               <h3 class="part-name">Discos Sólidos SSD</h3>
               <p class="part-desc">Multiplica la velocidad de arranque y de carga de programas. Clonamos tu información para que no pierdas nada.</p>
               <ul class="part-specs">
-              <li><i class="bi bi-check-circle-fill"></i> M.2 NVMe · M.2 SATA · 2.5" SATA</li>
+              <li><i class="bi bi-check-circle-fill"></i> M.2 NVMe PCIe 4.0 · M.2 SATA · 2.5" SATA</li>
               <li><i class="bi bi-check-circle-fill"></i> 256GB · 500GB · 1TB · 2TB</li>
               <li><i class="bi bi-check-circle-fill"></i> Kingston · Samsung · Western Digital · Adata</li>
               <li><i class="bi bi-check-circle-fill"></i> Para HP · Dell · Lenovo · Asus · Acer · Apple · Dynabook</li>
@@ -539,21 +537,21 @@
           <article class="part-card" data-cat="ram">
             <div class="part-media">
               <span class="part-badge">En stock</span>
-              <img src="repuestos%20laptops/memoria%20ram%20laptop.webp" alt="Memoria RAM SODIMM para laptop y DIMM para computadora de escritorio" loading="lazy" decoding="async">
+              <img src="repuestos%20laptops/memoria%20ram%20laptop.webp" alt="Memoria RAM SO-DIMM de reemplazo para laptop" loading="lazy" decoding="async">
               <span class="part-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
             </div>
             <div class="part-body">
               <span class="part-cat">Memorias RAM</span>
-              <h3 class="part-name">Memorias RAM</h3>
-              <p class="part-desc">Amplía la memoria para trabajar con más programas abiertos sin trabas. La prueba de compatibilidad no tiene costo.</p>
+              <h3 class="part-name">Memorias RAM Laptop</h3>
+              <p class="part-desc">Amplía la memoria para trabajar con más programas abiertos sin trabas. Verificamos sin costo si tu modelo permite ampliación.</p>
               <ul class="part-specs">
+              <li><i class="bi bi-check-circle-fill"></i> Memorias RAM SO-DIMM</li>
               <li><i class="bi bi-check-circle-fill"></i> DDR3 · DDR4 · DDR5</li>
-              <li><i class="bi bi-check-circle-fill"></i> SODIMM para laptop · DIMM para PC</li>
               <li><i class="bi bi-check-circle-fill"></i> 4GB · 8GB · 16GB · 32GB</li>
               <li><i class="bi bi-check-circle-fill"></i> Para HP · Dell · Lenovo · Asus · Acer · Apple · Dynabook</li>
               </ul>
               <div class="part-cta">
-                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital%21%20Me%20interesa%20este%20repuesto%3A%20%2AMemorias%20RAM%2A.%20%C2%BFLo%20tienen%20disponible%20y%20cu%C3%A1l%20es%20el%20precio%20con%20instalaci%C3%B3n%3F" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital%21%20Me%20interesa%20este%20repuesto%3A%20%2AMemorias%20RAM%20Laptop%2A.%20%C2%BFLo%20tienen%20disponible%20y%20cu%C3%A1l%20es%20el%20precio%20con%20instalaci%C3%B3n%3F" target="_blank" rel="noopener noreferrer">
                   <i class="bi bi-whatsapp"></i> Consultar precio
                 </a>
               </div>
@@ -571,7 +569,7 @@
               <h3 class="part-name">Pantallas LED para Laptop</h3>
               <p class="part-desc">Display de reemplazo para equipos con la pantalla rota, con líneas o sin imagen.</p>
               <ul class="part-specs">
-              <li><i class="bi bi-check-circle-fill"></i> 11.6" · 14" · 15.6" · 17.3" y AIO</li>
+              <li><i class="bi bi-check-circle-fill"></i> 11.6" · 14" · 15.6" · 17.3" y Retina de MacBook</li>
               <li><i class="bi bi-check-circle-fill"></i> Conector de 30 y 40 pines · versión táctil (touch)</li>
               <li><i class="bi bi-check-circle-fill"></i> HD 720p · Full HD 1080p · 4K</li>
               <li><i class="bi bi-check-circle-fill"></i> Para HP · Dell · Lenovo · Asus · Acer · Apple · Dynabook</li>
@@ -587,7 +585,7 @@
           <article class="part-card" data-cat="flex">
             <div class="part-media">
               <span class="part-badge">En stock</span>
-              <img src="repuestos%20laptops/cables%20flex%20de%20video.jpg" alt="Cable flex de video LVDS de reemplazo para laptop con sus conectores" loading="lazy" decoding="async">
+              <img src="repuestos%20laptops/cable%20flex%20de%20video%202.webp" alt="Cable flex de video LVDS de reemplazo para laptop con sus conectores" loading="lazy" decoding="async">
               <span class="part-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
             </div>
             <div class="part-body">
@@ -595,9 +593,9 @@
               <h3 class="part-name">Cables Flex de Video</h3>
               <p class="part-desc">El cable que lleva la imagen de la placa a la pantalla. Se cambia cuando la pantalla parpadea, se ve con líneas o se apaga al mover la tapa.</p>
               <ul class="part-specs">
-              <li><i class="bi bi-check-circle-fill"></i> Conector de 30 y 40 pines</li>
+              <li><i class="bi bi-check-circle-fill"></i> Conectores de 30, 40 y 44 pines</li>
               <li><i class="bi bi-check-circle-fill"></i> Versiones con y sin táctil (touch)</li>
-              <li><i class="bi bi-check-circle-fill"></i> Medida y conector según el modelo</li>
+              <li><i class="bi bi-check-circle-fill"></i> Largo y conector según el modelo</li>
               <li><i class="bi bi-check-circle-fill"></i> Para HP · Dell · Lenovo · Asus · Acer · Apple · Dynabook</li>
               </ul>
               <div class="part-cta">
@@ -692,7 +690,7 @@
               <ul class="part-specs">
               <li><i class="bi bi-check-circle-fill"></i> Distribución en español (con Ñ)</li>
               <li><i class="bi bi-check-circle-fill"></i> Flex de conexión incluido</li>
-              <li><i class="bi bi-check-circle-fill"></i> Versiones con retroiluminación bajo pedido</li>
+              <li><i class="bi bi-check-circle-fill"></i> Versiones con retroiluminación y gamer</li>
               <li><i class="bi bi-check-circle-fill"></i> Para HP · Dell · Lenovo · Asus · Acer · Apple · Dynabook</li>
               </ul>
               <div class="part-cta">
@@ -714,7 +712,7 @@
 
       <p class="parts-note">
         <i class="bi bi-info-circle"></i>
-        <strong>También manejamos:</strong> fuentes de poder 80 Plus, cargadores originales y MagSafe, disipadores y heatpipes, pasta térmica, pantallas Retina para MacBook y memorias DIMM para PC de escritorio. Envíanos la marca y el modelo exacto de tu equipo y te cotizamos el mismo día, con instalación en taller o envío a nivel nacional.
+        <strong>También manejamos:</strong> cargadores originales y MagSafe, pantallas Retina para MacBook Pro y MacBook Air, topcase, trackpads, bisagras, carcasas, disipadores y pasta térmica. Envíanos la marca y el modelo exacto de tu equipo y te cotizamos el mismo día, con instalación en taller o envío a nivel nacional.
       </p>
 
     </div>
@@ -724,7 +722,7 @@
        Catálogo visual interactivo · repuestos celulares
        (flota sobre el fondo animado de polígonos .geo-shapes-layer)
        ====================================================================== -->
-  <section class="section parts-catalog-section" id="repuestos-moviles" style="padding-top: 3.5rem; padding-bottom: 1rem;">
+  <section class="section parts-catalog-section" id="repuestos-moviles" data-unit="repuestos" style="padding-top: 3.5rem; padding-bottom: 1rem;">
     <div class="container">
 
       <div class="parts-catalog-head">
@@ -942,7 +940,7 @@
        Catálogo visual interactivo · repuestos  PC-CPU
        (flota sobre el fondo animado de polígonos .geo-shapes-layer)
        ====================================================================== -->
-  <section class="section parts-catalog-section" id="repuestos-pc" style="padding-top: 3.5rem; padding-bottom: 1rem;">
+  <section class="section parts-catalog-section" id="repuestos-pc" data-unit="repuestos" style="padding-top: 3.5rem; padding-bottom: 1rem;">
     <div class="container">
 
       <div class="parts-catalog-head">
@@ -955,7 +953,7 @@
         </div>
         <div class="parts-count-chip">
           <i class="bi bi-box-seam-fill"></i>
-          <strong class="parts-count">10</strong>&nbsp;repuestos
+          <strong class="parts-count">11</strong>&nbsp;repuestos
         </div>
       </div>
 
@@ -970,6 +968,7 @@
         <button type="button" class="parts-filter-btn" data-filter="refrigeracion" role="tab" aria-selected="false"><i class="bi bi-droplet-fill"></i> Refrigeración</button>
         <button type="button" class="parts-filter-btn" data-filter="cases" role="tab" aria-selected="false"><i class="bi bi-pc-display"></i> Cases</button>
         <button type="button" class="parts-filter-btn" data-filter="red" role="tab" aria-selected="false"><i class="bi bi-wifi"></i> Red WiFi</button>
+        <button type="button" class="parts-filter-btn" data-filter="perifericos" role="tab" aria-selected="false"><i class="bi bi-mouse2-fill"></i> Periféricos</button>
       </div>
 
       <div class="parts-grid">
@@ -1214,6 +1213,30 @@
             </div>
           </article>
 
+          <article class="part-card" data-cat="perifericos">
+            <div class="part-media">
+              <span class="part-badge">En stock</span>
+              <img src="repuestos%20%20PC-CPU/combo%20teclado%20y%20mouse.webp" alt="Combo de teclado y mouse gamer con retroiluminación RGB para computadora" loading="lazy" decoding="async">
+              <span class="part-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+            </div>
+            <div class="part-body">
+              <span class="part-cat">Periféricos</span>
+              <h3 class="part-name">Combos de Teclado y Mouse</h3>
+              <p class="part-desc">Para renovar el puesto de trabajo o completar un equipo recién armado, en versión de oficina o gamer.</p>
+              <ul class="part-specs">
+              <li><i class="bi bi-check-circle-fill"></i> Alámbricos por USB e inalámbricos</li>
+              <li><i class="bi bi-check-circle-fill"></i> Versiones gamer con retroiluminación RGB</li>
+              <li><i class="bi bi-check-circle-fill"></i> Teclado completo con teclado numérico</li>
+              <li><i class="bi bi-check-circle-fill"></i> Genius · Logitech · Quasad · Marvo</li>
+              </ul>
+              <div class="part-cta">
+                <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital%21%20Me%20interesa%20este%20repuesto%3A%20%2ACombos%20de%20Teclado%20y%20Mouse%2A.%20%C2%BFLo%20tienen%20disponible%20y%20cu%C3%A1l%20es%20el%20precio%20con%20instalaci%C3%B3n%3F" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-whatsapp"></i> Consultar precio
+                </a>
+              </div>
+            </div>
+          </article>
+
       </div>
 
       <button type="button" class="parts-more" hidden></button>
@@ -1235,7 +1258,7 @@
        Catálogo visual interactivo · Repuestos tablets
        (flota sobre el fondo animado de polígonos .geo-shapes-layer)
        ====================================================================== -->
-  <section class="section parts-catalog-section" id="repuestos-tablet" style="padding-top: 3.5rem; padding-bottom: 1rem;">
+  <section class="section parts-catalog-section" id="repuestos-tablet" data-unit="repuestos" style="padding-top: 3.5rem; padding-bottom: 1rem;">
     <div class="container">
 
       <div class="parts-catalog-head">

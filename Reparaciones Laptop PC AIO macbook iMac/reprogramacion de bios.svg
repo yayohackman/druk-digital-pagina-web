@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" role="img" aria-label="Laptop sin imagen con el LED de mayúsculas parpadeando y un programador USB conectado al chip de BIOS">
+  <defs>
+    <linearGradient id="bi-plate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef4f1"/>
+    </linearGradient>
+    <linearGradient id="bi-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="640" fill="url(#bi-plate)"/>
+
+  <!-- laptop sin imagen -->
+  <g transform="translate(96 118)">
+    <rect x="0" y="0" width="404" height="256" rx="16" fill="#334155"/>
+    <rect x="16" y="16" width="372" height="212" rx="8" fill="url(#bi-screen)"/>
+    <!-- pantalla apagada: sin señal -->
+    <g stroke="#475569" stroke-width="7" stroke-linecap="round">
+      <path d="M158 106 l88 88 M246 106 l-88 88"/>
+    </g>
+    <text x="202" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+          font-size="21" fill="#64748b" letter-spacing="2">SIN IMAGEN</text>
+    <!-- base y teclado -->
+    <path d="M-34 256 H438 l30 44 H-64z" fill="#475569"/>
+    <rect x="-64" y="300" width="532" height="14" rx="7" fill="#334155"/>
+    <!-- LED de mayúsculas y de encendido parpadeando -->
+    <g>
+      <circle cx="52" cy="278" r="11" fill="#f59e0b">
+        <animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="52" cy="278" r="21" fill="none" stroke="#f59e0b" stroke-width="4" opacity="0.5">
+        <animate attributeName="r" values="13;30" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.55;0" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="112" cy="278" r="11" fill="#f59e0b">
+        <animate attributeName="opacity" values="0.15;1;0.15" dur="1.1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <text x="82" y="336" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+          font-size="19" font-weight="600" fill="#64748b">LED parpadeando</text>
+  </g>
+
+  <!-- flecha de diagnóstico -->
+  <path d="M552 250 h74" fill="none" stroke="#10b981" stroke-width="9" stroke-linecap="round"/>
+  <path d="M612 230 l26 20 -26 20z" fill="#10b981"/>
+
+  <!-- placa con chip de BIOS y pinza del programador -->
+  <g transform="translate(664 116)">
+    <rect x="0" y="42" width="248" height="200" rx="14" fill="#0f766e"/>
+    <rect x="0" y="42" width="248" height="200" rx="14" fill="none" stroke="#115e59" stroke-width="5"/>
+    <g stroke="#5eead4" stroke-width="3" opacity="0.55" fill="none">
+      <path d="M22 84h74v40h58M22 150h44v52h96M150 84v34h76M40 202h30"/>
+    </g>
+    <g fill="#134e4a">
+      <rect x="176" y="150" width="46" height="34" rx="5"/>
+      <rect x="26" y="60" width="34" height="18" rx="4"/>
+    </g>
+
+    <!-- chip de BIOS resaltado -->
+    <rect x="72" y="128" width="86" height="60" rx="7" fill="#1f2937" stroke="#f59e0b" stroke-width="5"/>
+    <g fill="#9ca3af">
+      <rect x="60" y="138" width="14" height="7" rx="2"/><rect x="60" y="154" width="14" height="7" rx="2"/><rect x="60" y="170" width="14" height="7" rx="2"/>
+      <rect x="156" y="138" width="14" height="7" rx="2"/><rect x="156" y="154" width="14" height="7" rx="2"/><rect x="156" y="170" width="14" height="7" rx="2"/>
+    </g>
+    <text x="115" y="164" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+          font-size="20" font-weight="700" fill="#f59e0b">BIOS</text>
+
+    <!-- pinza / cable del programador -->
+    <path d="M115 128 V70 h96" fill="none" stroke="#f59e0b" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 0"/>
+    <circle cx="115" cy="128" r="10" fill="#f59e0b"/>
+  </g>
+
+  <!-- programador USB -->
+  <g transform="translate(700 396)">
+    <rect x="0" y="0" width="200" height="52" rx="8" fill="#166534"/>
+    <rect x="0" y="0" width="200" height="52" rx="8" fill="none" stroke="#14532d" stroke-width="4"/>
+    <rect x="-46" y="12" width="52" height="28" rx="4" fill="#d4a017"/>
+    <g fill="#052e16">
+      <rect x="26" y="14" width="46" height="24" rx="4"/>
+      <rect x="88" y="16" width="26" height="20" rx="3"/>
+    </g>
+    <g fill="#f59e0b">
+      <rect x="128" y="14" width="7" height="24" rx="2"/><rect x="141" y="14" width="7" height="24" rx="2"/>
+      <rect x="154" y="14" width="7" height="24" rx="2"/><rect x="167" y="14" width="7" height="24" rx="2"/>
+    </g>
+    <text x="100" y="86" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+          font-size="20" font-weight="600" fill="#475569">Programador USB</text>
+  </g>
+</svg>

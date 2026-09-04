@@ -635,6 +635,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const filterBtns = Array.from(section.querySelectorAll('.parts-filter-btn'));
       const countEl = section.querySelector('.parts-count');
       const emptyEl = section.querySelector('.parts-empty');
+      const unidad = section.dataset.unit || 'repuestos';
 
       /* ---- Aparición progresiva al entrar en pantalla ---- */
       if ('IntersectionObserver' in window && !reduceMotion) {
@@ -691,7 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
           moreBtn.hidden = matching.length <= COMPACT_LIMIT;
           moreBtn.innerHTML = expanded
             ? '<i class="bi bi-chevron-up"></i> Ver menos'
-            : '<i class="bi bi-chevron-down"></i> Ver los ' + matching.length + ' repuestos';
+            : '<i class="bi bi-chevron-down"></i> Ver los ' + matching.length + ' ' + unidad;
         }
       }
 
