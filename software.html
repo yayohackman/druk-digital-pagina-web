@@ -190,7 +190,33 @@
           </li>
 
           <!-- Item 3: Software (Activo) -->
-          <li><a href="software.html" class="nav-link active"><i class="bi bi-code-slash me-1"></i> Software</a></li>
+          <li class="nav-dropdown-item">
+            <a href="software.html" class="nav-link dropdown-toggle active">
+              <i class="bi bi-code-slash me-1"></i> Desarrollo de Software <i class="bi bi-chevron-down ms-1" style="font-size: 0.8rem;"></i>
+            </a>
+            <div class="dropdown-menu" style="width: 620px;">
+              <div class="dropdown-header">
+                <span><i class="bi bi-code-slash me-1"></i> Desarrollo de Software</span>
+                <span>DRUK Digital</span>
+              </div>
+              <div class="dropdown-stack">
+                <a href="software.html#taller-master" class="dropdown-link">
+                  <i class="bi bi-cpu-fill"></i>
+                  <div>
+                    <strong>Software para Emprendedores</strong>
+                    <small>TALLER MASTER: ERP con Inteligencia Artificial para centros de servicio técnico. Órdenes con QR, inventario, punto de venta y avisos automáticos por WhatsApp</small>
+                  </div>
+                </a>
+                <a href="software.html#paginas-web" class="dropdown-link">
+                  <i class="bi bi-globe2"></i>
+                  <div>
+                    <strong>Páginas Web (Landing Page)</strong>
+                    <small>Páginas como la de DRUK Digital, con hosting, dominio propio y correos electrónicos corporativos</small>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
 
           <!-- Item 4: Submenú Desplegable de Ventas -->
           <li class="nav-dropdown-item">
@@ -275,7 +301,11 @@
         <a href="repuestos.html#repuestos-pc" class="mobile-sublink"><i class="bi bi-pc-display me-1"></i> Repuestos para PC / CPU</a>
         <a href="repuestos.html#repuestos-tablet" class="mobile-sublink"><i class="bi bi-tablet-fill me-1"></i> Repuestos para Tablet / iPad</a>
       </div>
-      <a href="software.html" class="nav-link active"><i class="bi bi-code-slash me-2"></i> Software para Emprendedores | TALLER MASTER</a>
+      <a href="software.html" class="nav-link active"><i class="bi bi-code-slash me-2"></i> Desarrollo de Software</a>
+      <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
+        <a href="software.html#taller-master" class="mobile-sublink"><i class="bi bi-cpu-fill me-1"></i> Software para Emprendedores</a>
+        <a href="software.html#paginas-web" class="mobile-sublink"><i class="bi bi-globe2 me-1"></i> Páginas Web (Landing Page)</a>
+      </div>
 
       <a href="ventas.html" class="nav-link"><i class="bi bi-cart-check me-2"></i> Ventas & Ensamble de Equipos</a>
       <div class="mobile-sublinks" style="grid-template-columns: 1fr;">
@@ -330,6 +360,54 @@
   </section>
 
   <!-- Sección: Módulos y Beneficios de TALLER MASTER -->
+
+  <!-- Sección: Qué es TALLER MASTER -->
+  <section class="section tm-intro" id="taller-master">
+    <div class="container">
+      <div class="tm-card">
+        <div class="badge badge-emerald">
+          <i class="bi bi-cpu-fill me-1"></i> Software para Emprendedores
+        </div>
+        <h2 class="tm-title">TALLER MASTER, el <span>ERP con Inteligencia Artificial</span> para tu centro de servicio técnico</h2>
+
+        <p class="tm-text">
+          Taller Master es el ERP integral y sistema operativo todo&#8209;en&#8209;uno con Inteligencia
+          Artificial diseñado exclusivamente para centros de servicio técnico de laptops,
+          celulares y electrónica.
+        </p>
+        <p class="tm-text">
+          Reemplaza cuadernos, hojas de Excel y múltiples programas dispersos centralizando en
+          una sola plataforma: <strong>recepción de equipos con tickets QR</strong>, control
+          estricto de repuestos e inventario, <strong>punto de venta (POS) con arqueo de
+          caja</strong> y avisos automáticos por WhatsApp al cliente. Además, incorpora
+          <strong>escaneo inteligente de facturas con IA</strong>, permitiéndote digitalizar
+          compras y actualizar stock en segundos.
+        </p>
+        <p class="tm-highlight">
+          El resultado: cero pérdidas de repuestos, control financiero total y una imagen
+          corporativa de primer nivel que fideliza a tus clientes.
+        </p>
+
+        <div class="tm-video" id="tallerMasterVideo">
+          <!-- Cuando tengas el video, reemplaza este bloque por:
+               <video src="taller master.mp4" controls preload="metadata" playsinline
+                      poster="taller master portada.jpg"></video>            -->
+          <div class="tm-video-ph">
+            <i class="bi bi-play-btn"></i>
+            <strong>Video explicativo de TALLER MASTER</strong>
+            <small>Aquí va el recorrido en video por el sistema: recepción con QR, inventario, caja y avisos automáticos.</small>
+          </div>
+        </div>
+
+        <div class="tm-actions">
+          <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital%21%20Quiero%20solicitar%20una%20demo%20de%20TALLER%20MASTER%20para%20mi%20taller." target="_blank" rel="noopener noreferrer" class="tecnico-cta">
+            <i class="bi bi-whatsapp"></i> Solicitar Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section software-section" id="desarrollo-software" style="padding-top: 1rem;">
     <div class="container">
       <div class="section-header">
@@ -453,6 +531,67 @@
         </a>
       </div>
 
+    </div>
+  </section>
+
+
+  <!-- Sección: Páginas Web (Landing Page) -->
+  <section class="section web-section" id="paginas-web">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge badge-emerald">
+          <i class="bi bi-globe2 me-1"></i> Presencia Digital
+        </div>
+        <h2 class="section-title">Páginas Web y Landing Pages</h2>
+        <p class="section-subtitle">
+          Diseñamos y publicamos páginas web para negocios y emprendimientos, con el mismo
+          acabado de la que estás viendo ahora mismo.
+        </p>
+      </div>
+
+      <div class="web-demo">
+        <p>
+          <b>Esta misma página es nuestro ejemplo.</b> www.drukdigital.es la desarrollamos
+          nosotros de principio a fin: diseño, animaciones, catálogos y contacto directo por
+          WhatsApp. Lo que ves aquí es lo que podemos hacer para tu negocio.
+        </p>
+        <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital%21%20Quiero%20cotizar%20una%20p%C3%A1gina%20web%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="tecnico-cta">
+          <i class="bi bi-whatsapp"></i> Cotizar mi página web
+        </a>
+      </div>
+
+      <div class="web-grid">
+        <div class="web-item">
+          <i class="bi bi-window-desktop"></i>
+          <h4>Diseño y desarrollo</h4>
+          <p>Landing pages y sitios de varias páginas, adaptados a celular y tablet, con tu logo y tus colores.</p>
+        </div>
+        <div class="web-item">
+          <i class="bi bi-hdd-network"></i>
+          <h4>Hosting incluido</h4>
+          <p>Alojamiento del sitio, certificado de seguridad y copias de respaldo. Tú no tienes que configurar nada.</p>
+        </div>
+        <div class="web-item">
+          <i class="bi bi-globe2"></i>
+          <h4>Dominio propio</h4>
+          <p>Registramos tu dominio (tunegocio.com, .ec, .es) y lo dejamos apuntando a tu página.</p>
+        </div>
+        <div class="web-item">
+          <i class="bi bi-envelope-at"></i>
+          <h4>Correos corporativos</h4>
+          <p>Cuentas de correo con tu propio dominio, tipo ventas@tunegocio.com, en lugar de un Gmail suelto.</p>
+        </div>
+        <div class="web-item">
+          <i class="bi bi-whatsapp"></i>
+          <h4>Contacto directo</h4>
+          <p>Botón de WhatsApp, formulario de contacto, mapa de ubicación y enlaces a tus redes sociales.</p>
+        </div>
+        <div class="web-item">
+          <i class="bi bi-graph-up-arrow"></i>
+          <h4>Lista para que te encuentren</h4>
+          <p>Optimizada para Google, con carga rápida y contador de visitas para que veas cómo se mueve.</p>
+        </div>
+      </div>
     </div>
   </section>
 

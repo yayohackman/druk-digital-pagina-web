@@ -3198,6 +3198,288 @@ body.parts-lightbox-open { overflow: hidden; }
 
 .part-card.is-star .part-cat { color: #fbbf24; }
 
+/* ==========================================================================
+   BANDA DEL TÉCNICO  (servicio-tecnico.html)
+   ========================================================================== */
+.tecnico-band {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 0 1rem;
+}
+
+.tecnico-card {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(226, 232, 240, 0.14);
+}
+
+.tecnico-foto {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  aspect-ratio: 3 / 4;
+  background: #071c14;
+}
+
+.tecnico-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tecnico-foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5, 22, 16, 0.55), transparent 45%);
+  pointer-events: none;
+}
+
+.tecnico-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--emerald-bright);
+  margin: 0 0 0.6rem;
+}
+
+.tecnico-title {
+  font-size: clamp(1.45rem, 3vw, 2.05rem);
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  color: var(--text-heading);
+}
+
+.tecnico-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--silver);
+  margin: 0 0 1rem;
+}
+
+.tecnico-name span { color: var(--emerald-bright); }
+
+.tecnico-desc {
+  color: var(--silver-muted);
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+  max-width: 56ch;
+}
+
+.tecnico-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tecnico-stat {
+  flex: 1 1 200px;
+  padding: 0.95rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: rgba(5, 22, 16, 0.6);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+}
+
+.tecnico-stat b {
+  display: block;
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
+  line-height: 1.05;
+  color: var(--emerald-bright);
+  letter-spacing: -0.01em;
+}
+
+.tecnico-stat span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.86rem;
+  color: var(--silver-muted);
+}
+
+.tecnico-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--accent-whatsapp), var(--accent-whatsapp-hover));
+  color: #04170f;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tecnico-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.4);
+  color: #04170f;
+}
+
+@media (max-width: 860px) {
+  .tecnico-card { grid-template-columns: 1fr; }
+  .tecnico-foto { max-width: 300px; margin: 0 auto; aspect-ratio: 4 / 5; }
+  .tecnico-band { padding-top: 2.25rem; }
+}
+
+@media (max-width: 480px) {
+  .tecnico-stat { flex: 1 1 100%; }
+  .tecnico-cta { width: 100%; justify-content: center; }
+}
+
+/* ==========================================================================
+   TALLER MASTER Y PÁGINAS WEB  (software.html)
+   ========================================================================== */
+.tm-intro { position: relative; z-index: 2; padding: 2.5rem 0 0.5rem; }
+
+.tm-card {
+  padding: clamp(1.5rem, 3.5vw, 2.6rem);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(226, 232, 240, 0.14);
+}
+
+.tm-title {
+  font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+  line-height: 1.18;
+  margin: 0.75rem 0 1.1rem;
+  color: var(--text-heading);
+}
+
+.tm-title span { color: var(--emerald-bright); }
+
+.tm-text { color: var(--silver-muted); line-height: 1.75; margin: 0 0 1.1rem; max-width: 80ch; }
+.tm-text:last-of-type { margin-bottom: 1.6rem; }
+.tm-text strong { color: var(--silver); font-weight: 600; }
+
+.tm-highlight {
+  display: block;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--emerald-bright);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(5, 22, 16, 0.55);
+  color: var(--silver);
+  line-height: 1.7;
+  margin: 0 0 1.75rem;
+  max-width: 80ch;
+}
+
+/* ---------- Recuadro reservado para el video ---------- */
+.tm-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px dashed rgba(52, 211, 153, 0.45);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(52, 211, 153, 0.14), transparent 62%),
+    rgba(5, 22, 16, 0.72);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.tm-video video,
+.tm-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.tm-video-ph { display: grid; gap: 0.6rem; justify-items: center; }
+
+.tm-video-ph i {
+  font-size: 3rem;
+  color: var(--emerald-bright);
+  filter: drop-shadow(0 6px 18px rgba(52, 211, 153, 0.45));
+}
+
+.tm-video-ph strong { color: var(--silver); font-size: 1.05rem; }
+.tm-video-ph small { color: var(--silver-muted); font-size: 0.88rem; max-width: 44ch; }
+
+.tm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+/* ---------- Páginas web ---------- */
+.web-section { position: relative; z-index: 2; padding-top: 2.5rem; }
+
+.web-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.15rem;
+  margin: 1.75rem 0;
+}
+
+.web-item {
+  padding: 1.4rem;
+  border-radius: var(--radius-md);
+  background: var(--glass-card);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+}
+
+.web-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(52, 211, 153, 0.5);
+  background: var(--glass-card-hover);
+}
+
+.web-item i {
+  font-size: 1.7rem;
+  color: var(--emerald-bright);
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.web-item h4 { margin: 0 0 0.45rem; font-size: 1.05rem; color: var(--text-heading); }
+.web-item p { margin: 0; font-size: 0.9rem; color: var(--silver-muted); line-height: 1.6; }
+
+.web-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: rgba(5, 22, 16, 0.6);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.web-demo p { margin: 0; flex: 1 1 320px; color: var(--silver); line-height: 1.65; }
+.web-demo p b { color: var(--emerald-bright); }
+
+@media (max-width: 620px) {
+  .tm-actions .btn, .tm-actions .tecnico-cta { width: 100%; justify-content: center; }
+}
+
 
 /* ==========================================================================
    AJUSTES RESPONSIVOS GLOBALES — celulares y tablets (las 5 páginas)
