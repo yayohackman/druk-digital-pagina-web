@@ -3812,3 +3812,115 @@ html { overflow-x: clip; }
   .equipos-grid-4,
   .equipos-grid-3 { grid-template-columns: 1fr; gap: 1.25rem; }
 }
+
+/* ==========================================================================
+   INICIO: TEXTOS DEL HERO CONVERTIDOS EN BOTONES (enlazan a cada pestaña)
+   Mismo efecto que las tarjetas de repuestos: se elevan, borde esmeralda,
+   halo verde y un destello de luz que cruza al pasar el mouse.
+   ========================================================================== */
+.hero-link-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  background: rgba(5, 22, 16, 0.55);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: 12px;
+  padding: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-link-item,
+.hero-link-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+  text-decoration: none;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.45s ease,
+              background 0.35s ease;
+}
+
+.hero-link-item {
+  color: #cbd5e1;
+  padding: 7px 34px 7px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(226, 232, 240, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.hero-link-card {
+  color: #f8fafc;
+  padding-right: 2.6rem;
+}
+
+/* Destello de luz que cruza el botón (igual que en repuestos) */
+.hero-link-item::after,
+.hero-link-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.16) 48%, rgba(52, 211, 153, 0.22) 52%, transparent 70%);
+  transform: translateX(-130%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.hero-link-arrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translate(-4px, -50%);
+  font-size: 1.35rem;
+  color: var(--emerald-bright);
+  opacity: 0.55;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.hero-link-item:hover,
+.hero-link-item:focus-visible,
+.hero-link-card:hover,
+.hero-link-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--emerald-bright);
+  background: var(--glass-card-hover);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5), 0 0 28px rgba(52, 211, 153, 0.35);
+  outline: none;
+}
+
+.hero-link-item:hover::after,
+.hero-link-item:focus-visible::after,
+.hero-link-card:hover::after,
+.hero-link-card:focus-visible::after { transform: translateX(130%); }
+
+.hero-link-item:hover .hero-link-arrow,
+.hero-link-card:hover .hero-link-arrow,
+.hero-link-item:focus-visible .hero-link-arrow,
+.hero-link-card:focus-visible .hero-link-arrow {
+  transform: translate(2px, -50%);
+  opacity: 1;
+}
+
+.hero-link-item:active,
+.hero-link-card:active { transform: translateY(-1px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-link-item, .hero-link-card, .hero-link-item::after, .hero-link-card::after { transition: none; }
+}
+
+/* ==========================================================================
+   CABECERA COMPACTA ENTRE 901 Y 1240 PX (laptops pequeñas / tablets horizontales)
+   El botón del teléfono se salía por la derecha y quedaba cortado.
+   ========================================================================== */
+@media (min-width: 901px) and (max-width: 1240px) {
+  .nav-links { gap: 0.15rem; }
+  .nav-link { font-size: 0.84rem; padding: 0.4rem 0.45rem; }
+  .header-social-links { gap: 4px; margin-right: 6px; }
+  .header-social-btn { width: 29px; height: 29px; font-size: 0.85rem; }
+  .header-phone-badge { padding: 0.45rem 0.85rem; font-size: 0.84rem; letter-spacing: 0; gap: 0.35rem; }
+}
