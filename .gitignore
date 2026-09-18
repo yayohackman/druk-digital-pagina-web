@@ -1,0 +1,11 @@
+# Editor y archivos temporales
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# Carpetas de trabajo local y capturas
+Claude outputs/
+computadoras ensambladas y laptops/
+agujeros negro verde esmeralda.mp4

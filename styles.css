@@ -3678,3 +3678,137 @@ html { overflow-x: clip; }
   .logo-img { height: 29px; }
   .badge { font-size: 0.67rem; letter-spacing: 0.6px; }
 }
+
+/* ==========================================================================
+   VENTAS: TARJETAS DE EQUIPOS (CPU ENSAMBLADOS & LAPTOPS) CON IMAGEN
+   ========================================================================== */
+.equipos-grid {
+  display: grid;
+  gap: 1.75rem;
+  align-items: stretch;
+}
+.equipos-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.equipos-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.equipo-card {
+  background: var(--glass-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.equipo-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--emerald-bright);
+  box-shadow: 0 0 35px rgba(52, 211, 153, 0.25);
+}
+
+.equipo-img {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--emerald-dark);
+}
+.equipo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.equipo-card:hover .equipo-img img { transform: scale(1.05); }
+
+.equipo-tier {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(5, 22, 16, 0.85);
+  border: 1px solid var(--emerald-bright);
+  color: var(--emerald-bright);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.equipo-body {
+  padding: 1.35rem 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+.equipo-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--silver-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.equipo-body h3 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: var(--text-heading);
+}
+.equipo-desc {
+  font-size: 0.88rem;
+  color: var(--silver-muted);
+}
+
+.equipo-specs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.25rem 0 0.5rem;
+}
+.equipo-specs li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  column-gap: 0.6rem;
+  align-items: start;
+  background: rgba(5, 22, 16, 0.45);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.75rem;
+}
+.equipo-specs li i {
+  grid-row: span 2;
+  color: var(--emerald-bright);
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+}
+.equipo-specs .spec-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--silver-muted);
+}
+.equipo-specs .spec-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--silver);
+}
+
+.equipo-btn {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .equipos-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .equipos-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .equipos-grid-4,
+  .equipos-grid-3 { grid-template-columns: 1fr; gap: 1.25rem; }
+}
