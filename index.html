@@ -988,20 +988,28 @@
         <h2 class="section-title">Ubicación</h2>
       </div>
 
-      <div class="location-box" style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 1050px; margin: 0 auto;">
-        <!-- 1. Mapa Interactivo Google Maps en la parte superior -->
+      <!-- NOTA: se anula backdrop-filter/overflow en .location-box porque el filtro de desenfoque
+           del contenedor hace que el mapa de Google (WebGL) se renderice en blanco/celeste sin teselas. -->
+      <div class="location-box" style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 1050px; margin: 0 auto; backdrop-filter: none; -webkit-backdrop-filter: none; overflow: visible;">
+        <!-- 1. Mapa Interactivo Google Maps en la parte superior (coordenadas exactas de DRUK Digital) -->
         <div class="map-container" style="border-radius: 18px; overflow: hidden; border: 1px solid var(--glass-border); position: relative; height: 380px; width: 100%; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(52, 211, 153, 0.15);">
-          <iframe 
-            src="https://maps.google.com/maps?q=DRUK%20Digital,%20Av.%20Rep%C3%BAblica%20OE1-167%20y%20Teresa%20de%20Cepeda,%20Quito,%20Ecuador&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
+          <iframe
+            src="https://maps.google.com/maps?q=-0.1807119,-78.490823&hl=es&z=17&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; display:block;"
+            allowfullscreen=""
             referrerpolicy="no-referrer-when-downgrade"
             title="Google Maps DRUK Digital Quito Ecuador">
           </iframe>
         </div>
+
+        <!-- Enlace de respaldo por si el mapa embebido no carga -->
+        <p style="margin: -0.5rem 0 0; text-align: center; font-size: 0.9rem; color: var(--silver);">
+          <i class="bi bi-info-circle me-1" style="color: var(--emerald-bright);"></i>
+          ¿No ves el mapa?
+          <a href="https://maps.app.goo.gl/MyCBaA6QTHzryNj6A" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-bright); font-weight: 600; text-decoration: underline;">Abre DRUK Digital en Google Maps</a>
+        </p>
 
         <!-- 2. Datos de Ubicación debajo del mapa -->
         <div class="location-info" style="display: flex; flex-direction: column; gap: 1rem; background: rgba(5, 22, 16, 0.55); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem 2rem; backdrop-filter: blur(16px);">
@@ -1009,7 +1017,7 @@
             <h3 style="font-size: 1.35rem; color: var(--silver); margin: 0; display: inline-flex; align-items: center; gap: 8px;">
               <i class="bi bi-building" style="color: var(--emerald-bright);"></i> Centro Técnico DRUK Digital
             </h3>
-            <a href="https://maps.app.goo.gl/Pn5C9WFekvHkiR7o8" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.55rem 1.35rem;">
+            <a href="https://maps.app.goo.gl/MyCBaA6QTHzryNj6A" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.55rem 1.35rem;">
               <i class="bi bi-sign-turn-right-fill me-2"></i> Cómo Llegar con Google Maps
             </a>
           </div>
