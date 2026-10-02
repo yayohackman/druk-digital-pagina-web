@@ -355,6 +355,34 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroContainer) {
       heroContainer.addEventListener('mouseenter', stopAutoSlide);
       heroContainer.addEventListener('mouseleave', startAutoSlide);
+
+      // Soporte táctil para deslizar con el dedo (Swipe en móviles y tablets)
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      heroContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      heroContainer.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        // Si el usuario desliza horizontalmente más de 40px y más horizontal que vertical
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            // Deslizó hacia la izquierda -> Siguiente slide
+            goToSlide(currentSlide + 1);
+          } else {
+            // Deslizó hacia la derecha -> Slide anterior
+            goToSlide(currentSlide - 1);
+          }
+          startAutoSlide();
+        }
+      }, { passive: true });
     }
 
     startAutoSlide();

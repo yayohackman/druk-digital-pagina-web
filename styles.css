@@ -2049,25 +2049,67 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 1150px) {
-  .hero-slider-arrow {
-    top: auto;
-    bottom: -65px;
-    transform: none;
-    height: 44px;
-    width: 65px;
-    border-radius: 22px;
+  .hero {
+    padding-top: 92px;
+    padding-bottom: 60px;
   }
-  .hero-slider-arrow:hover {
-    transform: scale(1.08);
+
+  .hero-slider-container {
+    position: relative;
+    padding-top: 60px !important;
   }
-  .hero-arrow-prev {
-    left: calc(50% - 80px);
+
+  /* Pista de slides */
+  .hero-slider-track {
+    margin-top: 0;
   }
-  .hero-arrow-next {
-    right: calc(50% - 80px);
-  }
+
+  /* Indicadores Puntos (Dots) en la parte superior principal */
   .hero-slider-dots {
-    margin-top: 5.5rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    height: 42px;
+    padding: 0 16px;
+    background: rgba(10, 38, 28, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 34;
+  }
+
+  /* Botones para moverse (Anterior / Siguiente) en la parte superior principal */
+  .hero-slider-arrow {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    transform: none;
+    height: 42px;
+    width: 50px;
+    border-radius: 21px;
+    z-index: 35;
+    background: linear-gradient(135deg, rgba(10, 38, 28, 0.95) 0%, rgba(19, 78, 56, 0.95) 100%);
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-slider-arrow:hover,
+  .hero-slider-arrow:active {
+    transform: scale(1.06);
+    background: linear-gradient(135deg, #ffffff 0%, var(--emerald-bright) 100%);
+    color: #051610;
+  }
+
+  .hero-arrow-prev {
+    left: calc(50% - 138px);
+  }
+
+  .hero-arrow-next {
+    right: calc(50% - 138px);
   }
 }
 
