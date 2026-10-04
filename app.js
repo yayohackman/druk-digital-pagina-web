@@ -249,33 +249,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let currX = 0;
     let currY = 0;
 
-    window.addEventListener('mousemove', (e) => {
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
-      mouseX = (e.clientX - cx) / cx; // Normalizado entre -1 y 1
-      mouseY = (e.clientY - cy) / cy;
-    });
+    const hasPointer = window.matchMedia('(pointer: fine)').matches;
 
-    function renderParallax() {
-      // Suavizado e inercia de movimiento (Lerp)
-      currX += (mouseX - currX) * 0.06;
-      currY += (mouseY - currY) * 0.06;
+    if (hasPointer) {
+      window.addEventListener('mousemove', (e) => {
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+        mouseX = (e.clientX - cx) / cx; // Normalizado entre -1 y 1
+        mouseY = (e.clientY - cy) / cy;
+      }, { passive: true });
 
-      geoShapes.forEach((shape) => {
-        const speed = parseFloat(shape.getAttribute('data-speed')) || 25;
-        const rot = parseFloat(shape.getAttribute('data-rot')) || 12;
-        const moveX = currX * speed;
-        const moveY = currY * speed;
-        const rotateX = currY * rot;
-        const rotateY = -currX * rot;
+      function renderParallax() {
+        // Suavizado e inercia de movimiento (Lerp)
+        currX += (mouseX - currX) * 0.06;
+        currY += (mouseY - currY) * 0.06;
 
-        shape.style.transform = `translate3d(${moveX}px, ${moveY}px, 0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      });
+        geoShapes.forEach((shape) => {
+          const speed = parseFloat(shape.getAttribute('data-speed')) || 25;
+          const rot = parseFloat(shape.getAttribute('data-rot')) || 12;
+          const moveX = currX * speed;
+          const moveY = currY * speed;
+          const rotateX = currY * rot;
+          const rotateY = -currX * rot;
 
-      requestAnimationFrame(renderParallax);
+          shape.style.transform = `translate3d(${moveX}px, ${moveY}px, 0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        requestAnimationFrame(renderParallax);
+      }
+
+      renderParallax();
     }
-
-    renderParallax();
   }
 
   /* --------------------------------------------------------------------------
@@ -404,15 +408,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const slowConnection = !!(conn && (conn.saveData || /2g/.test(conn.effectiveType || '')));
 
     function shouldSkipVideo() {
-      return mqMobile.matches || mqReducedMotion.matches || slowConnection;
+      return mqReducedMotion.matches || slowConnection;
     }
 
     function activateVideo(video) {
-      if (!video || !video.dataset.src || video.dataset.activated === 'true') return;
-      if (shouldSkipVideo()) return; // se queda mostrando el poster, sin descargar el video
-      video.dataset.activated = 'true';
-      video.src = video.dataset.src;
-      video.load();
+      if (!video || !video.dataset.src) return;
+      if (shouldSkipVideo()) return; // si tiene modo ahorro o movimiento reducido, mantiene el poster
+      if (video.dataset.activated !== 'true') {
+        video.dataset.activated = 'true';
+        video.src = video.dataset.src;
+        video.load();
+      }
       video.play().catch(() => {});
     }
 
@@ -421,11 +427,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const standaloneVideos = [];
     allHeroVideos.forEach((v) => (v.closest('.hero-slide') ? heroSlideVideos.push(v) : standaloneVideos.push(v)));
 
-    // Slider: solo se activa el video del slide que está visible en este momento
+    // Slider: solo se activa el video del slide que está visible en este momento y se pausan los demás
     function activateActiveHeroSlide() {
       heroSlides.forEach((slide) => {
+        const video = slide.querySelector('.hero-video');
         if (slide.classList.contains('active')) {
-          activateVideo(slide.querySelector('.hero-video'));
+          activateVideo(video);
+        } else if (video && video.src && !video.paused) {
+          video.pause();
         }
       });
     }
