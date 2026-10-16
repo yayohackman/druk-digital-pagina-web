@@ -471,9 +471,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --------------------------------------------------------------------------
      CONTADOR DE EQUIPOS REPARADOS CON DISTORSIÓN GLITCH
-     Sube en saltos hasta la cifra real (data-count-target) y se queda ahí,
-     así nunca muestra un número que todavía no se ha alcanzado.
-     Para actualizar la cifra, cambia data-count-target="3792" en el HTML.
+     - data-count-target="3792" = cifra base. Para actualizarla, cambia ese número
+       en el HTML (portada, franja de confianza y servicio-tecnico.html).
+     - Si además tiene data-count-live (solo el de la portada), sigue subiendo
+       +1, +2, +3, +1... cada 2 segundos mientras está visible, como antes.
      -------------------------------------------------------------------------- */
   (function () {
     const counters = document.querySelectorAll('[data-count-target]');
@@ -482,48 +483,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const formatNumber = (num) => '+' + String(num).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
     counters.forEach((el) => {
-      const target = parseInt(el.getAttribute('data-count-target'), 10);
-      if (!target) return;
-      el.textContent = formatNumber(target);
-      if (reduceMotion) return;
+      const BASE_NUMBER = parseInt(el.getAttribute('data-count-target'), 10);
+      if (!BASE_NUMBER) return;
+      el.textContent = formatNumber(BASE_NUMBER);
+      if (!el.hasAttribute('data-count-live') || reduceMotion) return;
 
-      const STEPS = 12;           // número de saltos con distorsión
-      const STEP_MS = 160;        // tiempo entre saltos
-      const START = Math.max(0, target - 96);
-      let timer = null;
+      const incrementSteps = [1, 2, 3]; // Suma +1, luego +2, luego +3, luego +1...
+      let currentVal = BASE_NUMBER;
+      let stepIndex = 0;
+      let counterInterval = null;
 
-      function run() {
-        clearInterval(timer);
-        let i = 0;
-        el.textContent = formatNumber(START);
-        timer = setInterval(() => {
-          i++;
-          const val = i >= STEPS ? target : Math.round(START + (target - START) * (i / STEPS));
-          el.classList.remove('is-glitching');
-          void el.offsetWidth; // reinicia la animación CSS
-          el.classList.add('is-glitching');
-          setTimeout(() => { el.textContent = formatNumber(val); }, 140);
-          if (i >= STEPS) clearInterval(timer);
-        }, STEP_MS);
+      function triggerDistortionIncrement() {
+        const increment = incrementSteps[stepIndex % incrementSteps.length];
+        stepIndex++;
+        currentVal += increment;
+        el.classList.remove('is-glitching');
+        void el.offsetWidth; // reinicia la animación CSS
+        el.classList.add('is-glitching');
+        setTimeout(() => { el.textContent = formatNumber(currentVal); }, 140);
       }
 
-      function reset() {
-        clearInterval(timer);
-        el.textContent = formatNumber(target);
+      function startCounter() {
+        if (counterInterval) clearInterval(counterInterval);
+        currentVal = BASE_NUMBER;
+        stepIndex = 0;
+        el.textContent = formatNumber(BASE_NUMBER);
+        counterInterval = setInterval(triggerDistortionIncrement, 2000);
+      }
+
+      function stopAndResetCounter() {
+        if (counterInterval) {
+          clearInterval(counterInterval);
+          counterInterval = null;
+        }
+        currentVal = BASE_NUMBER;
+        stepIndex = 0;
+        el.textContent = formatNumber(BASE_NUMBER);
       }
 
       if ('IntersectionObserver' in window) {
         new IntersectionObserver((entries) => {
-          entries.forEach((entry) => (entry.isIntersecting ? run() : reset()));
-        }, { threshold: 0.4 }).observe(el);
+          entries.forEach((entry) => (entry.isIntersecting ? startCounter() : stopAndResetCounter()));
+        }, { threshold: 0.2 }).observe(el);
       }
 
-      // En el slider de inicio: vuelve a animar cada vez que su diapositiva se activa
-      const slide = el.closest('.hero-slide');
-      if (slide) {
+      // Si el slider vuelve al slide 1, reiniciar el conteo
+      const slide1 = el.closest('.hero-slide');
+      if (slide1) {
         new MutationObserver(() => {
-          slide.classList.contains('active') ? run() : reset();
-        }).observe(slide, { attributes: true, attributeFilter: ['class'] });
+          slide1.classList.contains('active') ? startCounter() : stopAndResetCounter();
+        }).observe(slide1, { attributes: true, attributeFilter: ['class'] });
       }
     });
   })();
