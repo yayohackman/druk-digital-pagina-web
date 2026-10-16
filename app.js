@@ -470,104 +470,63 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /* --------------------------------------------------------------------------
-     CONTADOR DINÁMICO CON DISTORSIÓN GLITCH (+3,725)
+     CONTADOR DE EQUIPOS REPARADOS CON DISTORSIÓN GLITCH
+     Sube en saltos hasta la cifra real (data-count-target) y se queda ahí,
+     así nunca muestra un número que todavía no se ha alcanzado.
+     Para actualizar la cifra, cambia data-count-target="3792" en el HTML.
      -------------------------------------------------------------------------- */
-  const counterEl = document.getElementById('counter-equipos-reparados');
-  if (counterEl) {
-    const BASE_NUMBER = 3725;
-    let currentVal = BASE_NUMBER;
-    const incrementSteps = [1, 2, 3]; // Suma +1, luego +2, luego +3, luego +1...
-    let stepIndex = 0;
-    let counterInterval = null;
+  (function () {
+    const counters = document.querySelectorAll('[data-count-target]');
+    if (!counters.length) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const formatNumber = (num) => '+' + String(num).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
-    function formatNumber(num) {
-      return '+' + num.toLocaleString('es-EC');
-    }
+    counters.forEach((el) => {
+      const target = parseInt(el.getAttribute('data-count-target'), 10);
+      if (!target) return;
+      el.textContent = formatNumber(target);
+      if (reduceMotion) return;
 
-    function triggerDistortionIncrement() {
-      const increment = incrementSteps[stepIndex % incrementSteps.length];
-      stepIndex++;
-      currentVal += increment;
+      const STEPS = 12;           // número de saltos con distorsión
+      const STEP_MS = 160;        // tiempo entre saltos
+      const START = Math.max(0, target - 96);
+      let timer = null;
 
-      // Disparar animación de distorsión
-      counterEl.classList.remove('is-glitching');
-      // Forzar reflujo para reiniciar keyframe
-      void counterEl.offsetWidth;
-      counterEl.classList.add('is-glitching');
-
-      // Actualizar número a mitad de la distorsión
-      setTimeout(() => {
-        counterEl.textContent = formatNumber(currentVal);
-      }, 140);
-    }
-
-    function startCounter() {
-      if (counterInterval) clearInterval(counterInterval);
-      currentVal = BASE_NUMBER;
-      stepIndex = 0;
-      counterEl.textContent = formatNumber(BASE_NUMBER);
-      counterInterval = setInterval(triggerDistortionIncrement, 2000);
-    }
-
-    function stopAndResetCounter() {
-      if (counterInterval) {
-        clearInterval(counterInterval);
-        counterInterval = null;
+      function run() {
+        clearInterval(timer);
+        let i = 0;
+        el.textContent = formatNumber(START);
+        timer = setInterval(() => {
+          i++;
+          const val = i >= STEPS ? target : Math.round(START + (target - START) * (i / STEPS));
+          el.classList.remove('is-glitching');
+          void el.offsetWidth; // reinicia la animación CSS
+          el.classList.add('is-glitching');
+          setTimeout(() => { el.textContent = formatNumber(val); }, 140);
+          if (i >= STEPS) clearInterval(timer);
+        }, STEP_MS);
       }
-      currentVal = BASE_NUMBER;
-      stepIndex = 0;
-      counterEl.textContent = formatNumber(BASE_NUMBER);
-    }
 
-    // Iniciar con IntersectionObserver (cuando el módulo es visible en pantalla)
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          startCounter();
-        } else {
-          stopAndResetCounter();
-        }
-      });
-    }, { threshold: 0.2 });
+      function reset() {
+        clearInterval(timer);
+        el.textContent = formatNumber(target);
+      }
 
-    observer.observe(counterEl);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          entries.forEach((entry) => (entry.isIntersecting ? run() : reset()));
+        }, { threshold: 0.4 }).observe(el);
+      }
 
-    // Si el slider de inicio cambia de diapositiva y regresa al slide 1, reiniciar conteo
-    const slide1 = counterEl.closest('.hero-slide');
-    if (slide1) {
-      const mutationObserver = new MutationObserver(() => {
-        if (slide1.classList.contains('active')) {
-          startCounter();
-        } else {
-          stopAndResetCounter();
-        }
-      });
-      mutationObserver.observe(slide1, { attributes: true, attributeFilter: ['class'] });
-    }
-  }
-
-  /* --------------------------------------------------------------------------
-     CONTADOR DE VISITAS HÍBRIDO EN VIVO (DRUK DIGITAL)
-     -------------------------------------------------------------------------- */
-  const visitorCountDisplay = document.getElementById('visitorCountDisplay');
-  if (visitorCountDisplay) {
-    // Consultar el conteo real en hits.sh
-    fetch('https://hits.sh/www.drukdigital.es.svg?label=Visitas')
-      .then(res => res.text())
-      .then(svg => {
-        const match = svg.match(/<title>Visitas:\s*([\d,]+)<\/title>/);
-        if (match && match[1]) {
-          const rawCount = parseInt(match[1].replace(/,/g, ''), 10);
-          if (!isNaN(rawCount)) {
-            visitorCountDisplay.innerHTML = `<span class="visitor-number">+${rawCount.toLocaleString('es-EC')}</span>`;
-          }
-        }
-      })
-      .catch(() => {
-        // En caso de modo offline o bloqueo de red, el badge SVG actúa de fallback
-      });
-  }
-
+      // En el slider de inicio: vuelve a animar cada vez que su diapositiva se activa
+      const slide = el.closest('.hero-slide');
+      if (slide) {
+        new MutationObserver(() => {
+          slide.classList.contains('active') ? run() : reset();
+        }).observe(slide, { attributes: true, attributeFilter: ['class'] });
+      }
+    });
+  })();
 
   /* --------------------------------------------------------------------------
      9. Catálogos Visuales Interactivos de Repuestos (repuestos.html)
