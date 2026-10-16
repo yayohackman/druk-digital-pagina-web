@@ -14,7 +14,7 @@
   'use strict';
 
   var GA4_ID = 'G-LYWH1TTN3D';   // Google Analytics 4 - flujo "DRUK Digital Web"
-  var META_PIXEL_ID = '';   // ejemplo: '123456789012345'
+  var META_PIXEL_ID = '1598726791188172';   // Pixel de Meta - "DRUK Digital Web"
 
   /* ---------- Google Analytics 4 ---------- */
   if (GA4_ID) {
