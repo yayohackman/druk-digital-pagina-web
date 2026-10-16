@@ -13,7 +13,7 @@
 (function () {
   'use strict';
 
-  var GA4_ID = '';          // ejemplo: 'G-ABC123XYZ9'
+  var GA4_ID = 'G-LYWH1TTN3D';   // Google Analytics 4 - flujo "DRUK Digital Web"
   var META_PIXEL_ID = '';   // ejemplo: '123456789012345'
 
   /* ---------- Google Analytics 4 ---------- */
