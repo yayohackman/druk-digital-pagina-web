@@ -1150,7 +1150,11 @@ button {
   margin-top: 0.25rem;
 }
 
-.stat-item h4 {
+.stat-item h4,
+.stat-item .stat-value {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
   font-size: 1.8rem;
   color: #ffffff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
@@ -1923,7 +1927,7 @@ input:checked + .slider:before {
   font-size: 0.95rem;
 }
 
-.footer-links h4 {
+.footer-links h3, .footer-links h4 {
   font-size: 1.1rem;
   margin-bottom: 1.25rem;
   color: var(--silver);
@@ -3501,7 +3505,7 @@ body.parts-lightbox-open { overflow: hidden; }
   margin-bottom: 0.7rem;
 }
 
-.web-item h4 { margin: 0 0 0.45rem; font-size: 1.05rem; color: var(--text-heading); }
+.web-item h3, .web-item h4 { margin: 0 0 0.45rem; font-size: 1.05rem; color: var(--text-heading); }
 .web-item p { margin: 0; font-size: 0.9rem; color: var(--silver-muted); line-height: 1.6; }
 
 .web-demo {
@@ -3705,7 +3709,7 @@ html { overflow-x: clip; }
 
   .footer { padding: 45px 0 25px; }
   .footer-grid { gap: 2rem; margin-bottom: 2rem; }
-  .footer-links h4 { font-size: 1rem; margin-bottom: 0.9rem; }
+  .footer-links h3, .footer-links h4 { font-size: 1rem; margin-bottom: 0.9rem; }
 
   .subpage-title { margin-bottom: 0.6rem; }
   .subpage-desc { font-size: 0.96rem; margin-bottom: 1.15rem; }
@@ -4012,6 +4016,7 @@ html { overflow-x: clip; }
   border: 1px solid rgba(52, 211, 153, 0.28);
 }
 
+.ai-panel h4,
 .ai-panel h5 {
   display: flex;
   align-items: center;
@@ -4125,3 +4130,6 @@ html { overflow-x: clip; }
   .faq-item summary { font-size: 0.98rem; padding: 1rem 2.6rem 1rem 1rem; }
   .faq-item p { padding: 0 1rem 1rem; }
 }
+
+/* Jerarquía de encabezados corregida (h2 > h3 > h4): mantiene el aspecto anterior */
+.solution-card > h3 { font-size: 1em; }
