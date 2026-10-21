@@ -4097,3 +4097,31 @@ html { overflow-x: clip; }
   .trust-item span { font-size: 0.78rem; }
   .trust-item > i { width: 2.2rem; height: 2.2rem; font-size: 1.05rem; }
 }
+
+/* ===== Preguntas frecuentes (servicio-tecnico.html) ===== */
+.faq-section { padding-top: 2rem; }
+.faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+.faq-item {
+  background: var(--glass-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+.faq-item:hover, .faq-item[open] { border-color: var(--glass-border-hover); background: var(--glass-card-hover); }
+.faq-item summary {
+  cursor: pointer; list-style: none; position: relative;
+  padding: 1.1rem 3rem 1.1rem 1.25rem;
+  font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; color: var(--text-heading);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%);
+  font-size: 1.4rem; line-height: 1; color: var(--emerald-bright); transition: transform var(--transition-fast);
+}
+.faq-item[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq-item p { margin: 0; padding: 0 1.25rem 1.2rem; color: var(--text-body); line-height: 1.6; }
+@media (max-width: 600px) {
+  .faq-item summary { font-size: 0.98rem; padding: 1rem 2.6rem 1rem 1rem; }
+  .faq-item p { padding: 0 1rem 1rem; }
+}
