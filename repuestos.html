@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
   <!-- CSS Principal Liquid Glass -->
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -1611,10 +1611,16 @@
     </div>
   </div>
 
-  <!-- Botón Flotante WhatsApp -->
-  <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20disponibilidad%20de%20un%20repuesto." target="_blank" class="floating-whatsapp" aria-label="WhatsApp DRUK Digital">
-    <i class="bi bi-whatsapp"></i>
-  </a>
+    <!-- Botón Flotante WhatsApp con pastilla "¿Necesitas ayuda?" -->
+  <div class="floating-whatsapp-wrap">
+    <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20disponibilidad%20de%20un%20repuesto." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-pill" aria-label="¿Necesitas ayuda? Escríbenos por WhatsApp">
+      <span class="floating-whatsapp-dot" aria-hidden="true"></span>
+      <span class="floating-whatsapp-text">¿Necesitas ayuda?</span>
+    </a>
+    <a href="https://wa.me/593987334711?text=%C2%A1Hola%20DRUK%20Digital!%20Deseo%20consultar%20disponibilidad%20de%20un%20repuesto." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="WhatsApp DRUK Digital">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
 
   <!-- Script JS Principal -->
   <script src="app.js?v=4"></script>
