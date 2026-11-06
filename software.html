@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
   <!-- CSS Principal Liquid Glass -->
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -415,10 +415,10 @@
         </p>
 
         <div class="tm-video tm-video--ready" id="tallerMasterVideo">
-          <video controls preload="metadata" playsinline poster="Software%20para%20emprendedores/Taller%20Master/taller-master-portada.jpg" aria-label="Video explicativo de TALLER MASTER">
-            <source src="Software%20para%20emprendedores/Taller%20Master/taller-master-video-web.mp4" type="video/mp4">
-            Tu navegador no puede reproducir este video.
-          </video>
+          <img class="tm-yt-poster" src="Software%20para%20emprendedores/Taller%20Master/taller-master-portada.jpg" alt="Portada del video de TALLER MASTER">
+          <iframe data-yt="tallerMaster" loading="lazy" title="Video explicativo de TALLER MASTER"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <div class="tm-actions">
@@ -702,6 +702,14 @@
   </div>
 
   <!-- Script JS Principal -->
-  <script src="app.js?v=4"></script>
+  <!-- ===== VIDEO DE YOUTUBE =====
+       Pega el ID del video entre las comillas (lo que va después de "v=" o de "youtu.be/").
+       Mientras esté vacío se muestra la portada. -->
+  <script>
+    window.DRUK_YT = Object.assign(window.DRUK_YT || {}, {
+      tallerMaster: '' // antes: Software para emprendedores/Taller Master/taller-master-video-web.mp4
+    });
+  </script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

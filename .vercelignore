@@ -1,0 +1,21 @@
+# Videos: se alojan en YouTube, no se suben a Vercel
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.webm
+*.WEBM
+videos/
+
+# Carpetas de trabajo y respaldos locales (no forman parte del sitio)
+Claude outputs/
+computadoras ensambladas y laptops/
+
+# Imágenes fuente pesadas que la web no usa (sus versiones .webp quedan en el repo)
+Gemini_Generated_Image_1bxebv1bxebv1bxe.png
+Gemini_Generated_Image_ntammrntammrntam.png
+DRUK DIGITAL LOGO NUEVO 2026.png
+IPHONE ARMADO.png
+IPHONE DESCARMADO.png
+cpu armado.png
+cpu desarmado.png

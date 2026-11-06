@@ -9,3 +9,12 @@ Thumbs.db
 Claude outputs/
 computadoras ensambladas y laptops/
 agujeros negro verde esmeralda.mp4
+
+# Videos: se alojan en YouTube, no en el repo ni en Vercel
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.webm
+*.WEBM
+videos/

@@ -411,8 +411,48 @@ document.addEventListener('DOMContentLoaded', () => {
       return mqReducedMotion.matches || slowConnection;
     }
 
+    // --- Videos de YouTube (los IDs se pegan en window.DRUK_YT dentro del HTML) ---
+    function ytSrc(key, fondo) {
+      const id = ((window.DRUK_YT || {})[key] || '').trim();
+      if (!id) return '';
+      const base = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id);
+      return fondo
+        ? base + '?autoplay=1&mute=1&loop=1&playlist=' + encodeURIComponent(id) +
+          '&controls=0&playsinline=1&rel=0&modestbranding=1&enablejsapi=1'
+        : base + '?rel=0&modestbranding=1&playsinline=1';
+    }
+    function ytCommand(iframe, func) {
+      if (iframe && iframe.contentWindow && iframe.src) {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: func, args: [] }), '*');
+      }
+    }
+    function isYT(el) { return el && el.tagName === 'IFRAME' && el.dataset.yt; }
+    function pauseVideo(el) {
+      if (isYT(el)) ytCommand(el, 'pauseVideo');
+      else if (el && el.src && !el.paused) el.pause();
+    }
+
+    // Videos de YouTube fuera del slider (ej. software.html): se cargan con loading="lazy"
+    document.querySelectorAll('iframe[data-yt]:not(.hero-video)').forEach((f) => {
+      const src = ytSrc(f.dataset.yt, false);
+      if (src) f.src = src;
+    });
+
     function activateVideo(video) {
-      if (!video || !video.dataset.src) return;
+      if (!video) return;
+      if (isYT(video)) {
+        if (shouldSkipVideo()) return; // mantiene la imagen de portada
+        if (video.dataset.activated !== 'true') {
+          const src = ytSrc(video.dataset.yt, video.dataset.ytMode === 'fondo');
+          if (!src) return; // sin ID todavía: se queda la portada
+          video.dataset.activated = 'true';
+          video.src = src;
+        } else {
+          ytCommand(video, 'playVideo');
+        }
+        return;
+      }
+      if (!video.dataset.src) return;
       if (shouldSkipVideo()) return; // si tiene modo ahorro o movimiento reducido, mantiene el poster
       if (video.dataset.activated !== 'true') {
         video.dataset.activated = 'true';
@@ -433,8 +473,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const video = slide.querySelector('.hero-video');
         if (slide.classList.contains('active')) {
           activateVideo(video);
-        } else if (video && video.src && !video.paused) {
-          video.pause();
+        } else {
+          pauseVideo(video);
         }
       });
     }
@@ -464,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // cualquier video que ya se hubiera activado
     mqReducedMotion.addEventListener('change', () => {
       if (mqReducedMotion.matches) {
-        document.querySelectorAll('.hero-video[src]').forEach((v) => v.pause());
+        document.querySelectorAll('.hero-video[src]').forEach(pauseVideo);
       }
     });
   })();
