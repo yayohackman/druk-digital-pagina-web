@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
   <!-- CSS Principal Liquid Glass -->
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=12">
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -512,6 +512,33 @@
           </ul>
         </div>
 
+        <!-- Solución 1b: Ingreso de orden de trabajo desde la app Android (short de YouTube + pasos) -->
+        <div class="solution-card ot-android-card" id="orden-android" data-category="ordenes">
+          <div class="ot-android-info">
+            <span class="badge badge-emerald"><i class="bi bi-android2 me-1"></i> Desde la app Android</span>
+            <h3>Ingresa una orden de trabajo desde tu celular Android</h3>
+            <p>
+              Con la app de Taller Master para Android registras el equipo en el momento de
+              recibirlo, tomando las fotos directamente con la cámara de tu celular.
+            </p>
+            <ol class="ot-steps">
+              <li><span>Abre el <strong>módulo de órdenes de trabajo</strong></span></li>
+              <li><span>Registra los <strong>datos del cliente</strong></span></li>
+              <li><span>Anota los <strong>datos del equipo</strong> y la falla reportada</span></li>
+              <li><span>Toma <strong>fotos</strong> con la cámara y agrega observaciones</span></li>
+              <li><span><strong>Guarda la orden</strong> y queda lista para seguimiento</span></li>
+            </ol>
+          </div>
+          <figure class="ot-android-video">
+            <div class="yt-short">
+              <iframe data-yt="tallerMasterOtAndroid" loading="lazy" title="Taller Master: ingreso de orden de trabajo desde la app Android"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption>Tutorial en video: ingreso de una orden desde la app Android (2:16 min)</figcaption>
+          </figure>
+        </div>
+
         <!-- Solución 3 -->
         <div class="solution-card" data-category="cobros">
           <div class="solution-header">
@@ -737,7 +764,8 @@
        Mientras esté vacío se muestra la portada. -->
   <script>
     window.DRUK_YT = Object.assign(window.DRUK_YT || {}, {
-      tallerMaster: 'zfQPRRytZh4' // YouTube: Taller Master, tutorial completo (antes: taller-master-video-web.mp4)
+      tallerMaster: 'zfQPRRytZh4', // YouTube: Taller Master, tutorial completo (antes: taller-master-video-web.mp4)
+      tallerMasterOtAndroid: '00aYzvtrxRE' // YouTube Short: ingreso de orden de trabajo desde la app Android
     });
   </script>
   <script src="app.js?v=5"></script>
