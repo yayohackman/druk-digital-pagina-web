@@ -18,3 +18,9 @@ agujeros negro verde esmeralda.mp4
 *.webm
 *.WEBM
 videos/
+
+# Excepción: videos cortos de portada (menos de 1.2 MB cada uno) que sí van en el repo y en Vercel
+!robot-tecnico-web.mp4
+!robot-repuestos-web.mp4
+!robot-programando-web.mp4
+!venta-pc-laptop-web.mp4

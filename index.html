@@ -917,10 +917,8 @@
 
             <div class="hero-visual">
               <div class="hero-img-wrapper">
-                <img class="hero-yt-poster" src="hero_banner.webp" alt="" aria-hidden="true">
-                <iframe class="hero-video hero-yt" data-yt="robotTecnico" data-yt-mode="fondo" loading="lazy"
-                  title="Servicio técnico DRUK Digital" allow="autoplay; encrypted-media; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <video class="hero-video" data-src="robot-tecnico-web.mp4" autoplay loop muted playsinline
+                  webkit-playsinline poster="hero_banner.webp" preload="none"></video>
               </div>
               <!-- Botones colocados debajo del video -->
               <div class="hero-actions">
@@ -1001,10 +999,8 @@
 
             <div class="hero-visual">
               <div class="hero-img-wrapper">
-                <img class="hero-yt-poster" src="repuestos_banner.webp" alt="" aria-hidden="true">
-                <iframe class="hero-video hero-yt" data-yt="robotRepuestos" data-yt-mode="fondo" loading="lazy"
-                  title="Repuestos DRUK Digital" allow="autoplay; encrypted-media; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <video class="hero-video" data-src="robot-repuestos-web.mp4" autoplay loop muted playsinline
+                  webkit-playsinline poster="repuestos_banner.webp" preload="none"></video>
               </div>
               <!-- Botones colocados debajo del video -->
               <div class="hero-actions">
@@ -1057,10 +1053,8 @@
 
             <div class="hero-visual">
               <div class="hero-img-wrapper">
-                <img class="hero-yt-poster" src="robot-programando.webp" alt="" aria-hidden="true">
-                <iframe class="hero-video hero-yt" data-yt="robotProgramando" data-yt-mode="fondo" loading="lazy"
-                  title="Software TALLER MASTER" allow="autoplay; encrypted-media; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <video class="hero-video" data-src="robot-programando-web.mp4" autoplay loop muted playsinline
+                  webkit-playsinline poster="robot-programando.webp" preload="none"></video>
               </div>
               <!-- Botones colocados debajo del video -->
               <div class="hero-actions">
@@ -1127,10 +1121,8 @@
 
             <div class="hero-visual">
               <div class="hero-img-wrapper">
-                <img class="hero-yt-poster" src="venta_banner.webp" alt="" aria-hidden="true">
-                <iframe class="hero-video hero-yt" data-yt="ventaPcLaptop" data-yt-mode="fondo" loading="lazy"
-                  title="Venta de PC y laptops DRUK Digital" allow="autoplay; encrypted-media; picture-in-picture"
-                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <video class="hero-video" data-src="venta-pc-laptop-web.mp4" autoplay loop muted playsinline
+                  webkit-playsinline poster="venta_banner.webp" preload="none"></video>
               </div>
               <!-- Botones colocados debajo del video -->
               <div class="hero-actions">
@@ -1402,18 +1394,6 @@
   </div>
 
   <!-- Script JS Principal -->
-  <!-- ===== VIDEOS DE YOUTUBE =====
-       Pega el ID de cada video entre las comillas (es lo que va después de "v=" o de "youtu.be/").
-       Ej: https://youtu.be/dQw4w9WgXcQ  ->  'dQw4w9WgXcQ'
-       Mientras esté vacío se muestra la imagen de portada. -->
-  <script>
-    window.DRUK_YT = Object.assign(window.DRUK_YT || {}, {
-      robotTecnico:     '', // antes: robot-tecnico-web.mp4
-      robotRepuestos:   '', // antes: robot-repuestos-web.mp4
-      robotProgramando: '', // antes: robot-programando-web.mp4
-      ventaPcLaptop:    ''  // antes: venta-pc-laptop-web.mp4
-    });
-  </script>
   <script src="app.js?v=5"></script>
 </body>
 
