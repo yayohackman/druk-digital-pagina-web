@@ -481,7 +481,7 @@
           <i class="bi bi-android2 me-1"></i> Taller Master desde la app Android
         </a>
         <button class="tab-btn" data-category="ia">
-          <i class="bi bi-stars me-1"></i> Inteligencia Artificial
+          <i class="bi bi-stars me-1"></i> Inteligencia Artificial · Ingreso de productos con IA
         </button>
         <button class="tab-btn" data-category="cobros">
           <i class="bi bi-calculator me-1"></i> Flujo de Caja
@@ -591,6 +591,33 @@
               </ul>
             </div>
           </div>
+        </div>
+
+        <!-- Ingreso de productos con IA (short de YouTube + pasos) -->
+        <div class="solution-card ot-android-card" id="ingreso-productos-ia" data-category="ia">
+          <div class="ot-android-info">
+            <span class="badge badge-emerald"><i class="bi bi-stars me-1"></i> Escáner de factura con IA</span>
+            <h3>Ingreso de productos con IA</h3>
+            <p>
+              Cuando llega mercadería con factura, la IA de Taller Master la lee por ti y
+              registra los productos sin que tengas que digitarlos.
+            </p>
+            <ol class="ot-steps">
+              <li><span>Abre <strong>Inventario</strong> y elige <strong>Escanear Factura IA</strong></span></li>
+              <li><span>Escanea el <strong>código QR</strong> con tu celular y fotografía la factura</span></li>
+              <li><span>La <strong>IA lee</strong> proveedor, productos, costos y total</span></li>
+              <li><span>Ajusta el <strong>precio de venta y la garantía</strong> de cada producto</span></li>
+              <li><span>Se registra el <strong>egreso</strong> en Flujo de Caja y el <strong>stock</strong> se actualiza en Inventario</span></li>
+            </ol>
+          </div>
+          <figure class="ot-android-video">
+            <div class="yt-short">
+              <iframe data-yt="ingresoProductosIA" loading="lazy" title="Taller Master: ingreso de productos al inventario con IA"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption>Tutorial en video: ingreso de productos con IA (1:00 min)</figcaption>
+          </figure>
         </div>
 
       </div>
@@ -747,7 +774,8 @@
   <script>
     window.DRUK_YT = Object.assign(window.DRUK_YT || {}, {
       tallerMaster: 'zfQPRRytZh4', // YouTube: Taller Master, tutorial completo (antes: taller-master-video-web.mp4)
-      tallerMasterOtAndroid: '00aYzvtrxRE' // YouTube Short: ingreso de orden de trabajo desde la app Android
+      tallerMasterOtAndroid: '00aYzvtrxRE', // YouTube Short: ingreso de orden de trabajo desde la app Android
+      ingresoProductosIA: 'FUiBUZPQFQY' // YouTube Short: ingreso de productos al inventario con IA
     });
   </script>
   <script src="app.js?v=6"></script>
