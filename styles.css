@@ -4176,6 +4176,8 @@ html { overflow-x: clip; }
 .solution-card.ai-card { grid-column: 1 / -1; }
 
 /* Ingreso de orden de trabajo desde la app Android: pasos a la izquierda, short vertical a la derecha */
+.tab-btn.tab-link { text-decoration: none; cursor: pointer; }
+#orden-android { scroll-margin-top: 110px; }
 .solution-card.ot-android-card {
   grid-column: 1 / -1;
   flex-direction: row;

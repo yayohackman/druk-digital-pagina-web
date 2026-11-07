@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
   <!-- CSS Principal Liquid Glass -->
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -477,9 +477,9 @@
         <button class="tab-btn active" data-category="all">
           <i class="bi bi-grid-fill me-1"></i> Todos los Módulos
         </button>
-        <button class="tab-btn" data-category="ordenes">
-          <i class="bi bi-receipt me-1"></i> Órdenes de Trabajo (OT)
-        </button>
+        <a class="tab-btn tab-link" href="#orden-android" data-scroll="orden-android">
+          <i class="bi bi-android2 me-1"></i> Taller Master desde la app Android
+        </a>
         <button class="tab-btn" data-category="ia">
           <i class="bi bi-stars me-1"></i> Inteligencia Artificial
         </button>
@@ -500,7 +500,6 @@
             <div class="solution-icon">
               <i class="bi bi-receipt-cutoff"></i>
             </div>
-            <span class="badge badge-emerald">Recepción & Diagnóstico</span>
           </div>
           <h3>Órdenes de Trabajo & Tickets QR</h3>
           <p style="color: var(--silver-muted); font-size: 0.9rem;">
@@ -768,6 +767,6 @@
       tallerMasterOtAndroid: '00aYzvtrxRE' // YouTube Short: ingreso de orden de trabajo desde la app Android
     });
   </script>
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

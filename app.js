@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------------------------------------------------
      3. Filtrado de Soluciones de Software por Tipo de Negocio
      -------------------------------------------------------------------------- */
-  const tabBtns = document.querySelectorAll('.category-tabs .tab-btn');
+  const tabBtns = document.querySelectorAll('.category-tabs .tab-btn[data-category]');
   const solutionCards = document.querySelectorAll('.solution-card');
 
   tabBtns.forEach(btn => {
@@ -98,6 +98,20 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.display = 'none';
         }
       });
+    });
+  });
+
+  // Botones de la barra que llevan a una sección (ej. "Taller Master desde la app Android" -> video)
+  document.querySelectorAll('.category-tabs [data-scroll]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = document.getElementById(link.dataset.scroll);
+      if (!target) return;
+      e.preventDefault();
+      // Si había un filtro activo, vuelve a "Todos los Módulos" para que la tarjeta del video esté visible
+      const allBtn = document.querySelector('.category-tabs .tab-btn[data-category="all"]');
+      if (allBtn && !allBtn.classList.contains('active')) allBtn.click();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (history.replaceState) history.replaceState(null, '', '#' + link.dataset.scroll);
     });
   });
 
