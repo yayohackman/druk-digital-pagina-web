@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
   <!-- CSS Principal Liquid Glass -->
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=14">
 
   <!-- Vercel Web Analytics -->
   <script>
@@ -483,11 +483,8 @@
         <button class="tab-btn" data-category="ia">
           <i class="bi bi-stars me-1"></i> Inteligencia Artificial · Ingreso de productos con IA
         </button>
-        <button class="tab-btn" data-category="cobros">
-          <i class="bi bi-calculator me-1"></i> Flujo de Caja
-        </button>
-        <button class="tab-btn" data-category="inventarios">
-          <i class="bi bi-boxes me-1"></i> Inventario de Repuestos
+        <button class="tab-btn" data-category="ot-pc">
+          <i class="bi bi-pc-display me-1"></i> Crear Orden de Trabajo desde la PC
         </button>
       </div>
 
@@ -521,42 +518,36 @@
           </figure>
         </div>
 
-        <!-- Solución 3 -->
-        <div class="solution-card" data-category="cobros">
-          <div class="solution-header">
-            <div class="solution-icon">
-              <i class="bi bi-cash-stack"></i>
-            </div>
-            <span class="badge badge-emerald">Cobros & Caja</span>
+        <!-- Crear orden de trabajo desde la PC (video de YouTube 16:9 + pasos con minuto) -->
+        <div class="solution-card ot-android-card ot-pc-card" id="orden-pc" data-category="ot-pc">
+          <div class="ot-android-info">
+            <span class="badge badge-emerald"><i class="bi bi-pc-display me-1"></i> Desde la PC</span>
+            <h3>Crea una orden de trabajo desde la computadora</h3>
+            <p>
+              Registra el ingreso de un equipo desde cualquier computadora con conexión a internet:
+              del ingreso al cobro, todo en una sola orden. Pulsa el minuto de cada paso para verlo en el video.
+            </p>
+            <ol class="ot-steps">
+              <li><span>Pulsa <strong>Crear orden de trabajo</strong></span><button type="button" class="ot-step-time" data-start="10" aria-label="Ver este paso en el video, minuto 0:10">0:10</button></li>
+              <li><span>Elige el <strong>técnico asignado</strong> y anota las observaciones visuales</span><button type="button" class="ot-step-time" data-start="16" aria-label="Ver este paso en el video, minuto 0:16">0:16</button></li>
+              <li><span>Busca al <strong>cliente</strong> por su nombre o regístralo nuevo con su dirección</span><button type="button" class="ot-step-time" data-start="26" aria-label="Ver este paso en el video, minuto 0:26">0:26</button></li>
+              <li><span>Registra el <strong>equipo</strong>: marca, modelo, serie o IMEI, patrón y accesorios</span><button type="button" class="ot-step-time" data-start="50" aria-label="Ver este paso en el video, minuto 0:50">0:50</button></li>
+              <li><span>Describe la <strong>falla</strong>, pon el presupuesto y registra el abono</span><button type="button" class="ot-step-time" data-start="63" aria-label="Ver este paso en el video, minuto 1:03">1:03</button></li>
+              <li><span>Escanea el <strong>código QR</strong> y toma las fotos de evidencia con tu celular</span><button type="button" class="ot-step-time" data-start="74" aria-label="Ver este paso en el video, minuto 1:14">1:14</button></li>
+              <li><span><strong>Guarda</strong>, imprime la orden o envíala al cliente por WhatsApp</span><button type="button" class="ot-step-time" data-start="123" aria-label="Ver este paso en el video, minuto 2:03">2:03</button></li>
+              <li><span>La orden aparece en la <strong>lista de órdenes</strong> con sus iconos de acción</span><button type="button" class="ot-step-time" data-start="145" aria-label="Ver este paso en el video, minuto 2:25">2:25</button></li>
+              <li><span>Agrega <strong>repuestos del inventario</strong>: quedan reservados para esa orden</span><button type="button" class="ot-step-time" data-start="176" aria-label="Ver este paso en el video, minuto 2:56">2:56</button></li>
+              <li><span><strong>Cobra la orden</strong> y envía o imprime la nota de venta</span><button type="button" class="ot-step-time" data-start="206" aria-label="Ver este paso en el video, minuto 3:26">3:26</button></li>
+            </ol>
           </div>
-          <h3>Control de Flujo de Ingresos en Caja</h3>
-          <p style="color: var(--silver-muted); font-size: 0.9rem;">
-            Controla el flujo de ingresos en caja según cómo te pagan tus clientes y ten siempre registrados los ingresos y gastos que van con el giro de tu negocio.
-          </p>
-          <ul class="solution-features">
-            <li><i class="bi bi-check2"></i> Pagos con transferencia bancaria, efectivo y tarjeta de crédito</li>
-            <li><i class="bi bi-check2"></i> Registro de ingresos y gastos del giro del negocio</li>
-            <li><i class="bi bi-check2"></i> Emisión de notas de venta y comprobantes</li>
-          </ul>
-        </div>
-
-        <!-- Solución 4 -->
-        <div class="solution-card" data-category="inventarios">
-          <div class="solution-header">
-            <div class="solution-icon">
-              <i class="bi bi-cpu"></i>
+          <figure class="ot-pc-video">
+            <div class="ot-pc-frame">
+              <iframe id="otPcVideo" data-yt="ordenPC" loading="lazy" title="Taller Master: cómo crear una orden de trabajo desde la PC"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <span class="badge">Stock en Tiempo Real</span>
-          </div>
-          <h3>Inventario & Descuento de Repuestos</h3>
-          <p style="color: var(--silver-muted); font-size: 0.9rem;">
-            Descuento automático de pantallas, SSDs, baterías y piezas al utilizarlos en una reparación, con alertas de stock bajo e historial de consumo.
-          </p>
-          <ul class="solution-features">
-            <li><i class="bi bi-check2"></i> Descuento automático de piezas instaladas en la OT</li>
-            <li><i class="bi bi-check2"></i> Alertas de bajo stock de piezas críticas</li>
-            <li><i class="bi bi-check2"></i> Control de costos de compras y margen de ganancia</li>
-          </ul>
+            <figcaption>Tutorial en video: crear una orden de trabajo desde la PC (3:57 min)</figcaption>
+          </figure>
         </div>
 
         <!-- Ingreso de productos con IA (short de YouTube + pasos) -->
@@ -775,9 +766,23 @@
     window.DRUK_YT = Object.assign(window.DRUK_YT || {}, {
       tallerMaster: 'zfQPRRytZh4', // YouTube: Taller Master, tutorial completo (antes: taller-master-video-web.mp4)
       tallerMasterOtAndroid: '00aYzvtrxRE', // YouTube Short: ingreso de orden de trabajo desde la app Android
-      ingresoProductosIA: 'FUiBUZPQFQY' // YouTube Short: ingreso de productos al inventario con IA
+      ingresoProductosIA: 'FUiBUZPQFQY', // YouTube Short: ingreso de productos al inventario con IA
+      ordenPC: 'i0F4FDolVQQ' // YouTube: crear orden de trabajo desde la PC
     });
   </script>
   <script src="app.js?v=6"></script>
+  <script>
+    // "Crear Orden de Trabajo desde la PC": al pulsar el minuto de un paso, el video salta a ese momento
+    document.querySelectorAll('.ot-step-time').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var f = document.getElementById('otPcVideo');
+        var id = ((window.DRUK_YT || {}).ordenPC || '').trim();
+        if (!f || !id) return;
+        f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+          '?rel=0&modestbranding=1&playsinline=1&autoplay=1&start=' + btn.dataset.start;
+        f.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
 </body>
 </html>
